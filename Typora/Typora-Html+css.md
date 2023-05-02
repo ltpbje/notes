@@ -1116,4 +1116,11 @@ body {
 </head>
 ```
 
+**container布局容器**
+
 ![image-20230502115753857](./Typora-image/image-20230502115753857.png)
+
+**栅格系统 container被分为12份**
+
+![image-20230502170025782](./Typora-image/image-20230502170025782.png)
+
