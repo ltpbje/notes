@@ -1097,3 +1097,23 @@ body {
 **引入相关样式文件**
 
 ![image-20230502104835707](./Typora-image/image-20230502104835707.png)
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+          <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+    <!-- 一定不要忘记引入bootstrap 的样式文件 -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+```
+
+![image-20230502115753857](./Typora-image/image-20230502115753857.png)
