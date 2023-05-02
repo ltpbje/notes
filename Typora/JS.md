@@ -160,3 +160,18 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
         // box.innerHTML = '<b>我是盒子</b> '//innerHTML可以解析HTML标签元素
 ```
 
+### 操作元素常用属性
+
+```js
+const img = document.querySelector('img');
+        img.src = './images/2.webp';
+        img.title = 'pink老师的艺术照'
+```
+
+![image-20230502202551414](./Typora-image/image-20230502202551414.png)
+
+### 操作元素样式属性
+
+**小驼峰命名法**
+
+![image-20230502203623441](./Typora-image/image-20230502203623441.png)
