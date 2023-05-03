@@ -1086,15 +1086,15 @@ body {
 
 ![image-20230502101714114](./Typora-image/image-20230502101714114.png)
 
-**创建文件夹结构**
+###### **创建文件夹结构**
 
 ![image-20230502103646872](./Typora-image/image-20230502103646872.png)
 
-**创建html骨架结构**
+###### **创建html骨架结构**
 
 ![image-20230502103603041](./Typora-image/image-20230502103603041.png)
 
-**引入相关样式文件**
+###### **引入相关样式文件**
 
 ![image-20230502104835707](./Typora-image/image-20230502104835707.png)
 
@@ -1120,7 +1120,57 @@ body {
 
 ![image-20230502115753857](./Typora-image/image-20230502115753857.png)
 
-**栅格系统 container被分为12份**
+###### **栅格系统 container被分为12份**
 
 ![image-20230502170025782](./Typora-image/image-20230502170025782.png)
 
+###### 列嵌套
+
+![image-20230503082418275](./Typora-image/image-20230503082418275.png)
+
+###### 列偏移
+
+![image-20230503092117070](./Typora-image/image-20230503092117070.png)
+
+```
+<div class="container">
+        <div class="col-md-3">左侧</div>
+        <div class="col-md-3 col-md-offset-6">右侧</div>
+    </div>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-5">中间</div>
+    </div>
+```
+
+###### 列排序
+
+![image-20230503093707685](./Typora-image/image-20230503093707685.png)
+
+```
+<div class="container">
+        <div class="col-md-5 col-md-push-7">左侧</div>
+        <div class="col-md-7 col-md-pull-5">右侧</div>
+    </div>
+```
+
+###### **响应式工具**
+
+![image-20230503095718257](./Typora-image/image-20230503095718257.png)
+
+```
+<div class="container">
+        <div class="row">
+            <div class="col-md-3 visible-xs">左侧</div>
+            <div class="col-md-3 hidden-lg">右侧</div>
+        </div>
+```
+
+## 阿里百秀案例
+
+![image-20230503101343407](./Typora-image/image-20230503101343407.png)
+
+![image-20230503101416255](./Typora-image/image-20230503101416255.png)
+
+![image-20230503101543224](./Typora-image/image-20230503101543224.png)
+
+![image-20230503102318741](./Typora-image/image-20230503102318741.png)
