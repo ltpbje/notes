@@ -148,6 +148,8 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 
 ![image-20230428080757607](./Typora-image/image-20230428080757607.png)
 
+**修改元素内容·**
+
 ![image-20230428081204437](./Typora-image/image-20230428081204437.png)
 
 ```js
@@ -175,3 +177,37 @@ const img = document.querySelector('img');
 **小驼峰命名法**
 
 ![image-20230502203623441](./Typora-image/image-20230502203623441.png)
+
+### 操作类名来操作css
+
+![image-20230503194237763](./Typora-image/image-20230503194237763.png)
+
+![image-20230503194814954](./Typora-image/image-20230503194814954.png)
+
+```
+// 获取元素
+        const div = document.querySelector('div');
+        // 添加类名
+        div.className = 'box nav';
+```
+
+![image-20230503195950760](./Typora-image/image-20230503195950760.png)
+
+**通过classlist修改样式**
+
+![image-20230503202229617](./Typora-image/image-20230503202229617.png)
+
+![image-20230503202056926](./Typora-image/image-20230503202056926.png)
+
+```
+ const div = document.querySelector('div');
+        // 追加类add()
+        // div.classList.add('nav');
+        //删除类名
+        // div.classList.remove('box');
+        // 切换类toggle 有则删除无则添加
+        // div.classList.toggle('box');
+        div.classList.toggle('nav');
+```
+
+![image-20230503202443783](./Typora-image/image-20230503202443783.png)
