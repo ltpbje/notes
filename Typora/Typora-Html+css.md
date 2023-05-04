@@ -1174,3 +1174,43 @@ body {
 ![image-20230503101543224](./Typora-image/image-20230503101543224.png)
 
 ![image-20230503102318741](./Typora-image/image-20230503102318741.png)
+
+```
+/* 屏幕进入小屏幕和超小屏幕时 让nav里面的li浮动起来 */
+@media screen and (max-width:991px) {
+    .nav li {
+        float: left;
+        width: 20%;
+    }
+
+    .news {
+        margin-top: 10px;
+    }
+}
+
+/* 屏幕进入超小屏幕时 让文字变小*/
+@media screen and (max-width:767px) {
+    .nav a {
+        padding-left: 0 !important;
+    }
+
+    .nav li {
+        font-size: 10px;
+    }
+
+    article .news ul li:first-child {
+        width: 100%;
+    }
+
+    article .news ul li:nth-child(n+2) {
+        width: 50%;
+    }
+
+    .publish h3 {
+        font-size: 14px;
+    }
+}
+```
+
+## vw  / vh
+
