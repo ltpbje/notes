@@ -1214,3 +1214,16 @@ body {
 
 ## vw  / vh
 
+![image-20230504095839314](./Typora-image/image-20230504095839314.png)
+
+**vw适配原理**
+
+![image-20230504100037186](./Typora-image/image-20230504100037186.png)
+
+**vh适配原理**
+
+![image-20230504100909121](./Typora-image/image-20230504100909121.png)
+
+**px转为vw**
+
+![image-20230504102155112](./Typora-image/image-20230504102155112.png)
