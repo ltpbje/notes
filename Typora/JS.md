@@ -193,7 +193,7 @@ const img = document.querySelector('img');
 
 ![image-20230503195950760](./Typora-image/image-20230503195950760.png)
 
-**通过classlist修改样式**
+### ==通过classlist修改样式==
 
 ![image-20230503202229617](./Typora-image/image-20230503202229617.png)
 
@@ -211,3 +211,25 @@ const img = document.querySelector('img');
 ```
 
 ![image-20230503202443783](./Typora-image/image-20230503202443783.png)
+
+### 随机轮播图
+
+```
+/* 生成随机数 */
+    const random = Math.floor(Math.random() * sliderData.length);
+    /* 1.获取图片元素 */
+    const img = document.querySelector('.slider-wrapper img');
+    img.src = sliderData[random].url;
+    /*  2.获取标题元素 */
+    const p = document.querySelector('.slider-footer p');
+    p.innerHTML = sliderData[random].title;
+    /* 3.获取slider-footer元素 */
+    const footer = document.querySelector('.slider-footer');
+    /* 修改背景颜色 */
+    footer.style.backgroundColor = sliderData[random].color;
+    /* 获取对应的小圆点 */
+    const li = document.querySelector(`.slider ul li:nth-child(${random + 1})`);
+    /* 为获取的li添加active 类名 */
+    li.classList.add('active');
+```
+
