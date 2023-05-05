@@ -233,3 +233,8 @@ const img = document.querySelector('img');
     li.classList.add('active');
 ```
 
+### 操作表单元素的属性
+
+![image-20230505084331648](./Typora-image/image-20230505084331648.png)
+
+![image-20230505084215500](./Typora-image/image-20230505084215500.png)
