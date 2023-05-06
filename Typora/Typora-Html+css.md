@@ -1234,3 +1234,11 @@ body {
 
 1. 点击设置 扩展设置
 2. ![在这里插入图片描述](./Typora-image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhb3RpYW4xOTk3,size_16,color_FFFFFF,t_70#pic_center.png)
+
+```
+// 相对路径
+    "less.compile": {
+        "out": "../css/"
+    }
+```
+
