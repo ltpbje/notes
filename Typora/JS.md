@@ -114,7 +114,7 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 
 ![image-20230427200418132](./Typora-image/image-20230427200418132.png)
 
-## DOM
+## 1.DOM
 
 ![image-20230427200848938](./Typora-image/image-20230427200848938.png)![image-20230427201037564](./Typora-image/image-20230427201037564.png)
 
@@ -269,3 +269,21 @@ const img = document.querySelector('img');
 ### 轮播图定时器版
 
 ![image-20230507163804142](./Typora-image/image-20230507163804142.png)
+
+## 2.DOM 
+
+### 事件监听
+
+![image-20230507190624516](./Typora-image/image-20230507190624516.png)
+
+**事件监听的实质: 就是让程序检测是否有事件产生，一旦有事件触发就立即调用一个函数做出响应，也称为注册事件**
+
+**三要素:事件源 事件类型 事件调用的函数**
+
+![image-20230507190901935](./Typora-image/image-20230507190901935.png)
+
+![image-20230507191404455](./Typora-image/image-20230507191404455.png)
+
+### 随机点名案例
+
+![image-20230507195613524](./Typora-image/image-20230507195613524.png)
