@@ -242,3 +242,30 @@ const img = document.querySelector('img');
 ### 自定义属性
 
 ![image-20230507110044625](./Typora-image/image-20230507110044625.png)
+
+### 定时器函数
+
+```
+ // setInterval(函数,间隔时间)时间单位是毫秒
+        setInterval(function () {
+            console.log('计时');
+        }, 1000);
+        // 函数会自动调用不必再次调用否则会出错
+        function fn() {
+            console.log('计时1');
+        }
+        // setInterval(fn(), 1000);
+        // setInterval(函数, 间隔时间)返回的是一个数字代表的是第几个计时器
+        let m = setInterval(fn, 1000);
+        console.log(m);
+        // 停止定时器
+        clearInterval(m);
+```
+
+![image-20230507152041300](./Typora-image/image-20230507152041300.png)
+
+![image-20230507155103178](./Typora-image/image-20230507155103178.png)
+
+### 轮播图定时器版
+
+![image-20230507163804142](./Typora-image/image-20230507163804142.png)
