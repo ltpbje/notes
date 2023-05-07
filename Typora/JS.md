@@ -238,3 +238,7 @@ const img = document.querySelector('img');
 ![image-20230505084331648](./Typora-image/image-20230505084331648.png)
 
 ![image-20230505084215500](./Typora-image/image-20230505084215500.png)
+
+### 自定义属性
+
+![image-20230507110044625](./Typora-image/image-20230507110044625.png)
