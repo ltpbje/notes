@@ -287,3 +287,38 @@ const img = document.querySelector('img');
 ### 随机点名案例
 
 ![image-20230507195613524](./Typora-image/image-20230507195613524.png)
+
+### 事件监听关于const的小问题
+
+```
+ const btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            // js 有垃圾回收机制该函数执行完之后该函数产生的数据会被清除
+            const random = Math.random();
+            console.log(random);
+        });
+```
+
+### 事件监听版本(了解即可)
+
+![image-20230508084245786](./Typora-image/image-20230508084245786.png)
+
+![image-20230508084641429](./Typora-image/image-20230508084641429.png)
+
+### 事件类型
+
+![image-20230508084834459](./Typora-image/image-20230508084834459.png)
+
+```
+  const div = document.querySelector('div');
+        // 鼠标移入事件源 触发事件
+        div.addEventListener('mouseenter', function () {
+            console.log(`轻轻的我来了`);
+        })
+        // 鼠标离开事件源 触发事件
+        div.addEventListener('mouseleave', function () {
+            console.log(`轻轻的我走了`);
+        })
+
+```
+
