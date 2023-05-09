@@ -1,6 +1,5 @@
 
-
-  [HtmlCSS(自学).pdf](C:\Users\19836\OneDrive\obsidian\pdf\HtmlCSS(自学).pdf) 
+<img src="C:\Users\19836\OneDrive\obsidian\pdf\HtmlCSS(自学">.pdf"> 
 
 # Web开发-CSS3
 
@@ -12,7 +11,7 @@
 
 ###  transform                                                                                          
 
-英 [trænsˈfɔː(r)m]
+英 [trænsˈfɔː(r">m]
 
 - **v.**使改变形态；使改变外观（或性质）；使改观
 
@@ -62,7 +61,7 @@
 
 ### transform复合写法
 
-**transform:可以复合在一起写(但最好位移放在最前面否则会影响其他属性)**
+**transform:可以复合在一起写(但最好位移放在最前面否则会影响其他属性">**
 
 **translate**-**rotate******- scale****   
 
@@ -74,15 +73,14 @@
 
 先**定义**再**使用**  **由多个节点来控制**
 
-![image-20230415191555544](./Typora-image/image-20230415191555544.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959446.png" alt="image-20230415191555544" />
 
 ### **利用keyframe来定义动画**
 
 **from to 等同于 0% 到 100%**
 
 **keyframe可以做多个状态的变化关键帧**
-
-![image-20230416084618602](./Typora-image/image-20230416084618602.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959447.png">
 
 ### **动画的使用**
 
@@ -91,12 +89,12 @@
         @keyframes move {
             /* 开始状态 */
             0% {
-                transform: translate(0, 0);
+                transform: translate(0, 0">;
             }
 
             /* 结束状态 */
             100% {
-                transform: translate(100px, 0);
+                transform: translate(100px, 0">;
             }
         }
 
@@ -127,48 +125,47 @@
         /* 动画序列 */
         /* @keyframes move {
             from {
-                transform: translateX(0);
+                transform: translateX(0">;
             }
 
             to {
-                transform: translateX(700px);
+                transform: translateX(700px">;
             }
         } */
         @keyframes move {
             0% {
-                transform: translate(0, 0);
+                transform: translate(0, 0">;
             }
 
             25% {
-                transform: translate(500px, 0);
+                transform: translate(500px, 0">;
             }
 
             50% {
-                transform: translate(500px, 500px);
+                transform: translate(500px, 500px">;
             }
 
             75% {
-                transform: translate(0px, 500px);
+                transform: translate(0px, 500px">;
             }
 
             100% {
-                transform: translate(0, 0);
+                transform: translate(0, 0">;
             }
         }
 ```
 
 ### 动画常用属性
-
-![Untitled](./Typora-image/Untitled.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959448.png">
 
 ```css
 @keyframes move {
             from {
-                transform: translate(0, 0);
+                transform: translate(0, 0">;
             }
 
             to {
-                transform: translate(500px, 0);
+                transform: translate(500px, 0">;
             }
         }
 
@@ -182,7 +179,7 @@
             animation-duration: 2s;
             /* 速度曲线 */
             animation-timing-function: ease;
-            /* 动画何时开始 (延迟播放) */
+            /* 动画何时开始 (延迟播放"> */
             animation-delay: 0.1s;
             /* 动画播放的次数 默认是1  实现循环用infinite */
             animation-iteration-count: infinite;
@@ -213,11 +210,11 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 ```css
  @keyframes move {
             from {
-                transform: translate(0, 0);
+                transform: translate(0, 0">;
             }
 
             to {
-                transform: translate(500px, 0);
+                transform: translate(500px, 0">;
             }
         }
 
@@ -245,7 +242,7 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 #### 速度曲线细节-==步长==
 
-![image-20230417125354007](./Typora-image/image-20230417125354007.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959449.png">
 
 ##### **一个元素可以添加多个动画**
 
@@ -253,7 +250,7 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 ```
  /* 一个元素可以使用两个动画 */
-            animation: bear 1s steps(8) infinite, move 3s linear forwards;
+            animation: bear 1s steps(8"> infinite, move 3s linear forwards;
 ```
 
 
@@ -262,7 +259,7 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 ### ==权重==
 
-**内联样式（即在HTML标签中使用style属性设置的样式) ——>1000**
+**内联样式（即在HTML标签中使用style属性设置的样式"> ——>1000**
 
 **ID选择器                                                                          ——>  100**
 
@@ -367,34 +364,31 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 ### 盒子阴影box-shadow
 
-![image-20230422192316016](./Typora-image/image-20230422192316016.png)
+![image-20230422192316016<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959450.png">
 
 ```
 /*   水平阴影的位置  垂直阴影的位置  模糊距离 阴影的尺寸 颜色 外部阴影 */
-            box-shadow: 0 0 2px 3px rgba(0, 0, 0, .3);
+            box-shadow: 0 0 2px 3px rgba(0, 0, 0, .3">;
 ```
 
 
 
 ### 文字阴影 text-shadow
-
-![image-20230422193823690](./Typora-image/image-20230422193823690.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959451.png">
 
 ### 圆角边框
 
 
-
-![image-20230423091635853](./Typora-image/image-20230423091635853.png)
-
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959452.png">
 
 
-![image-20230423093040743](./Typora-image/image-20230423093040743.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959453.png">
 
 ### box-sizing
 
 `content-box` 是**默认值**。如果你设置一个元素的宽为 100px，那么这个元素的内容区会有 100px 宽，并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。
 
-`border-box` 告诉浏览器：你想要设置的边框和内边距的值是包含在 width 内的。也就是说，如果你将一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减去 (border + padding) 的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。
+`border-box` 告诉浏览器：你想要设置的边框和内边距的值是包含在 width 内的。也就是说，如果你将一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减去 (border + padding"> 的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。
 
 ## CSS3之3D转换
 
@@ -416,7 +410,7 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 ```
   /*3D转换简写 translate3d  */
-            transform: translate3d(200px,200px,200px);
+            transform: translate3d(200px,200px,200px">;
              body {
      body {
            /* 3D转换配合透视才能生效-perspective  透视需要加在需要3D转换的元素的父盒子上*/
@@ -429,13 +423,13 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
             margin: 40px auto;
             background-color: pink;
             /*3D转换简写 translate3d  */
-            transform: translateZ(10px);
+            transform: translateZ(10px">;
         }
 ```
 
 #### 透视 也称视距 
 
-**==透视== 就是眼睛到屏幕的距离  越近物体越大 越远物体越小**  ![image-20230418081619150](./Typora-image/image-20230418081619150.png)
+**==透视== 就是眼睛到屏幕的距离  越近物体越大 越远物体越小**  ![image-20230418081619150<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959454.png">
 
 **d 为视距 眼睛到屏幕的距离 **
 
@@ -444,10 +438,8 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 #### 3D旋转-==rotate==
 
 #### 左手准则
-
-![image-20230418084149011](./Typora-image/image-20230418084149011.png)
-
-![image-20230418090405402](./Typora-image/image-20230418090405402.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959455.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959456.png">
 
 #### 3D呈现 ==transform-style== 
 
@@ -463,11 +455,11 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 ```
  旋转木马
- section div:nth-child(2) {
+ section div:nth-child(2"> {
 
      /* 先旋转在移动 旋转之后对应元素的坐标系会发生变化*/
 
-     transform: rotateY(60deg) translateZ(300px);
+     transform: rotateY(60deg"> translateZ(300px">;
 
     }
 ```
@@ -475,8 +467,7 @@ animation:  myfirst  5s  linear  2s  infinite  alternate forwards;
 
 
 ## 浏览器私有前缀
-
-![image-20230419204026514](./Typora-image/image-20230419204026514.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959457.png">
 
 # 移动端Web开发
 
@@ -522,12 +513,10 @@ meta视口标签的主要目的:**布局视口的宽度应该与理想视口的�
 <meta name="viewport"
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
 ```
-
-![image-20230420083643610](./Typora-image/image-20230420083643610.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959458.png">
 
 ### 标准的viewport设置
-
-![image-20230420084447934](./Typora-image/image-20230420084447934.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959459.png">
 
 **视口宽度和设备保持一致·**
 **视口的默认缩放比例1.0**
@@ -538,16 +527,16 @@ meta视口标签的主要目的:**布局视口的宽度应该与理想视口的�
 
 **更多的物理像素压缩至一块屏幕**
 
-**我们需要一个50*50像素(css像素)的图片直接放到我们的iphone8里面会放大2倍100*100就会模糊**
+**我们需要一个50*50像素(css像素">的图片直接放到我们的iphone8里面会放大2倍100*100就会模糊**
 
 **我们采取的是放一个100*100的图片然后手动的把这个图片缩小为 50*50****
 
 我们**准备的图片**比我们**实际需要**的**大小大2倍**，这就方式就是**2倍图**
 
 ```
- /* 我们需要一个50*50像素(css像素)的图片直接放到我们的iphone8里面会放大2倍100*100就会模糊我们采取一个100*100的图片然后手动的把这个图片缩小为 50*50
+ /* 我们需要一个50*50像素(css像素">的图片直接放到我们的iphone8里面会放大2倍100*100就会模糊我们采取一个100*100的图片然后手动的把这个图片缩小为 50*50
 我们准备的图片比我们实际需要的大小大2倍，这就方式就是2倍图 */
-        img:nth-child(2) {
+        img:nth-child(2"> {
             height: 50px;
             width: 50px;
         }
@@ -556,20 +545,17 @@ meta视口标签的主要目的:**布局视口的宽度应该与理想视口的�
 
 <body>
     <!-- 模糊 -->
-    <img src="./images/apple50(1).jpg" alt="">
+    <img src="./images/apple50(1">.jpg" alt="">
     <!-- 利用二倍图 清晰的 -->
     <img src="./images/apple100.jpg" alt="">
 ```
 
 
-
-![image-20230420090402191](./Typora-image/image-20230420090402191.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959460.png">
 
 #### 多倍图
 
-
-
-![image-20230420091415776](./Typora-image/image-20230420091415776.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959461.png">
 
 ### background-size-背景图片缩放
 
@@ -577,7 +563,7 @@ meta视口标签的主要目的:**布局视口的宽度应该与理想视口的�
     div {
 ​      height: 50px;
 ​      width: 50px;
-​      background: url(./images/apple100.jpg) no-repeat;
+​      background: url(./images/apple100.jpg"> no-repeat;
 ​      background-size: 50px 50px;
 ​    }
 ```
@@ -585,26 +571,21 @@ meta视口标签的主要目的:**布局视口的宽度应该与理想视口的�
 ## 移动端开发选择
 
 **单独制作移动端页面**
-
-![image-20230420184621220](./Typora-image/image-20230420184621220.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959462.png">
 
 **响应式兼容PC端移动端**
-
-![image-20230420184835896](./Typora-image/image-20230420184835896.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959463.png">
 
 ### 移动端技术解决方案
 
 
-
-![image-20230420185505428](./Typora-image/image-20230420185505428.png)
-
-![image-20230420191804384](./Typora-image/image-20230420191804384.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959464.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959465.png">
 
 ## 移动端常见布局
 
-### 流式布局(百分比布局)
-
-![image-20230420193559080](./Typora-image/image-20230420193559080.png)
+### 流式布局(百分比布局">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959466.png">
 
 ```
 section {
@@ -627,32 +608,26 @@ section {
 ```
     /* 二倍精灵图 坐标变为实际测量的二分之一 */
 
-    background: url(../images/jd-sprites.png) no-repeat -83px -0px;
+    background: url(../images/jd-sprites.png"> no-repeat -83px -0px;
     /* 图片宽高变为原来的二分之一 */
     background-size: 200px;
 ```
 
 #### 图片格式
-
-![image-20230421194807392](./Typora-image/image-20230421194807392.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959467.png">
 
 ### flex布局
-
-![image-20230421203424893](./Typora-image/image-20230421203424893.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959468.png">
 
 #### flex布局原理
-
-![image-20230421204945530](./Typora-image/image-20230421204945530.png)
-
-![image-20230421205234280](./Typora-image/image-20230421205234280.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959469.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959470.png">
 
 #### flex布局父项属性
-
-![image-20230422082530247](./Typora-image/image-20230422082530247.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959471.png">
 
 #### flex主轴方向
-
-![image-20230422082501839](./Typora-image/image-20230422082501839.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959473.png">
 
 ```
  display: flex;
@@ -667,8 +642,7 @@ section {
 ```
 
 ####  ==justify-content==设置主轴上的子元素排列方式
-
-![image-20230422084548024](./Typora-image/image-20230422084548024.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959474.png">
 
 ```
 display: flex;
@@ -700,9 +674,8 @@ display: flex;
 
 
 
-#### ==align-items==设置侧轴上的子元素排列方式(单行)
-
-![image-20230422092145341](./Typora-image/image-20230422092145341.png)
+#### ==align-items==设置侧轴上的子元素排列方式(单行">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959475.png">
 
 ```
  display: flex;
@@ -722,11 +695,10 @@ display: flex;
 
 
 
-#### ==align-content==设置侧轴上的子元素的排列方式（多行)
+#### ==align-content==设置侧轴上的子元素的排列方式（多行">
 
 **单行无效**
-
-![image-20230422104148417](./Typora-image/image-20230422104148417.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959476.png">
 
 ```
  /* 从头部开始排列 */
@@ -747,56 +719,47 @@ display: flex;
 
 
 #### ==align-content==和==align-items==区别
-
-![image-20230422104722981](./Typora-image/image-20230422104722981.png)
-
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959477.png">
 
 
-#### flex-flow(flex-direction 和 flex-wrap的复合属性)
 
-![image-20230422111721823](./Typora-image/image-20230422111721823.png)
+#### flex-flow(flex-direction 和 flex-wrap的复合属性">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959478.png">
 
 
 
 #### flex属性
 
 **定义子项目分配剩余空间**
-
-![image-20230422154303465](./Typora-image/image-20230422154303465.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959479.png">
 
 #### align-self 控制子项自己在侧轴上的排列方式
-
-![image-20230422155032343](./Typora-image/image-20230422155032343.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959480.png">
 
 
 
 #### order 属性定义项目的排列顺序
 
 **数值越小越靠前**
-
-![image-20230422160646339](./Typora-image/image-20230422160646339.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959481.png">
 
 #### 携程案例
-
-![image-20230422210735528](./Typora-image/image-20230422210735528.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959482.png">
 
 #### 常见flex布局思路
-
-![image-20230423082507902](./Typora-image/image-20230423082507902.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959483.png">
 
 #### 背景线性渐变
-
-![image-20230423183841988](./Typora-image/image-20230423183841988.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959484.png">
 
 ```
  /*背景渐变 必须加浏览器私有前缀 */
-            /* background: -webkit-linear-gradient(left, green, red); */
+            /* background: -webkit-linear-gradient(left, green, red">; */
             /* 默认渐变方向从上到下 */
-            /* background: -webkit-linear-gradient(pink, blue); */
-            background: -webkit-linear-gradient(left top, pink, blue);
+            /* background: -webkit-linear-gradient(pink, blue">; */
+            background: -webkit-linear-gradient(left top, pink, blue">;
 ```
-
-![image-20230423203806221](./Typora-image/image-20230423203806221.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959485.png">
 
 ### rem适配布局
 
@@ -805,8 +768,7 @@ display: flex;
 **em相对的是父元素的字体大小**
 
 **rem相对的是Html元素的字体大小**
-
-![image-20230424102028383](./Typora-image/image-20230424102028383.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959486.png">
 
 ```
 /* em单位 */
@@ -820,25 +782,22 @@ display: flex;
 ```
 
 #### 媒体查询
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959487.png">
 
-![image-20230424105035998](./Typora-image/image-20230424105035998.png)
-
-![image-20230424202705762](./Typora-image/image-20230424202705762.png)
-
-![image-20230424202951927](./Typora-image/image-20230424202951927.png)
-
-![image-20230424201742233](./Typora-image/image-20230424201742233.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959488.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959489.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959490.png">
 
 ```
  /* 屏幕宽度小于等于800px时body的背景颜色才可以显现 */
-        @media screen and (max-width:800px) {
+        @media screen and (max-width:800px"> {
             body {
                 background-color: pink;
             }
         }
 
         /* 屏幕宽度小于等于500px时body的背景颜色才可以显现 */
-        @media screen and (max-width:600px) {
+        @media screen and (max-width:600px"> {
             body {
                 background-color: purple;
             }
@@ -846,20 +805,19 @@ display: flex;
 ```
 
 #### 媒体查询从小到大来写代码更加简洁
-
-![image-20230424204635811](./Typora-image/image-20230424204635811.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959491.png">
 
 #### 媒体查询+rem实现元素动态大小变化
 
 ```
   /* 媒体查询+rem实现元素动态大小变化 */
-        @media screen and (min-width:350px) {
+        @media screen and (min-width:350px"> {
             html {
                 font-size: 400px;
             }
         }
 
-        @media screen and (min-width:900px) {
+        @media screen and (min-width:900px"> {
             html {
                 font-size: 200px;
             }
@@ -875,108 +833,89 @@ display: flex;
 ```
 
 #### 引入资源
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959492.png">
 
-![image-20230425082255409](./Typora-image/image-20230425082255409.png)
-
-![image-20230425082748964](./Typora-image/image-20230425082748964.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959493.png">
 
 ### Less
 
 #### Less基础
 
 
-
-![image-20230425084754905](./Typora-image/image-20230425084754905.png)
-
-![image-20230425085010975](./Typora-image/image-20230425085010975.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959494.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959495.png">
 
 #### less的使用
-
-![image-20230425085345673](./Typora-image/image-20230425085345673.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959496.png">
 
 ##### **利用==easy less== 插件来将less编译为css文件**
-
-![image-20230425092717197](./Typora-image/image-20230425092717197.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959497.png">
 
 ##### ==less的嵌套==
 
-![image-20230425093708387](./Typora-image/image-20230425093708387.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959498.png">
 
 **伪元素选择器中的less使用方法**
-
-![image-20230425094129920](./Typora-image/image-20230425094129920.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959499.png">
 
 ##### ==less运算==
-
-![image-20230425095726173](./Typora-image/image-20230425095726173.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959500.png">
 
 **==less运算的注意事项==**
 
 **符号左右两侧必须有空格隔开**
-
-![image-20230425100211234](./Typora-image/image-20230425100211234.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959501.png">
 
 ###### less运算的实例
 
-**现在的==less语法中，除法需要加 ()== 或 . ，比如：
-但不推荐  .  的写法，会提示波浪线错误，更推荐小括号()**
+**现在的==less语法中，除法需要加 (">== 或 . ，比如：
+但不推荐  .  的写法，会提示波浪线错误，更推荐小括号(">**
 
 ```
 div {
     // 加法的实现
     height: 200px + 100;
     // 乘法的实现
-    width: (200px + 0) * (3 / 2);
+    width: (200px + 0"> * (3 / 2">;
     background-color: pink;
     border: @border solid #000;
 }
 
 img {
     // 运算符两边单位不同时会使用第一个元素的单位
-    // 现在的less语法中，除法需要加()或.，比如： 但不推荐.的写法，会提示波浪线错误，更推荐小括号()
+    // 现在的less语法中，除法需要加(">或.，比如： 但不推荐.的写法，会提示波浪线错误，更推荐小括号(">
     display: block;
-    height: (50rem / @baseFont);
+    height: (50rem / @baseFont">;
     width: 50rem ./ @baseFont;
 }
 ```
-
-![image-20230425100530751](./Typora-image/image-20230425100530751.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959502.png">
 
 ### rem适配方案
-
-![image-20230425103605008](./Typora-image/image-20230425103605008.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959503.png">
 
 #### 实际开发适配方案
-
-![image-20230425103920302](./Typora-image/image-20230425103920302.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959504.png">
 
 #### rem适配方案技术的使用
-
-![image-20230425105022092](./Typora-image/image-20230425105022092.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959505.png">
 
 ##### 适配方案1
-
-![image-20230425105429703](./Typora-image/image-20230425105429703.png)
-
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959506.png">
 
 
-![image-20230425105822549](./Typora-image/image-20230425105822549.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959507.png">
 
 **rem适配方案**
-
-![image-20230425183841544](./Typora-image/image-20230425183841544.png)
-
-![image-20230425182156118](./Typora-image/image-20230425182156118.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959508.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959509.png">
 
 ## 苏宁移动端
 
 ### rem适配方案1
-
-![image-20230426124649056](./Typora-image/image-20230426124649056.png)
-
-![image-20230427080856246](./Typora-image/image-20230427080856246.png)
-
-![image-20230427082401145](./Typora-image/image-20230427082401145.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959510.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959512.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959513.png">
 
 ```
 // body样式
@@ -997,19 +936,16 @@ body {
     position: fixed;
     top: 0;
     width: 15rem;
-    height: (88rem / 50);
+    height: (88rem / 50">;
 }
 ```
 
-### rem适配方案2(更简单)
-
-![image-20230427105240388](./Typora-image/image-20230427105240388.png)
-
-![image-20230427105922172](./Typora-image/image-20230427105922172.png)
+### rem适配方案2(更简单">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959514.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959515.png">
 
 ### VScode px转换rem插件 cssrem
-
-![image-20230427180431941](./Typora-image/image-20230427180431941.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959516.png">
 
 ## 黑马面面
 
@@ -1024,12 +960,10 @@ body {
 ## 响应式开发
 
 #### 响应式开发原理
-
-![image-20230502091436706](./Typora-image/image-20230502091436706.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959517.png">
 
 #### 响应式布局容器
-
-![image-20230502092142742](./Typora-image/image-20230502092142742.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959518.png">
 
 ```
 .container {
@@ -1039,28 +973,28 @@ body {
         }
 
         /* 手机超小屏幕 小于768 宽度设置为100% */
-        @media screen and (max-width:767px) {
+        @media screen and (max-width:767px"> {
             .container {
                 width: 100%;
             }
         }
 
         /* 平板 小屏幕大于等于768 设置宽度为750px */
-        @media screen and (min-width:768px) {
+        @media screen and (min-width:768px"> {
             .container {
                 width: 750px;
             }
         }
 
         /* 中等屏幕大于等于992px 设置宽度为970px   */
-        @media screen and (min-width:992px) {
+        @media screen and (min-width:992px"> {
             .container {
                 width: 970px;
             }
         }
 
         /* 中等屏幕大于等于1200px 设置宽度为1170px   */
-        @media screen and (min-width:1200px) {
+        @media screen and (min-width:1200px"> {
             .container {
                 width: 1170px;
             }
@@ -1076,27 +1010,22 @@ body {
 
 ##### Bootstrap简介
 
-![image-20230502101055163](./Typora-image/image-20230502101055163.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959519.png">
 
 **bootstrap的优点**
-
-![image-20230502101604869](./Typora-image/image-20230502101604869.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959520.png">
 
 **bootstrap版本**
-
-![image-20230502101714114](./Typora-image/image-20230502101714114.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959521.png">
 
 ###### **创建文件夹结构**
-
-![image-20230502103646872](./Typora-image/image-20230502103646872.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959522.png">
 
 ###### **创建html骨架结构**
-
-![image-20230502103603041](./Typora-image/image-20230502103603041.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959523.png">
 
 ###### **引入相关样式文件**
-
-![image-20230502104835707](./Typora-image/image-20230502104835707.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959524.png">
 
 ```
 <!DOCTYPE html>
@@ -1117,20 +1046,18 @@ body {
 ```
 
 **container布局容器**
-
-![image-20230502115753857](./Typora-image/image-20230502115753857.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959525.png">
 
 ###### **栅格系统 container被分为12份**
-
-![image-20230502170025782](./Typora-image/image-20230502170025782.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959526.png">
 
 ###### 列嵌套
 
-![image-20230503082418275](./Typora-image/image-20230503082418275.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959527.png">
 
 ###### 列偏移
 
-![image-20230503092117070](./Typora-image/image-20230503092117070.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959528.png">
 
 ```
 <div class="container">
@@ -1143,8 +1070,7 @@ body {
 ```
 
 ###### 列排序
-
-![image-20230503093707685](./Typora-image/image-20230503093707685.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959529.png">
 
 ```
 <div class="container">
@@ -1154,8 +1080,7 @@ body {
 ```
 
 ###### **响应式工具**
-
-![image-20230503095718257](./Typora-image/image-20230503095718257.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959530.png">
 
 ```
 <div class="container">
@@ -1166,18 +1091,14 @@ body {
 ```
 
 ## 阿里百秀案例
-
-![image-20230503101343407](./Typora-image/image-20230503101343407.png)
-
-![image-20230503101416255](./Typora-image/image-20230503101416255.png)
-
-![image-20230503101543224](./Typora-image/image-20230503101543224.png)
-
-![image-20230503102318741](./Typora-image/image-20230503102318741.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959531.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959532.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959533.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959534.png">
 
 ```
 /* 屏幕进入小屏幕和超小屏幕时 让nav里面的li浮动起来 */
-@media screen and (max-width:991px) {
+@media screen and (max-width:991px"> {
     .nav li {
         float: left;
         width: 20%;
@@ -1189,7 +1110,7 @@ body {
 }
 
 /* 屏幕进入超小屏幕时 让文字变小*/
-@media screen and (max-width:767px) {
+@media screen and (max-width:767px"> {
     .nav a {
         padding-left: 0 !important;
     }
@@ -1202,7 +1123,7 @@ body {
         width: 100%;
     }
 
-    article .news ul li:nth-child(n+2) {
+    article .news ul li:nth-child(n+2"> {
         width: 50%;
     }
 
@@ -1213,28 +1134,23 @@ body {
 ```
 
 ## vw  / vh
-
-![image-20230504095839314](./Typora-image/image-20230504095839314.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959535.png">
 
 **vw适配原理**
-
-![image-20230504100037186](./Typora-image/image-20230504100037186.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959536.png">
 
 **vh适配原理**
-
-![image-20230504100909121](./Typora-image/image-20230504100909121.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959537.png">
 
 **px转为vw**
-
-![image-20230504102155112](./Typora-image/image-20230504102155112.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959538.png">
 
 ## m.bilibili项目
 
 **后面的定位会覆盖前面的定位**
 
 **vmin 可以照顾手机端横屏和竖屏的显示效果 取屏幕宽度和高度的最小值**
-
-![image-20230507102759935](./Typora-image/image-20230507102759935.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959539.png">
 
 
 
@@ -1242,8 +1158,7 @@ body {
 
 ## 二、指定css文件保存路径
 
-1. 点击设置 扩展设置
-2. ![在这里插入图片描述](./Typora-image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhb3RpYW4xOTk3,size_16,color_FFFFFF,t_70#pic_center.png)
+1. 点击设置 扩展设置<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091959540.png">
 
 ```
 // 相对路径

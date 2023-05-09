@@ -1,20 +1,24 @@
+---
+
+---
+
 # JS基础-ECMAScript
 
 ## 对象
 
-### 使用原型(prototype)创建对象
+### 使用原型(prototype">创建对象
 
 当我们创建一个函数时，函数就会自动拥有一个`prototype`属性，这个属性的值是一个对象，这个对象被称为该函数的原型对象。也可以叫做原型。
 
 ```
-function Store() {};
+function Store("> {};
 Store.prototype.name = "SF Express";
 Store.prototype.locaion = "Hong Kong";
 Store.prototype.salesVolume = 1200000000;
 // 创建对象
-var myStore = new Store();
+var myStore = new Store(">;
 // 创建一个新的对象
-var hisStore = new Store();
+var hisStore = new Store(">;
 hisStore.name = "STO Express";    // 覆盖了原来的name属性
 ```
 
@@ -27,16 +31,16 @@ var school = {
     name:"SJTU",
     location:"ShangHai",
     studentNum:40000,
-    display:function() {
-          console.log(this.name);
+    display:function("> {
+          console.log(this.name">;
     }
 };
 // 检测属性
-console.log("name" in school);    // 输出true
-console.log("sales" in school);    // 输出false
+console.log("name" in school">;    // 输出true
+console.log("sales" in school">;    // 输出false
 // 检测方法
-console.log("display" in school);    // 输出true
-console.log("print" in school);    // 输出false
+console.log("display" in school">;    // 输出true
+console.log("print" in school">;    // 输出false
 ```
 
 `true`，否则返回`false`
@@ -45,11 +49,11 @@ console.log("print" in school);    // 输出false
 
 ```
 展示了用来创建一个日期对象的多种方法
-var today = new Date();
-var birthday = new Date('December 17, 1995 03:24:00');
-var birthday = new Date('1995-12-17T03:24:00');
-var birthday = new Date(1995, 11, 17);
-var birthday = new Date(1995, 11, 17, 3, 24, 0);
+var today = new Date(">;
+var birthday = new Date('December 17, 1995 03:24:00'">;
+var birthday = new Date('1995-12-17T03:24:00'">;
+var birthday = new Date(1995, 11, 17">;
+var birthday = new Date(1995, 11, 17, 3, 24, 0">;
 ```
 
 ### 内置对象
@@ -60,19 +64,19 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 
 ```
 // 生成一个0到10的随机数
-        let getRandom = Math.floor(Math.random() * 11);
+        let getRandom = Math.floor(Math.random("> * 11">;
         // 生成一个3到10的随机数
-        // let b = Math.floor(Math.random() * (10 - 3 + 1) + 3);
-        let b = Math.floor(Math.random() * (10 - 3 + 1)) + 3;
+        // let b = Math.floor(Math.random("> * (10 - 3 + 1"> + 3">;
+        let b = Math.floor(Math.random("> * (10 - 3 + 1">"> + 3;
         // 生成一个N到M的随机数
-        // let c = Math.floor(Math.random() * (M - N + 1) + N);
-        // let c = Math.floor(Math.random() * (M - N + 1) ) + N;
-        console.log(b);
+        // let c = Math.floor(Math.random("> * (M - N + 1"> + N">;
+        // let c = Math.floor(Math.random("> * (M - N + 1"> "> + N;
+        console.log(b">;
 ```
 
-![image-20230425201045707](./Typora-image/image-20230425201045707.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909979.png" alt="image-20230425201045707" />
 
-![image-20230427191540227](./Typora-image/image-20230427191540227.png)**
+![image-20230427191540227<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909981.png">**
 
 ### 数据类型
 
@@ -80,15 +84,15 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 
 **==引用类型== 存储的仅是地址**
 
-![image-20230427191324737](./Typora-image/image-20230427191324737.png)
+![image-20230427191324737<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909982.png">
 
 #### 堆和栈
 
 **引用数据类型的值实际存储在堆中**
 
-<img src="./Typora-image/image-20230427192643306.png" alt="image-20230427192643306" style="zoom:50%;" />
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909983.png" alt="image-20230427192643306" style="zoom:50%;" />
 
-<img src="./Typora-image/image-20230427192357053.png" alt="image-20230427192357053" style="zoom: 67%;" />
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909984.png" alt="image-20230427192357053" style="zoom: 67%;" />
 
 # Web-APIs
 
@@ -96,45 +100,42 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 
 **const优先**
 
-![image-20230427195002528](./Typora-image/image-20230427195002528.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909985.png">
 
-![image-20230427195157917](./Typora-image/image-20230427195157917.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909987.png">
 
-![image-20230427195245263](./Typora-image/image-20230427195245263.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909988.png">
 
-![image-20230427200004351](./Typora-image/image-20230427200004351.png)
-
-![image-20230427200108843](./Typora-image/image-20230427200108843.png)
-
-![image-20230427200220579](./Typora-image/image-20230427200220579.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909989.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909990.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909991.png">
 
 ## 总结 
 
 **数组和对象建议用const来声明**
-
-![image-20230427200418132](./Typora-image/image-20230427200418132.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909992.png">
 
 ## 1.DOM
 
-![image-20230427200848938](./Typora-image/image-20230427200848938.png)![image-20230427201037564](./Typora-image/image-20230427201037564.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909993.png"><img src ="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909994.png">
 
 **DOM树**
 
-![image-20230427201502191](./Typora-image/image-20230427201502191.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909995.png">
 
 ### DOM对象
 
-![image-20230427202133682](./Typora-image/image-20230427202133682.png)·
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909996.png">
 
 ```
  //浏览器根据HTML标签自动生成了DOM对象
         // 显示选中的第一个标签 query查询 Selector选择器
-        let div = document.querySelector('div');
+        let div = document.querySelector('div'">;
         // 在控制台显示DOM对象
-        console.dir(div);
+        console.dir(div">;
 ```
 
-![image-20230427202744993](./Typora-image/image-20230427202744993.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909997.png">
 
 ### ==获取DOM元素==
 
@@ -144,20 +145,20 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 
 **根据CSS选择器来获取DOM元素**
 
-![image-20230427204059406](./Typora-image/image-20230427204059406.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909998.png">
 
-![image-20230428080757607](./Typora-image/image-20230428080757607.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909999.png">
 
 **修改元素内容·**
 
-![image-20230428081204437](./Typora-image/image-20230428081204437.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909000.png">
 
 ```js
 // 获取元素
-        const box = document.querySelector('.box');
+        const box = document.querySelector('.box'">;
         // 修改元素内容
         // box.innerText = '我是盒子'//修改文字内容
-        // console.log(box.innerText);//获取文字内容
+        // console.log(box.innerText">;//获取文字内容
         // box.innerText = '<b>我是盒子</b>';//innerText 不能解析HTML标签元素
         // box.innerHTML = '<b>我是盒子</b> '//innerHTML可以解析HTML标签元素
 ```
@@ -165,182 +166,191 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0);
 ### 操作元素常用属性
 
 ```js
-const img = document.querySelector('img');
+const img = document.querySelector('img'">;
         img.src = './images/2.webp';
         img.title = 'pink老师的艺术照'
 ```
-
-![image-20230502202551414](./Typora-image/image-20230502202551414.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909001.png">
 
 ### 操作元素样式属性
 
 **小驼峰命名法**
-
-![image-20230502203623441](./Typora-image/image-20230502203623441.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909002.png">
 
 ### 操作类名来操作css
-
-![image-20230503194237763](./Typora-image/image-20230503194237763.png)
-
-![image-20230503194814954](./Typora-image/image-20230503194814954.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909003.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909005.png">
 
 ```
 // 获取元素
-        const div = document.querySelector('div');
+        const div = document.querySelector('div'">;
         // 添加类名
         div.className = 'box nav';
 ```
 
-![image-20230503195950760](./Typora-image/image-20230503195950760.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909006.png">
 
 ### ==通过classlist修改样式==
 
-![image-20230503202229617](./Typora-image/image-20230503202229617.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909007.png">
 
-![image-20230503202056926](./Typora-image/image-20230503202056926.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909008.png">
 
 ```
- const div = document.querySelector('div');
-        // 追加类add()
-        // div.classList.add('nav');
+ const div = document.querySelector('div'">;
+        // 追加类add(">
+        // div.classList.add('nav'">;
         //删除类名
-        // div.classList.remove('box');
+        // div.classList.remove('box'">;
         // 切换类toggle 有则删除无则添加
-        // div.classList.toggle('box');
-        div.classList.toggle('nav');
+        // div.classList.toggle('box'">;
+        div.classList.toggle('nav'">;
 ```
-
-![image-20230503202443783](./Typora-image/image-20230503202443783.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909009.png">
 
 ### 随机轮播图
 
 ```
 /* 生成随机数 */
-    const random = Math.floor(Math.random() * sliderData.length);
+    const random = Math.floor(Math.random("> * sliderData.length">;
     /* 1.获取图片元素 */
-    const img = document.querySelector('.slider-wrapper img');
+    const img = document.querySelector('.slider-wrapper img'">;
     img.src = sliderData[random].url;
     /*  2.获取标题元素 */
-    const p = document.querySelector('.slider-footer p');
+    const p = document.querySelector('.slider-footer p'">;
     p.innerHTML = sliderData[random].title;
     /* 3.获取slider-footer元素 */
-    const footer = document.querySelector('.slider-footer');
+    const footer = document.querySelector('.slider-footer'">;
     /* 修改背景颜色 */
     footer.style.backgroundColor = sliderData[random].color;
     /* 获取对应的小圆点 */
-    const li = document.querySelector(`.slider ul li:nth-child(${random + 1})`);
+    const li = document.querySelector(`.slider ul li:nth-child(${random + 1}">`">;
     /* 为获取的li添加active 类名 */
-    li.classList.add('active');
+    li.classList.add('active'">;
 ```
 
 ### 操作表单元素的属性
 
-![image-20230505084331648](./Typora-image/image-20230505084331648.png)
-
-![image-20230505084215500](./Typora-image/image-20230505084215500.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909010.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909011.png">
 
 ### 自定义属性
-
-![image-20230507110044625](./Typora-image/image-20230507110044625.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909012.png">
 
 ### 定时器函数
 
 ```
- // setInterval(函数,间隔时间)时间单位是毫秒
-        setInterval(function () {
-            console.log('计时');
-        }, 1000);
+ // setInterval(函数,间隔时间">时间单位是毫秒
+        setInterval(function ("> {
+            console.log('计时'">;
+        }, 1000">;
         // 函数会自动调用不必再次调用否则会出错
-        function fn() {
-            console.log('计时1');
+        function fn("> {
+            console.log('计时1'">;
         }
-        // setInterval(fn(), 1000);
-        // setInterval(函数, 间隔时间)返回的是一个数字代表的是第几个计时器
-        let m = setInterval(fn, 1000);
-        console.log(m);
+        // setInterval(fn(">, 1000">;
+        // setInterval(函数, 间隔时间">返回的是一个数字代表的是第几个计时器
+        let m = setInterval(fn, 1000">;
+        console.log(m">;
         // 停止定时器
-        clearInterval(m);
+        clearInterval(m">;
 ```
-
-![image-20230507152041300](./Typora-image/image-20230507152041300.png)
-
-![image-20230507155103178](./Typora-image/image-20230507155103178.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909013.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909014.png">
 
 ### 轮播图定时器版
-
-![image-20230507163804142](./Typora-image/image-20230507163804142.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909015.png">
 
 ## 2.DOM 
 
 ### 事件监听
-
-![image-20230507190624516](./Typora-image/image-20230507190624516.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909016.png">
 
 **事件监听的实质: 就是让程序检测是否有事件产生，一旦有事件触发就立即调用一个函数做出响应，也称为注册事件**
 
 **三要素:事件源 事件类型 事件调用的函数**
 
-![image-20230507190901935](./Typora-image/image-20230507190901935.png)
 
-![image-20230507191404455](./Typora-image/image-20230507191404455.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909017.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909018.png">
 
 ### 随机点名案例
-
-![image-20230507195613524](./Typora-image/image-20230507195613524.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909019.png">
 
 ### 事件监听关于const的小问题
 
 ```
- const btn = document.querySelector('button');
-        btn.addEventListener('click', function () {
+ const btn = document.querySelector('button'">;
+        btn.addEventListener('click', function ("> {
             // js 有垃圾回收机制该函数执行完之后该函数产生的数据会被清除
-            const random = Math.random();
-            console.log(random);
-        });
+            const random = Math.random(">;
+            console.log(random">;
+        }">;
 ```
 
-### 事件监听版本(了解即可)
+### 事件监听版本(了解即可">
 
-![image-20230508084245786](./Typora-image/image-20230508084245786.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909020.png" alt="image-20230508084245786" />
 
-![image-20230508084641429](./Typora-image/image-20230508084641429.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909021.png" alt="image-20230508084641429" />
 
 ### 事件类型
 
-![image-20230508084834459](./Typora-image/image-20230508084834459.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909022.png">
 
 ```
-  const div = document.querySelector('div');
+  const div = document.querySelector('div'">;
         // 鼠标移入事件源 触发事件
-        div.addEventListener('mouseenter', function () {
-            console.log(`轻轻的我来了`);
-        })
+        div.addEventListener('mouseenter', function ("> {
+            console.log(`轻轻的我来了`">;
+        }">
         // 鼠标离开事件源 触发事件
-        div.addEventListener('mouseleave', function () {
-            console.log(`轻轻的我走了`);
-        })
+        div.addEventListener('mouseleave', function ("> {
+            console.log(`轻轻的我走了`">;
+        }">
 
 ```
 
 ### 事件对象
-
-![image-20230509093617084](./Typora-image/image-20230509093617084.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909023.png">
 
 #### 获取事件对象
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909024.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909026.png">
 
-![image-20230509093807604](./Typora-image/image-20230509093807604.png)
-
-![image-20230509094519900](./Typora-image/image-20230509094519900.png)
-
-![image-20230509100302577](./Typora-image/image-20230509100302577.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909027.png" alt="image-20230509100302577" />
 
 **trim()方法清除字符串两侧的空格**
 
 ```
-// trim()方法清除字符串两侧的空格
-        if (tx.value.trim() !== '') {
+// trim(">方法清除字符串两侧的空格
+        if (tx.value.trim("> !== ''"> {
           item.style.display = 'block';
           text.innerHTML = tx.value;
         }
 ```
+
+### 环境对象
+
+目标:能够分析判断函数运行在不同环境中this所指代的对象
+
+环境对象:指的是函数内部特殊的变量 **this**，它代表着当
+
+前函数运行时所处的环境作用:弄清楚this的指向，可以让我们代码更简洁
+
+函数的调用方式不同，this指代的对象也不同
+
+> **==【谁调用, this就是谁】==是判断this指向的粗略规则   代表当前函数运行时所处的环境** ![image-20230509210158832](./Typora-image/image-20230509210158832.png)
+
+
+
+### 回调函数
+
+<img src="./Typora-image/image-20230509205835098.png" alt="image-20230509205835098" />
+
+>
+>
+>![image-20230509210340947](./Typora-image/image-20230509210340947.png)
+
+
 

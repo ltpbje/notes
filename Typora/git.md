@@ -2,6 +2,6 @@
 
 git
 
-![image-20230418193349730](./Typora-image/image-20230418193349730.png)
+![image-20230418193349730](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091912748.png)
 
-<img src="./Typora-image/image-20230418201901728.png" alt="image-20230418201901728"  />
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091912749.png" alt="image-20230418201901728"  />
