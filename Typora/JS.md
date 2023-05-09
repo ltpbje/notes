@@ -322,3 +322,25 @@ const img = document.querySelector('img');
 
 ```
 
+### 事件对象
+
+![image-20230509093617084](./Typora-image/image-20230509093617084.png)
+
+#### 获取事件对象
+
+![image-20230509093807604](./Typora-image/image-20230509093807604.png)
+
+![image-20230509094519900](./Typora-image/image-20230509094519900.png)
+
+![image-20230509100302577](./Typora-image/image-20230509100302577.png)
+
+**trim()方法清除字符串两侧的空格**
+
+```
+// trim()方法清除字符串两侧的空格
+        if (tx.value.trim() !== '') {
+          item.style.display = 'block';
+          text.innerHTML = tx.value;
+        }
+```
+
