@@ -62,17 +62,17 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0)
 // 生成一个0到10的随机数
         let getRandom = Math.floor(Math.random()11)
         // 生成一个3到10的随机数
-        // let b = Math.floor(Math.random()(10 - 3 + 1"> + 3)
-        let b = Math.floor(Math.random()(10 - 3 + 1">"> + 3;
+        // let b = Math.floor(Math.random()*(10 - 3 + 1) + 3)
+        let b = Math.floor(Math.random()*(10 - 3 + 1)) + 3;
         // 生成一个N到M的随机数
-        // let c = Math.floor(Math.random()(M - N + 1"> + N)
-        // let c = Math.floor(Math.random()(M - N + 1"> "> + N;
+        // let c = Math.floor(Math.random()*(M - N + 1) + N)
+        // let c = Math.floor(Math.random()*(M - N + 1) ) + N;
         console.log(b)
 ```
 
 <img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909979.png" alt="image-20230425201045707" />
 
-![image-20230427191540227<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909981.png">**
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909981.png">**
 
 ### 数据类型
 
@@ -80,7 +80,7 @@ var birthday = new Date(1995, 11, 17, 3, 24, 0)
 
 **==引用类型== 存储的仅是地址**
 
-![image-20230427191324737<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909982.png">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909982.png">
 
 #### 堆和栈
 
@@ -194,7 +194,7 @@ const img = document.querySelector('img')
 
 ```
  const div = document.querySelector('div')
-        // 追加类add(">
+        // 追加类add()
         // div.classList.add('nav')
         //删除类名
         // div.classList.remove('box')
@@ -297,13 +297,13 @@ const img = document.querySelector('img')
 ```
   const div = document.querySelector('div')
         // 鼠标移入事件源 触发事件
-        div.addEventListener('mouseenter', function ("> {
+        div.addEventListener('mouseenter', function () {
             console.log(`轻轻的我来了`)
-        }">
+        })
         // 鼠标离开事件源 触发事件
-        div.addEventListener('mouseleave', function ("> {
+        div.addEventListener('mouseleave', function () {
             console.log(`轻轻的我走了`)
-        }">
+        })
 
 ```
 
@@ -319,8 +319,8 @@ const img = document.querySelector('img')
 **trim()方法清除字符串两侧的空格**
 
 ```
-// trim(">方法清除字符串两侧的空格
-        if (tx.value.trim("> !== ''"> {
+// trim()方法清除字符串两侧的空格
+        if (tx.value.trim() !== '') {
           item.style.display = 'block';
           text.innerHTML = tx.value;
         }
