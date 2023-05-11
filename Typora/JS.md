@@ -1,4 +1,4 @@
-# zJS基础-ECMAScript
+# JS基础-ECMAScript
 
 ## 对象
 
@@ -547,3 +547,68 @@ const btn = document.querySelector('button');
             }
 ```
 
+### 阻止默认行为
+
+![image-20230511192517041](./Typora-image/image-20230511192517041.png)
+
+![image-20230511192735421](./Typora-image/image-20230511192735421.png)
+
+### 页面加载事件
+
+1![image-20230511200304907](./Typora-image/image-20230511200304907.png)
+
+```
+ // 等待页面元素加载完毕后再执行回调函数
+        window.addEventListener('load', function () {
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert(11);
+            })
+        })
+        img.addEventListener('load', function () {
+            //等待图片加载完毕后再执行里面的代码 
+        })
+```
+
+![image-20230511201033392](./Typora-image/image-20230511201033392.png)
+
+```
+// HTML文档加载完后便执行加载速度更快
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert(11);
+            })
+        })
+```
+
+> **页面加载事件有哪两个?如何添加?**
+
+#### **load 事件**
+
+> **监听整个页面资源给window 加**
+
+#### **DOMContentLoaded**
+
+> **给document加**
+> **无需等待样式表、图像等完全加载**
+
+![image-20230511201655133](./Typora-image/image-20230511201655133.png)
+
+### 页面滚动事件
+
+![image-20230511202737396](./Typora-image/image-20230511202737396.png)
+
+![image-20230511204604708](./Typora-image/image-20230511204604708.png)
+
+```
+ const div = document.querySelector('div');
+        div.addEventListener('scroll', function () {
+            // 获取元素被卷去的头部大小
+            console.log(div.scrollTop);
+        })
+```
+
+![image-20230511205837812](./Typora-image/image-20230511205837812.png)
+
+![image-20230511205811279](./Typora-image/image-20230511205811279.png)
