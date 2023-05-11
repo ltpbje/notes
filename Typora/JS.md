@@ -284,7 +284,7 @@ const img = document.querySelector('img')
         })
 ```
 
-### 事件监听版本(了解即可">
+### 事件监听版本(了解即可)
 
 <img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909020.png" alt="image-20230508084245786" />
 
@@ -371,17 +371,24 @@ const img = document.querySelector('img')
 ### 表单全反选案例
 
 ```
-// 一. 业务一 全选控制小按钮功能
+  // 一. 业务一 全选控制小按钮功能
     // 获取全选框
     const checkAll = document.querySelector("#checkAll");
     const cks = document.querySelectorAll(".ck");
     // 添加事件监听
     checkAll.addEventListener('click', function () {
-      for (i = 0; i < cks.length; i++) {
-      //遍历所有小复选框 使其小复选框的checked = 全选框的checked
+      for (let i = 0; i < cks.length; i++) {
+        //遍历所有小复选框 使其小复选框的checked = 全选框的checked
         cks[i].checked = checkAll.checked;
       }
+      // 二. 小复选框三个全选时 全选框实现自动勾选
     })
+    for (let i = 0; i < cks.length; i++) {
+      cks[i].addEventListener('click', function () {
+        checkAll.checked = (document.querySelectorAll('.ck:checked').length === cks.length);
+      }
+      )
+    }
 ```
 
 
@@ -399,3 +406,123 @@ const img = document.querySelector('img')
     <input type="checkbox" name="" class="ck">
 ```
 
+## 3.DOM
+
+### 事件流
+
+
+
+<img src="./Typora-image/image-20230511082635761.png" alt="image-20230511082635761" />
+
+#### 捕获阶段(了解即可)
+
+**从根节点到触发事件的节点依次执行同名事件**
+
+> ![image-20230511083906737](./Typora-image/image-20230511083906737.png)
+>
+> ```
+> · const fa = document.querySelector(".father");
+>         const son = document.querySelector('.son');
+>         document.addEventListener('click', function () {
+>             alert("我是爷爷");
+>         }, true)
+>         fa.addEventListener('click', function () {
+>             alert("我是爸爸");
+>         }, true)
+>         son.addEventListener('click', function () {
+>             alert("我是儿子");
+>         }, true)
+> ```
+>
+> 
+
+
+
+#### 冒泡阶段
+
+> ![image-20230511084826482](./Typora-image/image-20230511084826482.png)
+>
+> ```
+>   // 冒泡阶段
+>         const fa = document.querySelector(".father");
+>         const son = document.querySelector('.son');
+>         document.addEventListener('click', function () {
+>             alert("我是爷爷");
+>         })
+>         fa.addEventListener('click', function () {
+>             alert("我是爸爸");
+>         })
+> 
+>         son.addEventListener('click', function (e) {
+>             alert("我是儿子");
+>             // 阻止事件流动
+>             e.stopPropagation();
+>         })
+> 
+> ```
+>
+> 
+
+### 事件解绑
+
+**L0 事件解绑方法**
+
+```
+const btn = document.querySelector('button');
+        // L0事件解绑
+        btn.onclick = function () {
+            alert('点我呀');
+            btn.onclick = null;
+        }
+```
+
+**L2事件解绑方法**
+
+**匿名函数无法被解绑**
+
+```
+  // L2事件解绑方法
+        btn.addEventListener('click', function fn() {
+            alert('点我呀');
+            btn.removeEventListener('click', fn)
+        })
+```
+
+![image-20230511094003946](./Typora-image/image-20230511094003946.png)
+
+```
+ const fa = document.querySelector('.father');
+        const son = document.querySelector('.son');
+        fa.addEventListener('mouseover', function () {
+            console.log('鼠标经过');
+        })
+        fa.addEventListener('mouseout', function () {
+            console.log('鼠标离开');
+        })
+```
+
+### 事件委托
+
+**事件委托是利用事件流的特征解决一些开发需求的知识==一种技巧==**
+
+> **优点:减少注册次数，可以提高程序性能**
+>
+> **原理:事件委托其实是利用事件冒泡的特点。**
+>
+> **给父元素注册事件，当我们触发子元素的时候，会冒泡到父元素身上，从而触发父元素的事件**
+>
+> **实现:事件对象.target.tagName可以获得真正触发事件的元素**
+>
+> ```
+>   const ul = document.querySelector('ul');
+>         ul.addEventListener('click', function (e) {
+>             // console.log(e.target)
+>             // console.dir(e.target.tagName);
+>             if (e.target.tagName === 'LI') {
+>                 // Event 接口的 target 只读属性是对事件分派到的对象的引用
+>                 e.target.style.color = 'red';
+>             }
+>         })
+> ```
+
+<img src="./Typora-image/image-20230511101613576.png" alt="image-20230511101613576" />
