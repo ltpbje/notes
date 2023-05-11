@@ -1,4 +1,4 @@
-# JS基础-ECMAScript
+# zJS基础-ECMAScript
 
 ## 对象
 
@@ -526,3 +526,24 @@ const btn = document.querySelector('button');
 > ```
 
 <img src="./Typora-image/image-20230511101613576.png" alt="image-20230511101613576" />
+
+#### 事件委托版tab栏切换
+
+```
+ const ul = document.querySelector('.tab-nav ul');
+        // 一.导航栏切换业务
+        ul.addEventListener('mouseover', function (e) {
+            // 只有点到a时才会触发事件监听行为
+            if (e.target.tagName === 'A') {
+                // 排他原理
+                document.querySelector('.tab-nav ul .active').classList.remove('active');
+                e.target.classList.add('active');
+                //二. 内容切换业务
+                const i = +e.target.dataset.id;
+                console.log(i);
+                console.log(typeof (i));
+                document.querySelector('.tab-content .active').classList.remove('active');
+                document.querySelector(`.tab-content .item:nth-child(${i})`).classList.add('active')
+            }
+```
+
