@@ -350,17 +350,17 @@ const img = document.querySelector('img')
 
 函数的调用方式不同，this指代的对象也不同
 
-> **==【谁调用, this就是谁】==是判断this指向的粗略规则   代表当前函数运行时所处的环境** ![image-20230509210158832](./Typora-image/image-20230509210158832.png)
+> **==【谁调用, this就是谁】==是判断this指向的粗略规则   代表当前函数运行时所处的环境** ![image-20230509210158832](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109101.png)
 
 
 
 ### 回调函数
 
-<img src="./Typora-image/image-20230509205835098.png" alt="image-20230509205835098" />
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109102.png" alt="image-20230509205835098" />
 
 >
 >
-><img src="./Typora-image/image-20230509210340947.png" alt="image-20230509210340947" />
+><img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109103.png" alt="image-20230509210340947" />
 >
 >
 
@@ -426,13 +426,13 @@ const img = document.querySelector('img')
 
 
 
-<img src="./Typora-image/image-20230511082635761.png" alt="image-20230511082635761" />
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109104.png" alt="image-20230511082635761" />
 
 #### 捕获阶段(了解即可)
 
 **从根节点到触发事件的节点依次执行同名事件**
 
-> ![image-20230511083906737](./Typora-image/image-20230511083906737.png)
+> ![image-20230511083906737](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109105.png)
 >
 > ```
 > · const fa = document.querySelector(".father");
@@ -454,7 +454,7 @@ const img = document.querySelector('img')
 
 #### 冒泡阶段
 
-> ![image-20230511084826482](./Typora-image/image-20230511084826482.png)
+> ![image-20230511084826482](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109107.png)
 >
 > ```
 >   // 冒泡阶段
@@ -502,7 +502,7 @@ const btn = document.querySelector('button');
         })
 ```
 
-![image-20230511094003946](./Typora-image/image-20230511094003946.png)
+![image-20230511094003946](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109108.png)
 
 ```
  const fa = document.querySelector('.father');
@@ -539,7 +539,7 @@ const btn = document.querySelector('button');
 >         })
 > ```
 
-<img src="./Typora-image/image-20230511101613576.png" alt="image-20230511101613576" />
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109109.png" alt="image-20230511101613576" />
 
 #### 事件委托版tab栏切换
 
@@ -563,13 +563,13 @@ const btn = document.querySelector('button');
 
 ### 阻止默认行为
 
-![image-20230511192517041](./Typora-image/image-20230511192517041.png)
+![image-20230511192517041](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109110.png)
 
-![image-20230511192735421](./Typora-image/image-20230511192735421.png)
+![image-20230511192735421](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109111.png)
 
 ### 页面加载事件
 
-1![image-20230511200304907](./Typora-image/image-20230511200304907.png)
+1![image-20230511200304907](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109112.png)
 
 ```
  // 等待页面元素加载完毕后再执行回调函数
@@ -584,7 +584,7 @@ const btn = document.querySelector('button');
         })
 ```
 
-![image-20230511201033392](./Typora-image/image-20230511201033392.png)
+![image-20230511201033392](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109113.png)
 
 ```
 // HTML文档加载完后便执行加载速度更快
@@ -607,13 +607,13 @@ const btn = document.querySelector('button');
 > **给document加**
 > **无需等待样式表、图像等完全加载**
 
-![image-20230511201655133](./Typora-image/image-20230511201655133.png)
+![image-20230511201655133](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109114.png)
 
 ### 页面滚动事件
 
-![image-20230511202737396](./Typora-image/image-20230511202737396.png)
+![image-20230511202737396](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109115.png)
 
-![image-20230511204604708](./Typora-image/image-20230511204604708.png)
+![image-20230511204604708](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109116.png)
 
 ```
  const div = document.querySelector('div');
@@ -623,9 +623,9 @@ const btn = document.querySelector('button');
         })
 ```
 
-![image-20230511205837812](./Typora-image/image-20230511205837812.png)
+![image-20230511205837812](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109117.png)
 
-![image-20230511205811279](./Typora-image/image-20230511205811279.png)
+![image-20230511205811279](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109118.png)
 
 ```
 // scrollTop可读写
@@ -637,7 +637,7 @@ const btn = document.querySelector('button');
       window.scrollTo(0, 0);
 ```
 
-![image-20230512084755925](./Typora-image/image-20230512084755925.png)
+![image-20230512084755925](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109119.png)
 
 
 
@@ -645,13 +645,13 @@ const btn = document.querySelector('button');
 
 ### 页面尺寸事件 -resize
 
-![image-20230512100939002](./Typora-image/image-20230512100939002.png)
+![image-20230512100939002](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109120.png)
 
 #### clientWidth获取元素宽高
 
 **(不包含边框 margin 滚动条)**
 
-![image-20230512101605744](./Typora-image/image-20230512101605744.png)
+![image-20230512101605744](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109121.png)
 
 #### offset家族
 
@@ -661,13 +661,13 @@ const btn = document.querySelector('button');
 
 **(它们都是只读属性)**
 
-![image-20230512103600930](./Typora-image/image-20230512103600930.png)
+![image-20230512103600930](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109122.png)
 
-![image-20230512100904413](./Typora-image/image-20230512100904413.png)
+![image-20230512100904413](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109123.png)
 
 #### element.getBoundingClientRect()方法返回元素的大小及其相对于视口的位置
 
-![image-20230512160017025](./Typora-image/image-20230512160017025.png)
+![image-20230512160017025](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109124.png)
 
 |              属性              |                     作用                     |                            说明                            |
 | :----------------------------: | :------------------------------------------: | :--------------------------------------------------------: |
@@ -678,4 +678,6 @@ const btn = document.querySelector('button');
 
 ### 电梯导航案例
 
-![image-20230512162421781](./Typora-image/image-20230512162421781.png)
+![image-20230512162421781](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109125.png)
+
+![image-20230512205211831](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109126.png)
