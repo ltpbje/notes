@@ -1,5 +1,19 @@
 # JS基础-ECMAScript
 
+## 逻辑运算符
+
+**逻辑与 逻辑或** 
+
+```
+  // 逻辑与 a&&b 若a为真 返回b a为假返回a 
+        console.log(2 && 3)//返回3
+        // 逻辑或 a||b 若a为真 返回a a为假返回b
+        console.log(2 > 1 || 3 < 2)// true
+        console.log(2 > 1 && 3 < 2)//flase
+```
+
+
+
 ## 对象
 
 ### 使用原型(prototype">创建对象
@@ -612,3 +626,61 @@ const btn = document.querySelector('button');
 ![image-20230511205837812](./Typora-image/image-20230511205837812.png)
 
 ![image-20230511205811279](./Typora-image/image-20230511205811279.png)
+
+```
+// scrollTop可读写
+        document.documentElement.scrollTop = 1000;
+
+// 返回顶部的两种方法
+      // document.documentElement.scrollTop = 0;
+      // window.scrollTo(x,y)
+      window.scrollTo(0, 0);
+```
+
+![image-20230512084755925](./Typora-image/image-20230512084755925.png)
+
+
+
+
+
+### 页面尺寸事件 -resize
+
+![image-20230512100939002](./Typora-image/image-20230512100939002.png)
+
+#### clientWidth获取元素宽高
+
+**(不包含边框 margin 滚动条)**
+
+![image-20230512101605744](./Typora-image/image-20230512101605744.png)
+
+#### offset家族
+
+**(获取元素的自身宽高、包含元素自身设置的宽高、padding、border)**
+
+**(还可以获取元素的位置)**
+
+**(它们都是只读属性)**
+
+![image-20230512103600930](./Typora-image/image-20230512103600930.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+![image-20230512100904413](./Typora-image/image-20230512100904413.png)
