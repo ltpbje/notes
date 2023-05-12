@@ -663,24 +663,19 @@ const btn = document.querySelector('button');
 
 ![image-20230512103600930](./Typora-image/image-20230512103600930.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ![image-20230512100904413](./Typora-image/image-20230512100904413.png)
+
+#### element.getBoundingClientRect()方法返回元素的大小及其相对于视口的位置
+
+![image-20230512160017025](./Typora-image/image-20230512160017025.png)
+
+|              属性              |                     作用                     |                            说明                            |
+| :----------------------------: | :------------------------------------------: | :--------------------------------------------------------: |
+|   **scrollLeft和scrollTop**    |            **被卷去的头部和左侧**            |                **配合页面滚动来用，可读写**                |
+| **clientWidth 和clientHeight** |            **获得元素宽度和高度**            | **不包含border,margin，滚动条用于js获取元素大小,只读属性** |
+| **offsetWidth和offsetHeight**  |            **获得元素宽度和高度**            |         ==**包含border、paaaing,滚动条等，只读**==         |
+| **==offsetLeft和offsetTop==**  | **获取元素距离自己定位父级元素的左、上距离** |          ==**获取元素位置的时候使用，只读属性**==          |
+
+### 电梯导航案例
+
+![image-20230512162421781](./Typora-image/image-20230512162421781.png)
