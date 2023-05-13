@@ -681,3 +681,30 @@ const btn = document.querySelector('button');
 ![image-20230512162421781](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109125.png)
 
 ![image-20230512205211831](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305122109126.png)
+
+### 日期对象
+
+![image-20230513163443304](./Typora-image/image-20230513163443304.png)
+
+#### 日期对象方法
+
+![image-20230513163808684](./Typora-image/image-20230513163808684.png)
+
+### 时间戳
+
+![image-20230513184442595](./Typora-image/image-20230513184442595.png)
+
+#### 获取时间戳
+
+![image-20230513185615849](./Typora-image/image-20230513185615849.png)
+
+```
+ const date = new Date()
+        //1. date.getTime()
+        console.log(date.getTime());
+        // 2. +new Date()
+        console.log(+new Date());
+        // 3. Date.now()
+        console.log(Date.now());
+```
+
