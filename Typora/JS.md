@@ -738,7 +738,7 @@ const btn = document.querySelector('button');
     <script>
         const li2 = document.querySelector('ul li:nth-child(2)')
         const ul = document.querySelector('ul')
-        // 查找子节点
+        // 查找子节点 获取的是一个伪数组
         console.log(ul.children)
         // 查找上一个兄弟节点
         console.log(li2.previousElementSibling)
@@ -747,3 +747,67 @@ const btn = document.querySelector('button');
     </script>
 ```
 
+#### 增加节点
+
+![image-20230514152117558](./Typora-image/image-20230514152117558.png)
+
+##### 创建节点
+
+![image-20230514152143800](./Typora-image/image-20230514152143800.png)
+
+##### 追加节点
+
+![image-20230514153439710](./Typora-image/image-20230514153439710.png)
+
+```
+const ul = document.querySelector('ul')
+        // 创建节点
+        const div = document.createElement('div')
+        // 追加节点 
+        // 插入到这个父元素的最后
+        // 父元素.appendchild(要插入的元素)
+        // document.body.appendChild(div)
+        //插入到某个子元素的前面
+        // 插入到某个子元素的前面
+        // 父元素.insertBefore(要插入的元素,在哪个元素前面)
+        ul.insertBefore(div, ul.children[0])
+        div.innerHTML = '周杰伦'
+```
+
+## 4.DOM
+
+### 学成在线渲染案例
+
+![image-20230514160651152](./Typora-image/image-20230514160651152.png)
+
+### 克隆节点
+
+![image-20230514160935442](./Typora-image/image-20230514160935442.png)
+
+```
+const ul = document.querySelector('ul')
+        // 克隆节点
+        const li1 = ul.children[0].cloneNode(true)
+        // const li1 = ul.children[0].cloneNode()
+        ul.appendChild(li1)
+```
+
+
+
+### 删除节点
+
+![image-20230514162923812](./Typora-image/image-20230514162923812.png)
+
+```
+ const ul = document.querySelector('ul')
+        // 父元素.removeChild(加要删除的元素)
+        ul.removeChild(ul.children[0])
+```
+
+### M端事件
+
+![image-20230514163805381](./Typora-image/image-20230514163805381.png)
+
+### 学生信息表案例
+
+![image-20230514204507089](./Typora-image/image-20230514204507089.png)
