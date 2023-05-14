@@ -708,3 +708,42 @@ const btn = document.querySelector('button');
         console.log(Date.now());
 ```
 
+### DOM节点
+
+![image-20230514093252430](./Typora-image/image-20230514093252430.png)
+
+#### 查找节点
+
+![image-20230514093704017](./Typora-image/image-20230514093704017.png)
+
+##### 父节点查找
+
+![image-20230514100031710](./Typora-image/image-20230514100031710.png)
+
+##### 子节点查找
+
+![image-20230514104615153](./Typora-image/image-20230514104615153.png)
+
+**兄弟关系查找**
+
+![image-20230514104749644](./Typora-image/image-20230514104749644.png)
+
+```
+     <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        const li2 = document.querySelector('ul li:nth-child(2)')
+        const ul = document.querySelector('ul')
+        // 查找子节点
+        console.log(ul.children)
+        // 查找上一个兄弟节点
+        console.log(li2.previousElementSibling)
+        // 查找下一个兄弟节点
+        console.log(li2.nextElementSibling)
+    </script>
+```
+
