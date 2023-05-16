@@ -810,4 +810,32 @@ const ul = document.querySelector('ul')
 
 ### 学生信息表案例
 
+![image-20230516101430872](./Typora-image/image-20230516101430872.png)
+
+![image-20230516101454851](./Typora-image/image-20230516101454851.png)
+
+![image-20230516101513412](./Typora-image/image-20230516101513412.png)
+
+![image-20230516101533407](./Typora-image/image-20230516101533407.png)
+
 ![image-20230514204507089](./Typora-image/image-20230514204507089.png)
+
+![image-20230516100111275](./Typora-image/image-20230516100111275.png)
+
+## BOM
+
+**BOM(Browser Object Model）是浏览器对象模型**
+
+![image-20230516103803074](./Typora-image/image-20230516103803074.png)
+
+<ul><li>
+    window对象是一个全局对象，也可以说是JavaScript中的顶级对象</li>
+    <li>像document、alert()、console.log()这些都是window的属性</li>
+    <li>基本BOM的属性和方法都是window所有通过var定义在全局作用域中的变量、函数都会变成window对象的属性和方法
+</li>
+    <li>window对象下的属性和方法调用的时候可以省略window</li></ul>
+
+
+
+### 延迟函数
+
