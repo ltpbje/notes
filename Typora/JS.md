@@ -930,4 +930,24 @@ reload方法用来刷新当前页面，传入参数true时表示强制刷新
 
 ### history对象
 
+history的数据类型是对象，主要管理历史记录，该对象与浏览器地址栏的操作相对应，如前进、后退、历史记录等
+
 ![image-20230518104924608](./Typora-image/image-20230518104924608.png)
+
+### 本地存储分类-localStorage
+
+![image-20230518200856469](./Typora-image/image-20230518200856469.png)
+
+LocalStorage的使用
+
+可以将数据永久存储在本地（用户的电脑），除非手动删除，否则关闭页面也会存在
+
+![image-20230518203207571](./Typora-image/image-20230518203207571.png)
+
+![image-20230518203919054](./Typora-image/image-20230518203919054.png)
+
+本地存储分类-sessionStorage
+
+生命周期为关闭浏览器窗口
+
+![image-20230518205740079](./Typora-image/image-20230518205740079.png)
