@@ -860,3 +860,74 @@ const ul = document.querySelector('ul')
 #### 事件循环
 
 ![image-20230517204638573](./Typora-image/image-20230517204638573.png)
+
+### location对象
+
+location的数据类型是对象，它拆分并保存了URL地址的各个组成部分
+
+![image-20230518092052279](./Typora-image/image-20230518092052279.png)
+
+跳转页面 href属性
+
+```
+// 跳转页面
+                location.href = "https://www.bilibili.com"
+```
+
+search属性获取地址中携带的参数,符号?后面部分
+
+![image-20230518092419176](./Typora-image/image-20230518092419176.png)
+
+```
+<!-- search属性 -->
+    <form action="">
+        文本：<input type="text" name="text">
+        密码：<input type="password" name="pwd">
+        <button type="submit">提交</button>
+    </form>
+    <!-- JS_practice/location%E5%AF%B9%E8%B1%A1.html?text=pink&pwd=123456 -->
+```
+
+hash属性获取地址中的哈希值，符号#后面部分
+
+后期vue路由的铺垫，经常用于不刷新页面，显示不同页面，比如网易云音乐
+
+![image-20230518093620047](./Typora-image/image-20230518093620047.png)
+
+reload方法用来刷新当前页面，传入参数true时表示强制刷新
+
+![image-20230518093951125](./Typora-image/image-20230518093951125.png)
+
+```
+  const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // 相当于 F5刷新
+            location.reload()
+            // 相当于 ctrl+F5强制刷新
+            location.reload(true)
+        })
+```
+
+![image-20230518100115433](./Typora-image/image-20230518100115433.png)
+
+### navigator对象
+
+![image-20230518103925539](./Typora-image/image-20230518103925539.png)
+
+```
+// 检测 userAgent（浏览器信息）
+    !(function () {
+      const userAgent = navigator.userAgent
+      // 验证是否为Android或iPhone
+      const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+      const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+      // 如果是Android或iPhone，则跳转至移动站点
+      if (android || iphone) {
+        location.href = 'http://m.itcast.cn'
+      }
+    })();
+```
+
+### history对象
+
+![image-20230518104924608](./Typora-image/image-20230518104924608.png)
