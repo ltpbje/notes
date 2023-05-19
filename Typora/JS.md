@@ -972,3 +972,26 @@ LocalStorage的使用
 
 ![image-20230519160810063](./Typora-image/image-20230519160810063.png)
 
+![image-20230519202025282](./Typora-image/image-20230519202025282.png)
+
+数组map方法 数组join方法
+
+![image-20230519203105910](./Typora-image/image-20230519203105910.png)
+
+```
+ 		// 1.map()方法
+        // arr = ['pink', 'Jay', 'David', '周杰伦'];
+        // const new_arr = arr.map(function (ele, index) {
+        //     // console.log(ele);//元素
+        //     // console.log(index);//索引号
+        //     return ele + "YYDS";
+        // });
+        // console.log(new_arr);
+        // 2.join()方法
+        arr = ['pink', 'Jay', 'David', '周杰伦'];
+        console.log(arr.join());//结果为 pink,Jay,David,周杰伦
+        console.log(arr.join(''));//结果为pinkJayDavid周杰伦
+        console.log(arr.join('和'));//结果为pink和Jay和David和周杰伦
+        console.log(arr.join('|'));//结果为pink|Jay|David|周杰伦
+```
+
