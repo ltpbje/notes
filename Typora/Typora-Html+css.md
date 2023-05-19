@@ -1,11 +1,19 @@
 
 <img src="C:\Users\19836\OneDrive\obsidian\pdf\HtmlCSS(自学">.pdf"> 
 
-# Web开发-CSS3
+
 
 [TOC]
 
+表格边框合并
 
+**`border-collapse`** [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) 属性是用来决定表格的边框是分开的还是合并的。在分隔模式下，相邻的单元格都拥有独立的边框。在合并模式下，相邻单元格共享边框。
+
+合并（*collapsed*）模式下，表格中相邻单元格共享边框。在这种模式下，CSS 属性[`border-style`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-style) 的值 inset 表现为槽，值 outset 表现为脊。
+
+分隔（*separated）*模式是 HTML 表格的传统模式。相邻单元格都拥有不同的边框。边框之间的距离是通过 CSS 属性 [`border-spacing`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-spacing) 来确定的。
+
+## Web开发-CSS3
 
 ## CSS之2D转换
 
