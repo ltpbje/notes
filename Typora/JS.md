@@ -970,6 +970,8 @@ LocalStorage的使用
 
 ![image-20230519160516126](./Typora-image/image-20230519160516126.png)
 
+#### 渲染业务
+
 ![image-20230519160810063](./Typora-image/image-20230519160810063.png)
 
 ![image-20230519202025282](./Typora-image/image-20230519202025282.png)
@@ -995,3 +997,6 @@ LocalStorage的使用
         console.log(arr.join('|'));//结果为pink|Jay|David|周杰伦
 ```
 
+#### 新增业务
+
+![image-20230520084222306](./Typora-image/image-20230520084222306.png)
