@@ -1062,3 +1062,62 @@ test()方法用来查看正则表达式与指定的字符串是否匹配
 ##### 量词
 
 ![image-20230520205216644](./Typora-image/image-20230520205216644.png)
+
+```
+ // const arr = 'web前端开发';
+        // const reg = /web/;
+        // // 检测是否匹配
+        // console.log(reg.test(arr));
+        // // 获取匹配项
+        // console.log(reg.exec(arr));//获取匹配项返回一个数组
+        // console.log('--------------------');
+        // //元字符
+        //1.边界符
+        console.log(/^二哈/.test("二哈"));//true
+        console.log(/^二哈/.test("二哈二哈"));//true
+        console.log(/^二哈$/.test('二哈'));//true
+        console.log(/^二哈$/.test('二哈二哈'));//false
+        console.log('------------------------------------');
+        // 2.量词
+        // * 出现 >=0 次
+        console.log(/^哈*$/.test('二哈'));//flase
+        console.log(/^哈*$/.test(''));//true
+        console.log(/^哈*$/.test('哈'));//true
+        console.log(/^哈*$/.test('哈哈'));//true
+        console.log(/^哈*$/.test('哈哈哈'));//true
+        console.log(/^哈*$/.test('哈哈哈哈'));//true
+        console.log(/^哈*$/.test('哈哈哈哈哈'));//true
+        console.log('-------------------------------');
+        // + 重复出现 >=1 次
+        console.log(/^哈+$/.test('二哈'));//flase
+        console.log(/^哈+$/.test(''));//flase
+        console.log(/^哈+$/.test('哈'));//true
+        console.log(/^哈+$/.test('哈哈'));//true
+        console.log(/^哈+$/.test('哈哈哈'));//true
+        console.log(/^哈+$/.test('哈哈哈哈'));//true
+        console.log(/^哈+$/.test('哈哈哈哈哈'));//true
+        console.log('-------------------------------');
+        // ? 出现 1 || 0
+        console.log(/^哈?$/.test('二哈'));//flase
+        console.log(/^哈?$/.test(''));//true
+        console.log(/^哈?$/.test('哈'));//true
+        console.log(/^哈?$/.test('哈哈'));//flase
+        console.log(/^哈?$/.test('哈哈哈'));//flase
+        console.log(/^哈?$/.test('哈哈哈哈'));//flase
+        console.log(/^哈?$/.test('哈哈哈哈哈'));//flase
+```
+
+##### 字符类
+
+![image-20230521093531677](./Typora-image/image-20230521093531677.png)
+
+![image-20230521093151645](./Typora-image/image-20230521093151645.png)
+
+![image-20230521093238352](./Typora-image/image-20230521093238352.png)
+
+![image-20230521093324588](./Typora-image/image-20230521093324588.png)
+
+(2) . 匹配除换行符之外的任何单个字符
+
+![image-20230521102049058](./Typora-image/image-20230521102049058.png)
+
