@@ -684,19 +684,19 @@ const btn = document.querySelector('button');
 
 ### 日期对象
 
-![image-20230513163443304](./Typora-image/image-20230513163443304.png)
+![image-20230513163443304](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614279.png)
 
 #### 日期对象方法
 
-![image-20230513163808684](./Typora-image/image-20230513163808684.png)
+![image-20230513163808684](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614281.png)
 
 ### 时间戳
 
-![image-20230513184442595](./Typora-image/image-20230513184442595.png)
+![image-20230513184442595](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614282.png)
 
 #### 获取时间戳
 
-![image-20230513185615849](./Typora-image/image-20230513185615849.png)
+![image-20230513185615849](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614283.png)
 
 ```
  const date = new Date()
@@ -710,23 +710,23 @@ const btn = document.querySelector('button');
 
 ### DOM节点
 
-![image-20230514093252430](./Typora-image/image-20230514093252430.png)
+![image-20230514093252430](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614284.png)
 
 #### 查找节点
 
-![image-20230514093704017](./Typora-image/image-20230514093704017.png)
+![image-20230514093704017](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614285.png)
 
 ##### 父节点查找
 
-![image-20230514100031710](./Typora-image/image-20230514100031710.png)
+![image-20230514100031710](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614286.png)
 
 ##### 子节点查找
 
-![image-20230514104615153](./Typora-image/image-20230514104615153.png)
+![image-20230514104615153](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614287.png)
 
 **兄弟关系查找**
 
-![image-20230514104749644](./Typora-image/image-20230514104749644.png)
+![image-20230514104749644](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614288.png)
 
 ```
      <li>1</li>
@@ -749,15 +749,15 @@ const btn = document.querySelector('button');
 
 #### 增加节点
 
-![image-20230514152117558](./Typora-image/image-20230514152117558.png)
+![image-20230514152117558](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614289.png)
 
 ##### 创建节点
 
-![image-20230514152143800](./Typora-image/image-20230514152143800.png)
+![image-20230514152143800](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614290.png)
 
 ##### 追加节点
 
-![image-20230514153439710](./Typora-image/image-20230514153439710.png)
+![image-20230514153439710](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614291.png)
 
 ```
 const ul = document.querySelector('ul')
@@ -778,11 +778,11 @@ const ul = document.querySelector('ul')
 
 ### 学成在线渲染案例
 
-![image-20230514160651152](./Typora-image/image-20230514160651152.png)
+![image-20230514160651152](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614292.png)
 
 ### 克隆节点
 
-![image-20230514160935442](./Typora-image/image-20230514160935442.png)
+![image-20230514160935442](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614293.png)
 
 ```
 const ul = document.querySelector('ul')
@@ -796,7 +796,7 @@ const ul = document.querySelector('ul')
 
 ### 删除节点
 
-![image-20230514162923812](./Typora-image/image-20230514162923812.png)
+![image-20230514162923812](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614294.png)
 
 ```
  const ul = document.querySelector('ul')
@@ -806,27 +806,27 @@ const ul = document.querySelector('ul')
 
 ### M端事件
 
-![image-20230514163805381](./Typora-image/image-20230514163805381.png)
+![image-20230514163805381](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614295.png)
 
 ### 学生信息表案例
 
-![image-20230516101430872](./Typora-image/image-20230516101430872.png)
+![image-20230516101430872](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614296.png)
 
-![image-20230516101454851](./Typora-image/image-20230516101454851.png)
+![image-20230516101454851](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614297.png)
 
-![image-20230516101513412](./Typora-image/image-20230516101513412.png)
+![image-20230516101513412](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614298.png)
 
-![image-20230516101533407](./Typora-image/image-20230516101533407.png)
+![image-20230516101533407](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614299.png)
 
-![image-20230514204507089](./Typora-image/image-20230514204507089.png)
+![image-20230514204507089](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614300.png)
 
-![image-20230516100111275](./Typora-image/image-20230516100111275.png)
+![image-20230516100111275](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614301.png)
 
-## BOM
+## 1.BOM
 
 **BOM(Browser Object Model）是浏览器对象模型**
 
-![image-20230516103803074](./Typora-image/image-20230516103803074.png)
+![image-20230516103803074](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614302.png)
 
 <ul><li>
     window对象是一个全局对象，也可以说是JavaScript中的顶级对象</li>
@@ -839,9 +839,9 @@ const ul = document.querySelector('ul')
 
 ### 延时函数
 
-![image-20230517194452252](./Typora-image/image-20230517194452252.png)
+![image-20230517194452252](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614303.png)
 
-![image-20230517200806316](./Typora-image/image-20230517200806316.png)
+![image-20230517200806316](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614304.png)
 
 ### JS执行机制
 
@@ -855,17 +855,17 @@ const ul = document.querySelector('ul')
 
 你在做一件事情时，因为这件事情会花费很长时间，在做这件事的同时，你还可以去处理其他事情。比如做饭的异步做法，我们在烧水的同时，利用这10分钟，去切菜，炒菜。
 
-![image-20230517203102216](./Typora-image/image-20230517203102216.png)
+![image-20230517203102216](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614305.png)
 
 #### 事件循环
 
-![image-20230517204638573](./Typora-image/image-20230517204638573.png)
+![image-20230517204638573](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614307.png)
 
 ### location对象
 
 location的数据类型是对象，它拆分并保存了URL地址的各个组成部分
 
-![image-20230518092052279](./Typora-image/image-20230518092052279.png)
+![image-20230518092052279](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614308.png)
 
 跳转页面 href属性
 
@@ -876,7 +876,7 @@ location的数据类型是对象，它拆分并保存了URL地址的各个组成
 
 search属性获取地址中携带的参数,符号?后面部分
 
-![image-20230518092419176](./Typora-image/image-20230518092419176.png)
+![image-20230518092419176](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614309.png)
 
 ```
 <!-- search属性 -->
@@ -892,11 +892,11 @@ hash属性获取地址中的哈希值，符号#后面部分
 
 后期vue路由的铺垫，经常用于不刷新页面，显示不同页面，比如网易云音乐
 
-![image-20230518093620047](./Typora-image/image-20230518093620047.png)
+![image-20230518093620047](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614310.png)
 
 reload方法用来刷新当前页面，传入参数true时表示强制刷新
 
-![image-20230518093951125](./Typora-image/image-20230518093951125.png)
+![image-20230518093951125](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614311.png)
 
 ```
   const btn = document.querySelector('button')
@@ -908,11 +908,11 @@ reload方法用来刷新当前页面，传入参数true时表示强制刷新
         })
 ```
 
-![image-20230518100115433](./Typora-image/image-20230518100115433.png)
+![image-20230518100115433](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614312.png)
 
 ### navigator对象
 
-![image-20230518103925539](./Typora-image/image-20230518103925539.png)
+![image-20230518103925539](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614313.png)
 
 ```
 // 检测 userAgent（浏览器信息）
@@ -932,53 +932,53 @@ reload方法用来刷新当前页面，传入参数true时表示强制刷新
 
 history的数据类型是对象，主要管理历史记录，该对象与浏览器地址栏的操作相对应，如前进、后退、历史记录等
 
-![image-20230518104924608](./Typora-image/image-20230518104924608.png)
+![image-20230518104924608](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614314.png)
 
 ### 本地存储分类-localStorage
 
-![image-20230518200856469](./Typora-image/image-20230518200856469.png)
+![image-20230518200856469](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614315.png)
 
 LocalStorage的使用
 
 可以将数据永久存储在本地（用户的电脑），除非手动删除，否则关闭页面也会存在
 
-![image-20230518203207571](./Typora-image/image-20230518203207571.png)
+![image-20230518203207571](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614316.png)
 
-![image-20230518203919054](./Typora-image/image-20230518203919054.png)
+![image-20230518203919054](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614317.png)
 
 本地存储分类-sessionStorage
 
 生命周期为关闭浏览器窗口
 
-![image-20230518205740079](./Typora-image/image-20230518205740079.png)
+![image-20230518205740079](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614318.png)
 
 ### 本地存储复杂数据类型
 
 需要将复杂数据类型转换成JS0N字符串，在存储到本地
 
-![image-20230519092617357](./Typora-image/image-20230519092617357.png)
+![image-20230519092617357](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614319.png)
 
 因为本地存储里面取出来的是字符串，不是对象，无法直接使用
 
-![image-20230519092755748](./Typora-image/image-20230519092755748.png)
+![image-20230519092755748](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614320.png)
 
 把取出来的字符串转换为对象来使用
 
-![image-20230519092830984](./Typora-image/image-20230519092830984.png)
+![image-20230519092830984](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614321.png)
 
 ### 学生就业统计表案例
 
-![image-20230519160516126](./Typora-image/image-20230519160516126.png)
+![image-20230519160516126](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614322.png)
 
 #### 渲染业务
 
-![image-20230519160810063](./Typora-image/image-20230519160810063.png)
+![image-20230519160810063](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614323.png)
 
-![image-20230519202025282](./Typora-image/image-20230519202025282.png)
+![image-20230519202025282](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614324.png)
 
 数组map方法 数组join方法
 
-![image-20230519203105910](./Typora-image/image-20230519203105910.png)
+![image-20230519203105910](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614325.png)
 
 ```
  		// 1.map()方法
@@ -999,43 +999,43 @@ LocalStorage的使用
 
 #### 新增业务
 
-![image-20230520084222306](./Typora-image/image-20230520084222306.png)
+![image-20230520084222306](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614326.png)
 
-![image-20230520160314623](./Typora-image/image-20230520160314623.png)
+![image-20230520160314623](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614327.png)
 
 #### 删除业务
 
-![image-20230520162832257](./Typora-image/image-20230520162832257.png)
+![image-20230520162832257](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614328.png)
 
 关于stuld的处理
 
-![image-20230520164921784](./Typora-image/image-20230520164921784.png)
+![image-20230520164921784](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614329.png)
 
 ### 正则表达式
 
-![image-20230520171252172](./Typora-image/image-20230520171252172.png)
+![image-20230520171252172](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614330.png)
 
 ●正则表达式在JavaScript中的使用场景：
 >例如验证表单：用户名表单只能输入英文字母、数字或者下划线，昵称输入框中可以输入中文（匹配）
 >比如用户名：/[a-z0-9-]{3,16}$/
 >过滤掉页面内容中的一些敏感词（替换），或从字符串中获取我们想要的特定部分（提取）等。
 
-![image-20230520171513012](./Typora-image/image-20230520171513012.png)
+![image-20230520171513012](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614331.png)
 
 #### 语法
 
 正则同样道理，我们分为两步：先定义规则
 再查找
 
-![image-20230520172306152](./Typora-image/image-20230520172306152.png)
+![image-20230520172306152](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614332.png)
 
 
 
-![image-20230520192134980](./Typora-image/image-20230520192134980.png)
+![image-20230520192134980](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614333.png)
 
 test()方法用来查看正则表达式与指定的字符串是否匹配
 
-![image-20230520193710094](./Typora-image/image-20230520193710094.png)
+![image-20230520193710094](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614334.png)
 
 #### 元字符
 
@@ -1045,7 +1045,7 @@ test()方法用来查看正则表达式与指定的字符串是否匹配
 >比如，规定用户只能输入英文26个英文字母，普通字符的话abcdefghijklm.…
 >但是换成元字符写法：[a-z]
 
-![image-20230520194945379](./Typora-image/image-20230520194945379.png)
+![image-20230520194945379](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614335.png)
 
 <ul>
     <li>元字符进行了分类：</li>
@@ -1053,15 +1053,15 @@ test()方法用来查看正则表达式与指定的字符串是否匹配
     <li>量词（表示重复次数）</li>
     <li>字符类（比如\d表示0~9）</li>
 
-![image-20230520195358859](./Typora-image/image-20230520195358859.png)
+![image-20230520195358859](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614336.png)
 
 ##### 边界符
 
-![image-20230520201117415](./Typora-image/image-20230520201117415.png)
+![image-20230520201117415](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614337.png)
 
 ##### 量词
 
-![image-20230520205216644](./Typora-image/image-20230520205216644.png)
+![image-20230520205216644](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614338.png)
 
 ```
  // const arr = 'web前端开发';
@@ -1109,15 +1109,28 @@ test()方法用来查看正则表达式与指定的字符串是否匹配
 
 ##### 字符类
 
-![image-20230521093531677](./Typora-image/image-20230521093531677.png)
+![image-20230521093531677](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614339.png)
 
-![image-20230521093151645](./Typora-image/image-20230521093151645.png)
+![image-20230521093151645](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614340.png)
 
-![image-20230521093238352](./Typora-image/image-20230521093238352.png)
+![image-20230521093238352](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614341.png)
 
-![image-20230521093324588](./Typora-image/image-20230521093324588.png)
+![image-20230521093324588](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614342.png)
 
 (2) . 匹配除换行符之外的任何单个字符
 
-![image-20230521102049058](./Typora-image/image-20230521102049058.png)
+![image-20230521102049058](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614343.png)
 
+#### 修饰符
+
+![image-20230521143549076](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614344.png)
+
+替换replace替换
+
+![image-20230521144113712](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614345.png)
+
+## 2.BOM
+
+### 小兔鲜儿页面注册
+
+![image-20230521161259471](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614346.png) 
