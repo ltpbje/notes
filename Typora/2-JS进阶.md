@@ -192,3 +192,109 @@ arguments是一个伪数组，只存在于函数中
 
 剩余参数：函数参数使用，得到==真数组==
 展开运算符：数组中使用，数组展开
+
+
+
+### ==箭头函数(重要)==
+
+![image-20230528103411816](./Typora-image/image-20230528103411816.png)
+
+#### 语法
+
+##### 语法1：基本写法
+
+![image-20230528150034661](./Typora-image/image-20230528150034661.png)
+
+##### 语法2：只有一个参数可以省略小括号
+
+![image-20230528150304075](./Typora-image/image-20230528150304075.png)
+
+##### 语法3：如果函数体只有一行代码，可以写到一行上，并且无需写return直接返回值
+
+![image-20230528150142170](./Typora-image/image-20230528150142170.png)
+
+##### 语法4：加括号的函数体返回对象字面量表达式
+
+![image-20230528151931050](./Typora-image/image-20230528151931050.png)
+
+#### 箭头函数参数
+
+1.普通函数有arguments动态参数
+2.箭头函数没有arguments动态参数，但是有剩余参数...args
+
+箭头函数里面有arguments:动态参数吗？可以使用什么参数？
+
+>没有arguments动态参数
+>可以使用剩余参数
+
+#### 箭头函数this
+
+箭头函数不会创建自己的this,它只会从自己的作用域链的上一层沿用this。
+
+![image-20230528154014105](./Typora-image/image-20230528154014105.png)
+
+在开发中【使用箭头函数前需要考虑函数中this的值】，事件回调函数使用箭头函数时，this为全局的window,因此
+==DOM事件回调函数为了简便，还是不太推荐使用箭头函数==
+
+```
+// // 语法1.基本写法
+        // const fn1 = () => {
+        //     console.log('我是箭头函数');
+        // };
+        // fn1();
+        // //语法2. 只有一个参数可以省略小括号
+        // const fn2 = x => {
+        //     return x + x;
+        // };
+        // console.log(fn2(2));
+        // //语法3. 如果函数体只有一行代码，可以写到一行上，并且无需写return直接返回值
+        // const fn3 = (x, y) => x + y;
+        // console.log(fn3(1, 2));
+        // // 语法4：加括号的函数体返回对象字面量表达式
+        // const fn4 = uname => ({ uname: uname });
+        // console.log(fn4('pink老师'));
+        // 箭头函数 不会自己创建 this 只会从自己的作用域链的上一层沿用this。
+        // const fn1 = () => this;
+        // console.log(fn1());//window
+        function outer() {
+            const fn2 = () => console.log(this);
+            fn2();
+        };
+        // window.outer window调用的outer所以this指向window
+        console.log(outer());//window
+```
+
+总结
+
+![image-20230528154855924](./Typora-image/image-20230528154855924.png)
+
+# 解构赋值
+
+目标：知道解构的语法及分类，使用解构简洁语法快速为变量赋值
+
+**左侧**的 [ ] 用于批量声明变量    **右侧**数组的单元值将被赋值给左侧的变量
+
+![image-20230528170416124](./Typora-image/image-20230528170416124.png)
+
+```
+ // // 变量少，单元值多
+        // const [a, b, c] = ['小米', '苹果', '华为', '格力'];
+        // console.log(a);//小米
+        // console.log(b); //苹果
+        // console.log(c); //华为
+        // 利用剩余参数变量少，单元值多
+        // const [a, b, ...tel] = ['小米', '苹果', '华为', '格力', 'vivo'];
+        // console.log(a);//小米
+        // console.log(b);//苹果
+        // console.log(tel);//['华为', '格力', 'vivo']
+        // // 防止有undefined传递单元值的情况，可以设置默认值：
+        // const [a = '手机', b = '华为'] = ['小米'];
+        // console.log(a);//小米
+        // console.log(b);//华为
+        // 按需导入，忽略某些值
+        const [a, , c, d] = ['小米', '苹果', '华为', '格力', 'vivo'];
+        console.log(a);//小米
+        console.log(c);//华为
+        console.log(d);//格力
+```
+
