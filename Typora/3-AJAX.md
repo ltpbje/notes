@@ -92,3 +92,19 @@ AJAX 的所有操作都是通过该对象进行的。
         }
 ```
 
+1) 创建 XMLHttpRequest 对象 var xhr = new XMLHttpRequest();
+
+2) 设置请求信息 xhr.open(method, url);//可以设置请求头，一般不设置
+3) 发送请求 xhr.send(body) //get 请求不传 body 参数，只有 post 请求使用
+4) 接收响应 //xhr.responseXML 接收 xml 格式的响应数据 //xhr.responseText 接收文本格式的响应数据
+
+```
+ xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 处理服务端返回的结果
+                        result.innerHTML = xhr.response;
+                    }
+                }
+```
+

@@ -274,10 +274,12 @@ arguments是一个伪数组，只存在于函数中
 
 **左侧**的 [ ] 用于批量声明变量    **右侧**数组的单元值将被赋值给左侧的变量
 
+## 数组解构
+
 ![image-20230528170416124](./Typora-image/image-20230528170416124.png)
 
 ```
- // // 变量少，单元值多
+// // 变量少，单元值多
         // const [a, b, c] = ['小米', '苹果', '华为', '格力'];
         // console.log(a);//小米
         // console.log(b); //苹果
@@ -291,10 +293,86 @@ arguments是一个伪数组，只存在于函数中
         // const [a = '手机', b = '华为'] = ['小米'];
         // console.log(a);//小米
         // console.log(b);//华为
-        // 按需导入，忽略某些值
-        const [a, , c, d] = ['小米', '苹果', '华为', '格力', 'vivo'];
-        console.log(a);//小米
+        // // 按需导入，忽略某些值
+        // const [a, , c, d] = ['小米', '苹果', '华为', '格力', 'vivo'];
+        // console.log(a);//小米
+        // console.log(c);//华为
+        // console.log(d);//格力
+        // //支持多维数组的解构
+        // const [a, b] = ['苹果', ['小米', '华为']];
+        // console.log(a);//苹果
+        // console.log(b);//['小米','华为']
+        const [a, [b, c]] = ['苹果', ['小米', '华为']];
+        console.log(a);//苹果
+        console.log(b);//小米
         console.log(c);//华为
-        console.log(d);//格力
+
+```
+
+![image-20230529083636432](./Typora-image/image-20230529083636432.png)
+
+1.变量的数量大于单元值数量时，多余的变量将被赋值为？
+undefined
+2.变量的数量小于单元值数量时，可以通过什么剩余获取所有的值？
+
+剩余参数...获取剩余单元值，但只能置于最末位
+
+## 对象解构
+
+对象解构是将对象属性和方法快速批量赋值给一系列变量的简洁语法
+
+### 基本语法：
+
+1.赋值运算符=左侧的 {  } 用于批量声明变量，右侧对象的属性值将被赋值给左侧的变量
+
+2.对象属性的值将被赋值给与==属性名相同的变量==
+
+3.注意解构的变量名不要和外面的变量名冲突否则报错
+
+4.对象中找不到与变量名一致的属性时变量值为undefined
+
+### 给新的变量名赋值用 ：
+
+可以从一个对象中提取变量并同时修改新的变量名
+
+```
+ // const pig = { name: '佩奇', age: 6 };
+        // const { name: uname, age } = pig;
+        // console.log(uname);//佩奇
+        // console.log(age);//6
+```
+
+冒号表示“什么值 : 赋值给谁”
+
+### 数组对象解构
+
+```
+const [{ goodsName, price }] = goods;
+        console.log(goodsName);//小米
+        console.log(price);//1999
+```
+
+### 多级对象解构
+
+![image-20230529094227417](./Typora-image/image-20230529094227417.png)
+
+```
+  // 需求1： 请将以上msg对象  采用对象解构的方式 只选出  data 方面后面使用渲染页面
+    const { data } = msg;
+    console.log(data);
+ // 需求2： 上面msg是后台传递过来的数据，我们需要把data选出当做参数传递给 函数
+
+    function render({ data }) {
+      // 我们只要 data 数据
+      // 内部处理
+      console.log(data);
+    }
+    render(msg)
+     // 需求3， 为了防止msg里面的data名字混淆，要求渲染函数里面的数据名改为 myData
+    function render({ data: myData }) {
+      // 要求将 获取过来的 data数据 更名为 myData
+      // 内部处理
+      console.log(myData);
+    }
 ```
 
