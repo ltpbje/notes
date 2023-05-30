@@ -376,3 +376,42 @@ const [{ goodsName, price }] = goods;
     }
 ```
 
+## ==遍历数组forEach方法（重点）==
+
+foreach( )没有返回值
+
+![image-20230530100641994](./Typora-image/image-20230530100641994.png)
+
+```
+ const arr = ['小米', '华为', 'vivo'];
+        //forEach()不会像map()方法那样返回数组
+        const a = arr.forEach((item, index) => {
+            console.log(item);//数组中的元素
+            console.log(index);//索引号
+        });
+        console.log(a);//undefined
+```
+
+![image-20230530100746717](./Typora-image/image-20230530100746717.png)
+
+## filter ( )筛选过滤数组方法
+
+```
+ const arr = [100, 200, 300, 10, 2];
+        // 筛选大于等于200的元素
+        const newArr = arr.filter(item => item >= 200);
+        console.log(newArr);// [200,300]
+```
+
+![image-20230530202119844](./Typora-image/image-20230530202119844.png)
+
+1) 筛选数组
+
+2) 返回值：返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组
+
+3) 参数：currentValue必须写，index可选
+
+4) ## 因为返回新数组，所以不会影响原数组
+
+# 深入对象
+
