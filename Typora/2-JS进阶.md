@@ -425,4 +425,98 @@ foreach( )没有返回值
 
 构造函数在技术上是常规函数。 不过有两个约定： 1. 它们的命名以大写字母开头。 2. 它们只能由 "new" 操作符来执行。
 
+## 构造函数实例化执行过程
+
+1) 利用new创建新的空对象
+2) this指向新的对象
+3) 执行构造函数代码,添加新的属性
+4) 返回新的对象
+
+
+
 ![image-20230531210251959](./Typora-image/image-20230531210251959.png)
+
+## 实例成员
+
+![image-20230601091655978](./Typora-image/image-20230601091655978.png)
+
+## 静态成员
+
+![image-20230601091736243](./Typora-image/image-20230601091736243.png)
+
+![image-20230601091810605](./Typora-image/image-20230601091810605.png)
+
+## 内置构造函数
+
+![image-20230601094142342](./Typora-image/image-20230601094142342.png)
+
+引用类型
+
+Object,Array,RegExp,Date
+
+包装类型
+
+String,Number,Boolean
+
+### Object
+
+![image-20230601095456370](./Typora-image/image-20230601095456370.png)
+
+#### 三个常用静态方法（静态方法就是只有构造函数0 bject可以调用的）
+
+作用：Object.keys静态方法获取对象中所有属性 (键)
+
+```
+ const person = { name: 'pink', age: 18 };
+ console.log(Object.keys(person));//['name', 'age']
+```
+
+作用：Object..values静态方法获取对象中所有属性值 (值)
+
+```
+console.log(Object.values(person));//['pink', 18]
+```
+
+作用：Object. assign 静态方法常用于对象拷贝
+
+```
+const o = {};
+console.log(Object.assign(o, person));//{name: 'pink', age: 18}
+```
+
+使用：经常使用的场景给对象添加属性
+
+```
+Object.assign(o, { gender: '女' });
+console.log(o);//{name: 'pink', age: 18, gender: '女'}
+```
+
+![image-20230601100835127](./Typora-image/image-20230601100835127.png)
+
+### Array
+
+forEach filter map reduce
+
+![image-20230601101221214](./Typora-image/image-20230601101221214.png)
+
+reduce方法
+
+作用：reduce返回函数累计处理的结果，经常用于求和等
+使用场景：求和运算
+
+![image-20230601102503005](./Typora-image/image-20230601102503005.png)
+
+```
+//    1.无起始值
+        // const total = arr.reduce(function (prev, current) {
+        //     return prev + current;
+        // });
+        // console.log(total);//60
+        // 2.有起始值
+        // const total = arr.reduce(function (prev, current) { return prev + current }, 6);
+        // console.log(total);//66
+        // 3.箭头函数
+        const total = arr.reduce((prev, current) => prev + current, 6);
+        console.log(total);//66
+```
+
