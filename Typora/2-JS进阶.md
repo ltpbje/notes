@@ -518,5 +518,26 @@ reduce方法
         // 3.箭头函数
         const total = arr.reduce((prev, current) => prev + current, 6);
         console.log(total);//66
+        
+        
+        
+          const arr = [{
+            name: '张三',
+            salary: 10000
+        }, {
+            name: '李四',
+            salary: 10000
+        }, {
+            name: '王五',
+            salary: 20000
+        },
+        ];
+        let total = 0;
+        total = arr.reduce((prev, current) => prev + current.salary, 0);
+        console.log(total);
+        // 涨薪30%
+        total = arr.reduce((prev, current) => prev + current.salary * 1.3, 0);
+        console.log(total);
 ```
 
+![image-20230602084550959](./Typora-image/image-20230602084550959.png)1
