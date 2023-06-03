@@ -540,4 +540,10 @@ reduce方法
         console.log(total);
 ```
 
-![image-20230602084550959](./Typora-image/image-20230602084550959.png)1
+
+
+![image-20230602084550959](./Typora-image/image-20230602084550959.png)
+
+### String
+
+![image-20230603093652358](./Typora-image/image-20230603093652358.png)
