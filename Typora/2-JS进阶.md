@@ -20,7 +20,7 @@
 
 ![image-20230524211357729](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305252055826.png)
 
-### 总结
+总结
 
 1.全局作用域有哪些？
 
@@ -197,25 +197,25 @@ arguments是一个伪数组，只存在于函数中
 
 ### ==箭头函数(重要)==
 
-![image-20230528103411816](./Typora-image/image-20230528103411816.png)
+![image-20230528103411816](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855703.png)
 
 #### 语法
 
 ##### 语法1：基本写法
 
-![image-20230528150034661](./Typora-image/image-20230528150034661.png)
+![image-20230528150034661](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855704.png)
 
 ##### 语法2：只有一个参数可以省略小括号
 
-![image-20230528150304075](./Typora-image/image-20230528150304075.png)
+![image-20230528150304075](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855705.png)
 
 ##### 语法3：如果函数体只有一行代码，可以写到一行上，并且无需写return直接返回值
 
-![image-20230528150142170](./Typora-image/image-20230528150142170.png)
+![image-20230528150142170](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855706.png)
 
 ##### 语法4：加括号的函数体返回对象字面量表达式
 
-![image-20230528151931050](./Typora-image/image-20230528151931050.png)
+![image-20230528151931050](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855707.png)
 
 #### 箭头函数参数
 
@@ -231,7 +231,7 @@ arguments是一个伪数组，只存在于函数中
 
 箭头函数不会创建自己的this,它只会从自己的作用域链的上一层沿用this。
 
-![image-20230528154014105](./Typora-image/image-20230528154014105.png)
+![image-20230528154014105](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855708.png)
 
 在开发中【使用箭头函数前需要考虑函数中this的值】，事件回调函数使用箭头函数时，this为全局的window,因此
 ==DOM事件回调函数为了简便，还是不太推荐使用箭头函数==
@@ -266,7 +266,7 @@ arguments是一个伪数组，只存在于函数中
 
 总结
 
-![image-20230528154855924](./Typora-image/image-20230528154855924.png)
+![image-20230528154855924](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855710.png)
 
 # 解构赋值
 
@@ -276,7 +276,7 @@ arguments是一个伪数组，只存在于函数中
 
 ## 数组解构
 
-![image-20230528170416124](./Typora-image/image-20230528170416124.png)
+![image-20230528170416124](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855711.png)
 
 ```
 // // 变量少，单元值多
@@ -309,7 +309,7 @@ arguments是一个伪数组，只存在于函数中
 
 ```
 
-![image-20230529083636432](./Typora-image/image-20230529083636432.png)
+![image-20230529083636432](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855712.png)
 
 1.变量的数量大于单元值数量时，多余的变量将被赋值为？
 undefined
@@ -354,7 +354,7 @@ const [{ goodsName, price }] = goods;
 
 ### 多级对象解构
 
-![image-20230529094227417](./Typora-image/image-20230529094227417.png)
+![image-20230529094227417](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855713.png)
 
 ```
   // 需求1： 请将以上msg对象  采用对象解构的方式 只选出  data 方面后面使用渲染页面
@@ -380,7 +380,7 @@ const [{ goodsName, price }] = goods;
 
 foreach( )没有返回值
 
-![image-20230530100641994](./Typora-image/image-20230530100641994.png)
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855714.png" alt="image-20230530100641994" />
 
 ```
  const arr = ['小米', '华为', 'vivo'];
@@ -392,7 +392,7 @@ foreach( )没有返回值
         console.log(a);//undefined
 ```
 
-![image-20230530100746717](./Typora-image/image-20230530100746717.png)
+![image-20230530100746717](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855715.png)
 
 ## filter ( )筛选过滤数组方法
 
@@ -403,7 +403,7 @@ foreach( )没有返回值
         console.log(newArr);// [200,300]
 ```
 
-![image-20230530202119844](./Typora-image/image-20230530202119844.png)
+![image-20230530202119844](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855716.png)
 
 1) 筛选数组
 
@@ -419,9 +419,9 @@ foreach( )没有返回值
 
 ## 创建对象三种方式
 
-![image-20230531203708393](./Typora-image/image-20230531203708393.png)
+![image-20230531203708393](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855717.png)
 
-![image-20230531203740422](./Typora-image/image-20230531203740422.png)
+![image-20230531203740422](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855718.png)
 
 构造函数在技术上是常规函数。 不过有两个约定： 1. 它们的命名以大写字母开头。 2. 它们只能由 "new" 操作符来执行。
 
@@ -434,21 +434,21 @@ foreach( )没有返回值
 
 
 
-![image-20230531210251959](./Typora-image/image-20230531210251959.png)
+![image-20230531210251959](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855719.png)
 
 ## 实例成员
 
-![image-20230601091655978](./Typora-image/image-20230601091655978.png)
+![image-20230601091655978](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855720.png)
 
 ## 静态成员
 
-![image-20230601091736243](./Typora-image/image-20230601091736243.png)
+![image-20230601091736243](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855721.png)
 
-![image-20230601091810605](./Typora-image/image-20230601091810605.png)
+![image-20230601091810605](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855722.png)
 
 ## 内置构造函数
 
-![image-20230601094142342](./Typora-image/image-20230601094142342.png)
+![image-20230601094142342](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855723.png)
 
 引用类型
 
@@ -460,7 +460,7 @@ String,Number,Boolean
 
 ### Object
 
-![image-20230601095456370](./Typora-image/image-20230601095456370.png)
+![image-20230601095456370](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855724.png)
 
 #### 三个常用静态方法（静态方法就是只有构造函数0 bject可以调用的）
 
@@ -491,20 +491,20 @@ Object.assign(o, { gender: '女' });
 console.log(o);//{name: 'pink', age: 18, gender: '女'}
 ```
 
-![image-20230601100835127](./Typora-image/image-20230601100835127.png)
+![image-20230601100835127](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855725.png)
 
 ### Array
 
 forEach filter map reduce
 
-![image-20230601101221214](./Typora-image/image-20230601101221214.png)
+![image-20230601101221214](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855726.png)
 
 reduce方法
 
 作用：reduce返回函数累计处理的结果，经常用于求和等
 使用场景：求和运算
 
-![image-20230601102503005](./Typora-image/image-20230601102503005.png)
+![image-20230601102503005](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855727.png)
 
 ```
 //    1.无起始值
@@ -542,8 +542,8 @@ reduce方法
 
 
 
-![image-20230602084550959](./Typora-image/image-20230602084550959.png)
+![image-20230602084550959](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855728.png)
 
 ### String
 
-![image-20230603093652358](./Typora-image/image-20230603093652358.png)
+![image-20230603093652358](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855729.png)
