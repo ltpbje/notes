@@ -1,3 +1,7 @@
+---
+
+---
+
 # JS进阶
 
 ## 作用域
@@ -620,7 +624,7 @@ reduce方法
 
 ​	 浪费内存
 
-# 原型
+# 原型对象
 
 目标：能够利用原型对象实现方法共享 
 
@@ -650,7 +654,56 @@ JavaScript 规定，每一个构造函数都有一个 prototype 属性，指向�
 
 > 实例化的对象
 
-```
+## constructor 属性 
+
+在哪里？每个原型对象里面都有个`constructor` 属性（constructor 构造函数） 
+
+==作用：该属性指向该原型对象的构造函数， 简单理解，就是指向我的爸爸，我是有爸爸的孩子==
+
+![image-20230604204734036](./Typora-image/image-20230604204734036.png)
+
+==使用场景==： 如果有多个对象的方法，我们可以给原型对象采取对象形式赋值. 但是这样就会覆盖构造函数原型对象原来的内容，这样修改后的原型对象 constructor 就不再指向当前构造函数了 此时，我们可以在修改后的原型对象中，添加一个 constructor 指向原来的构造函数。
 
 ```
+  function Star(uname, age) {
+            that = this;
+            this.uname = uname;
+            this.age = age;
+        }
+        Star.prototype = {
+            // 手动使原型对象指向构造函数
+            constructor: Star,
+            sing: () => {
+                console.log('唱歌');
+            },
+            dance: () => {
+                console.log('跳舞');
+            }
+        }
+        const ldh = new Star('刘德华', '55');
+        const zxy = new Star('张学友', '58');
+        console.log(Star.prototype.constructor);//f Object()
+        console.log(Star.prototype.constructor);//f Star()
+```
 
+构造函数可以创建实例对象，构造函数还有一个原型对象，一些公共的属性或者方法放到这个原型对象身上 但是 为啥实例对象可以访问原型对象里面的属性和方法呢？
+
+`对象都会有一个属性__proto__ `指向`构造函数的 prototype 原型对象`，之所以我们对象可以使用构造函数 prototype 原型对象的属性和方法，就是因为对象有 `__proto__ 原型`的存在。
+
+![image-20230604211642131](./Typora-image/image-20230604211642131.png)
+
+1. prototype是什么？哪里来的？
+
+   > 原型（原型对象）
+   >
+   > 构造函数都自动有原型 
+
+  2. constructor属性在哪里？作用干啥的？ 
+
+> prototype原型和对象原型`__proto__`里面都有 
+>
+>  都指向创建实例对象/原型的构造函数 
+
+3. `__proto__`属性在哪里？指向谁？  
+
+   > 在实例对象里面  指向原型 prototype
