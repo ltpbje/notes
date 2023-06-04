@@ -547,3 +547,7 @@ reduce方法
 ### String
 
 ![image-20230603093652358](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306031855729.png)
+
+### Number
+
+![image-20230604092717444](./Typora-image/image-20230604092717444.png)
