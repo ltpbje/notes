@@ -732,3 +732,101 @@ console.log(peppa.__proto__);//             对象原型              指向=>  
 </script>
 ```
 
+## ==原型继承==
+
+原型继承 
+
+继承是面向对象编程的另一个特征，通过继承进一步提升代码封装的程度，JavaScript 中大多是借助原型对象实现继承 的特性。 龙生龙、凤生凤、老鼠的儿子会打洞描述的正是继承的含义。
+
+1. 封装-抽取公共部分 把男人和女人公共的部分抽取出来放到人类里面
+
+   ```js
+   function People() {
+        this.eyes = 2;
+        this.head = 1;
+        this.sayHi = function () {
+            console.log('Hi');
+        }``
+    };
+   ```
+
+   
+
+2. 继承-让男人和女人都能继承人类的一些属性和方法  把男人女人公共的属性和方法抽取出来 People  然后赋值给Man的原型对象，可以共享这些属性和方法  注意让constructor指回Man这个构造函数
+
+3. 问题： 如果我们给男人添加了一个吸烟的方法，发现女人自动也添加这个方法
+
+​     --原因 男人和女人都同时使用了同一个对象，根据引用类型的特点，他们指向同一个对象，修改一个就会都影响
+
+![image-20230606200214235](./Typora-image/image-20230606200214235.png)
+
+4. 解决： 需求：男人和女人不要使用同一个对象，但是不同对象里面包含相同的属性和方法 答案：
+
+构造函数 new 每次都会创建一个新的对象
+
+5. 继承写法完善
+
+```js
+ function Person() {
+            this.eyes = 2;
+            this.head = 1;
+            this.sayHi = function () {
+                console.log('Hi');
+            }
+        };
+        function Woman() {
+            this.baby = function () {
+                console.log('宝贝');
+            };
+        };
+        function Man() {
+
+        };
+        console.log(new Person());
+        // 利用原型对象添加公共的属性和方法
+        Woman.prototype = new Person();
+        // 手动将原型对象指向构造函数
+        Woman.prototype.constructor = Woman;
+        const red = new Woman();
+        console.log(red);
+        console.log(red.eyes);
+
+        Man.prototype = new Person();
+        Man.prototype.constructor = Man;
+        const pink = new Man();
+        console.log(pink);
+        console.log(pink.eyes);
+        console.log(pink.sayHi());
+```
+
+### ==思路==
+
+真正做这个案例，我们的思路应该是先考虑大的，后考虑小的
+
+1. 人类共有的属性和方法有那些，然后做个构造函数，进行封装，一般公共属性写到构造函数内部，公共方法，挂载 到构造函数原型身上。
+2.  男人继承人类的属性和方法，之后创建自己独有的属性和方法 
+3. 女人同理
+
+## ==原型链==
+
+只要是`原型对象`就有`constructor`
+
+只要是`对象`就有`__proto__`对象原型
+
+基于原型对象的继承使得不同构造函数的原型对象关联在一起，并且这种关联的关系是一种链状的结构，我们将原型对 象的链状结构关系称为原型链
+
+ ==原型链其实就是一个查找规则== 
+
+① 当访问一个对象的属性（包括方法）时，首先查找这个对象自身有没有该属性。
+
+② 如果没有就查找它的原型（也就是`__proto__`指向的 prototype 原型对象） 
+
+③ 如果还没有就查找原型对象的原型（Object的原型对象）
+
+④ 依此类推一直找到 Object 为止（null） 
+
+⑤` __proto__`对象原型的意义就在于为对象成员查找机制提供一个方向，或者说一条路线 
+
+⑥ 可以使用` instanceof `运算符用于检测构造函数的 `prototype `属性是否出现在某个实例对象的原型链上
+
+![image-20230606204253514](./Typora-image/image-20230606204253514.png)
