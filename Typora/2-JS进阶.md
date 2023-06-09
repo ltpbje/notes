@@ -980,3 +980,163 @@ console.log(obj);
    ```
 
    
+
+## 异常处理
+
+### throw抛异常
+
+异常处理是指预估代码执行过程中可能发生的错误，然后最大程度的避免错误的发生导致整个程序无法继续运行
+
+```js
+ function fn(x, y) {
+  	if (!x || !y) {
+         throw new Error('没有参数传过来');
+     }
+     else return x + y;
+ };
+fn();
+```
+
+总结： 
+
+1) throw 抛出异常信息，程序也会终止执行
+2) throw 后面跟的是错误提示信息 
+3) Error 对象配合 throw 使用，能够设置更详细的错误信息
+
+### try/catch 捕获错误信息
+
+我们可以通过try / catch 捕获错误信息（浏览器提供的错误信息） try 试试 catch 拦住 finally 最后
+
+总结： 
+
+1. try...catch 用于捕获错误信息 
+2. 将预估可能发生错误的代码写在 try 代码段中 
+3. 如果 try 代码段中出现错误后，会执行 catch 代码段，并截获到错误信息
+4. finally 不管是否有错误，都会执行
+
+总结
+
+1) 捕获异常我们用那3个关键字？可能会出现的错误代码写到谁里面
+       try catch finally                                                                 try
+
+2) 怎么调用错误信息？ 
+       利用catch的参数
+
+   ```html
+    <p>111</p>
+       <script>
+           function foo() {
+               try {                  //试一试
+                   const p = document.querySelector('p');
+                   p.style.color = 'red';
+               } catch (err) {        //拦截错误
+                   console.log(err.message);
+                   throw new Error('你看看，选择器错误了');
+               } finally {
+                   alert('无论错误与否我都会执行');
+               }
+               console.log('当没有错误时我才会执行');
+           };
+           foo();
+       </script>
+   ```
+
+### debugger
+
+### 相当于断点调试 
+
+
+   我们可以通过try / catch 捕获错误信息（浏览器提供的错误信息）
+
+   
+
+![image-20230609142928797](./Typora-image/image-20230609142928797.png)
+
+## 处理this
+
+是 JavaScript 最具“魅惑”的知识点，不同的应用场合 this 的取值可能会有意想不到的结果，在此我们对以往学习 过的关于【 this 默认的取值】情况进行归纳和总结。 目标： 了解函数中 this 在不同场景下的默认值，知道动态指定函数 this 值的方法 学习路径： 
+
+1. 普通函数this指向 
+2.  箭头函数this指向
+
+### this指向-普通函数 
+
+目标： 能说出普通函数的this指向 普通函数的调用方式决定了 this 的值，即==【谁调用 this 的值指向谁】==
+
+普通函数this指向我们怎么记忆？
+
+   【谁调用 this 的值指向谁】 
+普通函数严格模式下指向谁？
+    严格模式下指向 undefined
+
+### this指向-箭头函数 
+
+箭头函数中的 this 与普通函数完全不同，也不受调用方式的影响，事实上箭头函数中并不存在 this ！ 
+
+1. 箭头函数会默认帮我们绑定外层 this 的值，所以在箭头函数中 this 的值和外层的 this 是一样的 
+2. 箭头函数中的this引用的就是最近作用域中的this 
+3. 向外层作用域中，一层一层查找this，直到有this的定义
+
+总结： 
+
+1. 函数内不存在this，沿用上一级的 
+2. 不适用  构造函数，原型函数，`Dom`事件函数等等 
+3. 适用  需要使用上层this的地方 
+4.  使用正确的话，它会在很多地方带来方便，后面我们会大量使用慢慢体会
+
+### 改变this的指向
+
+####  call() –了解
+
+ 使用 call 方法调用函数，同时指定被调用函数中 this 的值  语法： `fun.call(thisArg, arg1, arg2, ...)` 
+
+` thisArg`：在 fun 函数运行时指定的 this 值  `arg1，arg2`：传递的其他参数  返回值就是函数的返回值，因为它就是调用函数
+
+```js
+ const obj = {
+            name: 'pink',
+            age: 18
+        }
+        function fn(x, y) {
+            console.log(this);
+            console.log(x + y);
+        }
+        fn.call(obj, 1, 2);
+```
+
+call的作用是？ 
+
+ 调用函数，并可以改变被调用函数里面的this指向 
+
+call 里面第一个参数是 指定this， 其余是实参，传递的参数 整体做个了解，后期用的很少
+
+#### apply()-理解 
+
+使用 apply 方法调用函数，同时指定被调用函数中 this 的值 
+
+ 语法：  `thisArg`：在fun函数运行时指定的 this 值 
+
+` argsArray`：传递的值，必须包含在数组里面  返回值就是函数的返回值，因为它就是调用函数  因此 apply 主要跟数组有关系，比如使用 `Math.max()` 求数组的最大值
+
+call和apply的区别是？ 
+
+ 都是调用函数，都能改变this指向 
+
+ 参数不一样，apply传递的必须是数组
+
+```js
+ const obj = {
+            age: 18
+        };
+        function fn(x, y) {
+            console.log(this);
+            console.log(x + y);
+        };
+        fn.apply(obj, [1, 2]);
+        const arr = [12, 44, 33, 22];
+        const max = Math.max.apply(null, arr);
+        const min = Math.min.apply(null, arr);
+        console.log(max);
+        console.log(min);
+```
+
