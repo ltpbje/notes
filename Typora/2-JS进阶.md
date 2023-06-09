@@ -967,7 +967,16 @@ console.log(obj);
 3. 通过`JSON.stringify()`实现
 
    ```js
-   
+    const obj = {
+        name: 'pink',
+        age: 18,
+        hobby: ['乒乓球', '足球', '排球'],
+        family: {
+            baby: '小pink'
+        }
+    };
+   const o = JSON.parse(JSON.stringify(obj));
+   console.log(o);
    ```
 
    
