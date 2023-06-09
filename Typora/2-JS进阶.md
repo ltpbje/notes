@@ -907,5 +907,67 @@ console.log(obj);
 首先浅拷贝和深拷贝只针对引用类型 深拷贝：拷贝的是对象，不是地址 常见方法： 
 
 1. 通过递归实现深拷贝 
+
+   ```js
+    const obj = {
+        name: 'pink',
+        age: 18,
+        hobby: ['乒乓球', '足球', '排球'],
+        family: {
+            baby: '小pink'
+        }
+    }
+   const o = {};
+   function deppCopy(newObj, oldObj) {
+       for (let k in oldObj) {
+           // 必须先数组然后再对象
+           // 因为数组也属于对象
+           if (oldObj[k] instanceof Array) {
+               newObj[k] = [];
+               deppCopy(newObj[k], oldObj[k]);
+           } else if (oldObj[k] instanceof Object) {
+               newObj[k] = {};
+               deppCopy(newObj[k], oldObj[k]);
+           }
+           else {
+               newObj[k] = oldObj[k];
+           }
+       }
+   };
+   deppCopy(o, obj);
+   o.age = 20;
+   o.hobby[1] = '篮球';
+   o.family.baby = '老pink';
+   console.log(obj);
+   console.log(o);
+   ```
+
+   
+
 2. `lodash/cloneDeep`
+
+   ```js
+   const obj = {
+       name: 'pink',
+       age: 18,
+       hobby: ['乒乓球', '足球', '排球'],
+       family: {
+           baby: '小pink'
+       }
+   };
+   const o = _.cloneDeep(obj);
+   o.age = 20;
+   console.log(o);
+   console.log(obj);
+   ```
+
+   
+
+
 3. 通过`JSON.stringify()`实现
+
+   ```js
+   
+   ```
+
+   
