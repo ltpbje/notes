@@ -1086,9 +1086,9 @@ fn();
 
 ### 改变this的指向
 
-####  call() –了解
+####  `1.`call() –了解
 
- 使用 call 方法调用函数，同时指定被调用函数中 this 的值  语法： `fun.call(thisArg, arg1, arg2, ...)` 
+ 使用 call 方法==调用函数==，同时指定被调用函数中 this 的值  语法： `fun.call(thisArg, arg1, arg2, ...)` 
 
 ` thisArg`：在 fun 函数运行时指定的 this 值  `arg1，arg2`：传递的其他参数  返回值就是函数的返回值，因为它就是调用函数
 
@@ -1104,13 +1104,13 @@ fn();
         fn.call(obj, 1, 2);
 ```
 
-call的作用是？ 
+call的作用是？ 
 
  调用函数，并可以改变被调用函数里面的this指向 
 
 call 里面第一个参数是 指定this， 其余是实参，传递的参数 整体做个了解，后期用的很少
 
-#### apply()-理解 
+#### `2.`apply()-理解 
 
 使用 apply 方法调用函数，同时指定被调用函数中 this 的值 
 
@@ -1126,17 +1126,63 @@ call和apply的区别是？ 
 
 ```js
  const obj = {
-            age: 18
-        };
-        function fn(x, y) {
-            console.log(this);
-            console.log(x + y);
-        };
-        fn.apply(obj, [1, 2]);
-        const arr = [12, 44, 33, 22];
-        const max = Math.max.apply(null, arr);
-        const min = Math.min.apply(null, arr);
-        console.log(max);
-        console.log(min);
+     age: 18
+ };
+function fn(x, y) {
+    console.log(this);
+    console.log(x + y);
+};
+fn.apply(obj, [1, 2]);
+const arr = [12, 44, 33, 22];
+const max = Math.max.apply(null, arr);
+const min = Math.min.apply(null, arr);
+console.log(max);
+console.log(min);
 ```
 
+#### `3.`==bind()-重点==
+
+ bind() 方法==不会调用函数==。但是能改变函数内部this 指向 
+
+ 语法：    `fun.bind(thisArg, arg1, arg2, ...)`
+
+`thisArg`：在 fun 函数运行时指定的 this 值 
+
+`arg1，arg2`：传递的其他参数  返回由指定的 this 值和初始化参数改造的 原函数拷贝 （新函数）   因此当我们只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind，比如改变定时器内部的 this指向.
+
+```js
+const obj = {
+    age: 18
+};
+function fn(x, y) {
+    console.log(this);
+    console.log(x + y);
+};
+const foo = fn.bind(obj, 2, 3);
+console.log(foo);
+foo();
+```
+
+
+
+#### ==call apply bind 总结==
+
+ 相同点: 
+
+> 都可以改变函数内部的this指向.
+
+ 区别点: 
+
+> call 和 apply 会调用函数, 并且改变函数内部this指向. 
+
+call 和 apply 传递的参数不一样, call 传递参数 `aru1, aru2..`形式 apply 必须`数组形式[arg]`
+
+bind 不会调用函数, 可以改变函数内部this指向.
+
+主要应用场景: 
+
+call 调用函数并且可以传递参数 
+
+apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值最小值
+
+ bind 不调用函数,但是还想改变this指向. 比如改变定时器内部的this指向.
