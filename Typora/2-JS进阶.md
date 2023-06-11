@@ -754,7 +754,7 @@ console.log(peppa.__proto__);//             对象原型              指向=>  
 
 ​     --原因 男人和女人都同时使用了同一个对象，根据引用类型的特点，他们指向同一个对象，修改一个就会都影响
 
-![image-20230606200214235](./Typora-image/image-20230606200214235.png)
+![image-20230606200214235](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306101719273.png)
 
 4. 解决： 需求：男人和女人不要使用同一个对象，但是不同对象里面包含相同的属性和方法 答案：
 
@@ -825,7 +825,7 @@ console.log(peppa.__proto__);//             对象原型              指向=>  
 
 ⑥ 可以使用` instanceof `运算符用于检测构造函数的 `prototype `属性是否出现在某个实例对象的原型链上
 
-![image-20230606204253514](./Typora-image/image-20230606204253514.png)
+![image-20230606204253514](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306101719275.png)
 
 ## 综合案例
 
@@ -861,7 +861,7 @@ console.log(peppa.__proto__);//             对象原型              指向=>  
 
 深浅拷贝 开发中我们经常需要复制一个对象。如果直接用赋值会有下面问题：
 
-![image-20230608171759410](./Typora-image/image-20230608171759410.png)
+![image-20230608171759410](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306101719276.png)
 
 这好比有同学来pink老师这里拷视频，竟然用的是剪切…气人不
 
@@ -889,7 +889,7 @@ console.log(obj);
 
 小问题
 
-![image-20230608175819392](./Typora-image/image-20230608175819392.png)
+![image-20230608175819392](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306101719277.png)
 
 如果是简单数据类型拷贝值，引用数据类型拷贝的是地址 (简单理解： 如果是单层对象，没问题，如果有多层就有问题)
 
@@ -1050,7 +1050,7 @@ fn();
 
    
 
-![image-20230609142928797](./Typora-image/image-20230609142928797.png)
+![image-20230609142928797](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306101719278.png)
 
 ## 处理this
 
@@ -1186,3 +1186,48 @@ call 调用函数并且可以传递参数
 apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值最小值
 
  bind 不调用函数,但是还想改变this指向. 比如改变定时器内部的this指向.
+
+## 性能优化
+
+### 防抖`(debounce)`
+
+> 防抖：单位时间内，频繁触发事件，只执行最后一次
+
+举个栗子：王者荣耀回城，只要被打断就需要重新来
+
+使用场景：
+    搜索框搜索输入。只需用户最后一次输入完，再发送请求 手机号、邮箱验证输入检测
+
+![image-20230611103658124](./Typora-image/image-20230611103658124.png)
+
+```js
+<div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        const box = document.querySelector('.box');
+        let i = 0;
+        function mouseMove() {
+            box.innerHTML = ++i;
+        }
+        //1. lodash实现防抖
+        // box.addEventListener('mousemove', _.debounce(mouseMove,1000));
+        // 2.防抖函数
+        function debounce(fn, t) {
+            let timer;
+            return function () {
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(fn, t);
+            };
+        };
+        //                                因 此处的debounce()带小括号会直接调用执行 所以要用到return
+        box.addEventListener('mousemove', debounce(mouseMove, 200));
+    </script>
+```
+
+### 节流 
+
+节流（throttle） 
+
+所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数 
+
+只有等到了上一个人做完核酸，整个动作完成了， 第二个人才能排队跟上
