@@ -1231,3 +1231,76 @@ apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值
 所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数 
 
 只有等到了上一个人做完核酸，整个动作完成了， 第二个人才能排队跟上
+
+4.2节流-throttle
+节流
+
+> 节流：单位时间内，频繁触发事件，只执行一次
+
+举个栗子：
+
+> 触发王者荣耀技能冷却，期间无法继续释放技能
+
+和平精英`98k`换子弹期间不能射击
+使用场景：
+
+高频事件：鼠标移动`mousemove`、页面尺寸缩放resize、滚动条滚动scroll等等
+
+![image-20230611154624702](./Typora-image/image-20230611154624702.png)
+
+``````````````js
+<div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        const box = document.querySelector('.box');
+        let i = 0;
+        function mouseMove() {
+            box.innerHTML = ++i;
+        }
+        // 1.lodash来实现节流
+        // box.addEventListener('mousemove', _.throttle(mouseMove,3000));
+        // 2.利用函数实现节流
+        function throttle(fn, t) {
+            let timer = null;
+            return function () {
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        fn();
+                        timer = null
+                    }, t);
+                };
+            };
+        };
+        box.addEventListener('mousemove', throttle(mouseMove, 1000));
+    </script>
+``````````````
+
+### 总结
+
+| 性能优化 |                   说明                    |                           使用场景                           |
+| :------: | :---------------------------------------: | :----------------------------------------------------------: |
+|   防抖   | 单位时间内频繁触发事件,==只执行最后一次== |           搜索框搜索输入、手机号、邮箱验证输入检测           |
+|   节流   |   单位时间内频繁触发事件,==只执行一次==   | 高频事件：鼠标移动`mousemove`、页面尺寸缩放resize、滚动条滚动scroll等等 |
+
+
+
+## 节流综合案例
+
+页面打开，可以记录上一次的视频播放位置 分析： 
+
+两个事件: 
+
+①：`ontimeupdate` 事件在视频/音频（audio/video）当前的播放位置发送改变时触发 
+
+②：`onloadeddata` 事件在当前帧的数据加载完成且还没有足够的数据播放视频/音频（audio/video）的 下一帧时触发 谁需要节流？ 
+
+`ontimeupdate` ， 触发频次太高了，我们可以设定 1秒钟触发一次
+
+思路： 
+
+1.在`ontimeupdate`事件触发的时候，每隔1秒钟，就记录当前时间到本地存储 
+
+2.下次打开页面， `onloadeddata` 事件触发，就可以从本地存储取出时间，让视频从取出的时间播放，如 果没有就默认为0s 3. 获得当前时间 `video.currentTime`
+
+
+

@@ -82,13 +82,9 @@ toggleClass()
 
 - 切换jQuery对象的指定class
 
-------
-
 clone()
 
 - 复制jQuery元素
-
-------
 
 unwrap()
 
