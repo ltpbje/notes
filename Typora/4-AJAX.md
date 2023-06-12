@@ -108,3 +108,394 @@ AJAX 的所有操作都是通过该对象进行的。
                 }
 ```
 
+# Day1-AJAX入门
+
+## 01.AJAX 概念和 axios 使用
+
+### 目标
+
+了解 AJAX 概念并掌握 axios 库基本使用
+
+### 讲解
+
+1. 什么是 AJAX ? [mdn](https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX/Getting_Started)
+
+   * 使用浏览器的 XMLHttpRequest 对象 与服务器通信
+
+   * 浏览器网页中，使用 AJAX技术（XHR对象）发起获取省份列表数据的请求，服务器代码响应准备好的省份列表数据给前端，前端拿到数据数组以后，展示到网页
+
+     ![image-20230403173156484](./Typora-image/image-20230403173156484.png)
+
+2. 什么是服务器？
+
+   * 可以暂时理解为提供数据的一台电脑
+
+3. 为何学 AJAX ?
+
+   * 以前我们的数据都是写在代码里固定的, 无法随时变化
+   * 现在我们的数据可以从服务器上进行获取，让数据变活
+
+4. 怎么学 AJAX ?
+
+   * 这里使用一个第三方库叫 ==axios==, 后续在学习 XMLHttpRequest 对象了解 AJAX 底层原理
+   * 因为 axios 库语法简单，让我们有更多精力关注在与服务器通信上，而且后续 Vue，React 学习中，也使用 axios 库与服务器通信
+
+5. 需求：从服务器获取省份列表数据，展示到页面上（体验 axios 语法的使用）
+
+   > 获取省份列表数据 - 目标资源地址：http://hmajax.itheima.net/api/province
+
+1. * 完成效果：
+
+     ![image-20230612093031036](./Typora-image/image-20230612093031036.png)
+
+2. 接下来讲解 axios 语法，步骤：
+
+  3. 引入 axios.js 文件到自己的网页中
+
+     > axios.js文件链接: https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js
+
+  4. 明确axios函数的使用语法
+
+     ```js
+     axios({
+       url: '目标资源地址'
+     }).then((result) => {
+       // 对服务器返回的数据做后续处理
+     })
+     ```
+
+     > 注意：请求的 url 地址, 就是标记资源的网址
+     >
+     > 注意：then 方法这里先体验使用，由来后续会讲到
+
+     
+
+5. 对应代码
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="my-p"></p>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        axios({
+            url: 'http://hmajax.itheima.net/api/province'
+        }).then(result => {
+            console.log(result);
+            console.log(result.data.list);
+            console.log(result.d1ata.list.join('<br>'));
+            document.querySelector('.my-p').innerHTML = result.data.list.join('<br>');
+        });
+    </script>
+</body>
+
+</html>
+```
+
+###  小结
+
+1. AJAX 有什么用？
+
+    <details>
+    <summary>答案</summary>
+    <ul>
+    <li>浏览器和服务器之间通信，动态数据交互</li>
+    </ul>
+    </details>
+
+2. AJAX 如何学：
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>先掌握 axios 库使用，再了解 XMLHttpRequest 原理</li>
+   </ul>
+   </details>
+
+3. 这一节 axios 体验步骤（语法）？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>引入 axios 库，使用 axios 相关语法</li>
+   </ul>
+   </details>
+
+## 02.认识 URL
+
+### 目标
+
+了解 URL 的组成和作用
+
+### 讲解
+
+1. 为什么要认识 URL ? [mdn](https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX/Getting_Started)
+
+   * 虽然是后端给我的一个地址，但是哪部分标记的是服务器电脑，哪部分标记的是资源呢？所以为了和服务器有效沟通我们要认识一下
+
+2. 什么是 URL ？
+
+   * 统一资源定位符，简称网址，用于定位网络中的资源（资源指的是：网页，图片，数据，视频，音频等等）
+
+     ![image-20230403185206384](./Typora-image/image-20230403185206384.png)
+
+3. URL 的组成?
+
+   * 协议，域名，资源路径（URL 组成有很多部分，我们先掌握这3个重要的部分即可）
+
+     ![image-20230403185305934](./Typora-image/image-20230403185305934.png)
+
+     
+
+4. 什么是 http 协议 ?
+
+   * 叫超文本传输协议，规定了浏览器和服务器传递数据的格式（而格式具体有哪些稍后我们就会学到）
+
+     ![image-20230403185356997](./Typora-image/image-20230403185356997.png)
+
+5. 什么是域名 ?
+
+   * 标记服务器在互联网当中的方位，网络中有很多服务器，你想访问哪一台，就需要知道它的域名才可以
+
+     ![image-20230403185406674](./Typora-image/image-20230403185406674.png)
+
+6. 什么是资源路径 ?
+
+   * 一个服务器内有多个资源，用于标识你要访问的资源具体的位置
+
+     ![image-20230403185428276](./Typora-image/image-20230403185428276.png)
+
+7. 接下来做个需求，访问新闻列表的 URL 网址，打印新闻数据
+
+   * 效果图如下：
+
+   ![image-20230220122455915](./Typora-image/image-20230220122455915.png)
+
+   > 新闻列表数据 URL 网址：http://hmajax.itheima.net/api/news
+
+   ```js
+   axios({
+     url: 'http://hmajax.itheima.net/api/news'
+   }).then(result => {
+     console.log(result)
+   })
+   ```
+
+   > url解释：从黑马服务器使用http协议，访问/api/news路径下的新闻列表资源
+
+
+
+###  小结
+
+1. URL 是什么？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>统一资源定位符，网址，用于访问服务器上资源
+   </li>
+   </ul>
+   </details>
+
+
+
+2. 请解释这个 URL，每个部分作用？
+
+   http://hmajax.itheima.net/api/news
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>协议://域名/资源路径
+   </li>
+   </ul>
+   </details>
+
+## 03.URL 查询参数
+
+### 目标
+
+掌握-通过URL传递查询参数，获取匹配的数据
+
+
+
+### 讲解
+
+1. 什么是查询参数 ?
+
+   * 携带给服务器额外信息，让服务器返回我想要的某一部分数据而不是全部数据
+
+   * 举例：查询河北省下属的城市列表，需要先把河北省传递给服务器
+
+     ![image-20230404101257205](./Typora-image/image-20230404101257205.png)
+
+2. 查询参数的语法 ？
+
+   * 在 url 网址后面用?拼接格式：http://xxxx.com/xxx/xxx?参数名1=值1&参数名2=值2
+   * 参数名一般是后端规定的，值前端看情况传递即可
+
+3. axios 如何携带查询参数?
+
+   * 使用 params 选项即可
+
+     ```js
+     axios({
+       url: '目标资源地址',
+       params: {
+         参数名: 值
+       }
+     }).then(result => {
+       // 对服务器返回的数据做后续处理
+     })
+     ```
+
+     > 查询城市列表的 url地址：[http://hmajax.itheima.net/api/city](http://hmajax.itheima.net/api/city?pname=河北省)
+     >
+     > 参数名：pname （值要携带省份名字）
+
+4. 需求：获取“河北省”下属的城市列表，展示到页面，对应代码：
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>查询参数</title>
+   </head>
+   <body>
+     <!-- 
+       城市列表: http://hmajax.itheima.net/api/city
+       参数名: pname
+       值: 省份名字
+     -->
+     <p></p>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script>
+       axios({
+         url: 'http://hmajax.itheima.net/api/city',
+         // 查询参数
+         params: {
+           pname: '辽宁省'
+         }
+       }).then(result => {
+         console.log(result.data.list)
+         document.querySelector('p').innerHTML = result.data.list.join('<br>')
+       })
+     </script>
+   </body>
+   </html>
+   ```
+
+   
+
+###  小结
+
+1. URL 查询参数有什么用？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>浏览器提供给服务器额外信息，获取对应的数据
+   </li>
+   </ul>
+   </details>
+
+
+
+2. axios 要如何携带查询参数？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>使用 params 选项，携带参数名和值在对象结构中
+   </li>
+   </ul>
+   </details>
+
+## 04.案例-查询-地区列表
+
+### 目标
+
+巩固查询参数的使用，并查看多对查询参数如何传递
+
+
+
+### 讲解
+
+1. 需求：根据输入的省份名字和城市名字，查询下属地区列表
+
+   * 完成效果如下：
+
+     ![image-20230220125428695](./../../../%25E8%25AF%25BE%25E4%25BB%25B6/%25E4%25BB%25A3%25E7%25A0%2581%25E5%2592%258C%25E7%25AC%2594%25E8%25AE%25B0/Day01_AJAX%25E5%2585%25A5%25E9%2597%25A8/02-%25E7%25AC%2594%25E8%25AE%25B0/images/image-20230220125428695.png)
+
+   * 相关参数
+
+     > 查询地区: http://hmajax.itheima.net/api/area
+     >
+     > 参数名：
+     >
+     > pname：省份名字
+     >
+     > cname：城市名字
+
+   
+
+2. 正确代码如下：
+
+   ```js
+   /*
+         获取地区列表: http://hmajax.itheima.net/api/area
+         查询参数:
+           pname: 省份或直辖市名字
+           cname: 城市名字
+       */
+   // 目标: 根据省份和城市名字, 查询地区列表
+   // 1. 查询按钮-点击事件
+   document.querySelector('.sel-btn').addEventListener('click', () => {
+       // 2. 获取省份和城市名字
+       let pname = document.querySelector('.province').value
+       let cname = document.querySelector('.city').value
+   
+       // 3. 基于axios请求地区列表数据
+       axios({
+           url: 'http://hmajax.itheima.net/api/area',
+           params: {
+               pname,
+               cname
+           }
+       }).then(result => {
+           // console.log(result)
+           // 4. 把数据转li标签插入到页面上
+           let list = result.data.list
+           console.log(list)
+           let theLi = list.map(areaName => `<li class="list-group-item">${areaName}</li>`).join('')
+           console.log(theLi)
+           document.querySelector('.list-group').innerHTML = theLi
+       })
+   })
+   ```
+
+   
+
+###  小结
+
+1. ES6 对象属性和值简写的前提是什么？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>当属性名和value位置变量名同名即可简写
+   </li>
+   </ul>
+   </details>
+

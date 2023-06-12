@@ -1198,7 +1198,7 @@ apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值
 使用场景：
     搜索框搜索输入。只需用户最后一次输入完，再发送请求 手机号、邮箱验证输入检测
 
-![image-20230611103658124](./Typora-image/image-20230611103658124.png)
+![image-20230611103658124](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306111953259.png)
 
 ```js
 <div class="box"></div>
@@ -1246,7 +1246,7 @@ apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值
 
 高频事件：鼠标移动`mousemove`、页面尺寸缩放resize、滚动条滚动scroll等等
 
-![image-20230611154624702](./Typora-image/image-20230611154624702.png)
+![image-20230611154624702](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202306111953261.png)
 
 ``````````````js
 <div class="box"></div>
