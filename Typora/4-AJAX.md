@@ -436,7 +436,7 @@ AJAX 的所有操作都是通过该对象进行的。
 
    * 完成效果如下：
 
-     ![image-20230220125428695](./../../../%25E8%25AF%25BE%25E4%25BB%25B6/%25E4%25BB%25A3%25E7%25A0%2581%25E5%2592%258C%25E7%25AC%2594%25E8%25AE%25B0/Day01_AJAX%25E5%2585%25A5%25E9%2597%25A8/02-%25E7%25AC%2594%25E8%25AE%25B0/images/image-20230220125428695.png)
+     ![image-20230220125428695](./Typora-image/image-20230220125428695.png)
 
    * 相关参数
 
@@ -495,6 +495,115 @@ AJAX 的所有操作都是通过该对象进行的。
    <summary>答案</summary>
    <ul>
    <li>当属性名和value位置变量名同名即可简写
+   </li>
+   </ul>
+   </details>
+
+## 05.常用请求方法和数据提交
+
+### 目标
+
+掌握如何向服务器提交数据，而不单单是获取数据
+
+
+
+### 讲解
+
+1. 想要提交数据，先来了解什么是请求方法
+
+   * 请求方法是一些固定单词的英文，例如：GET，POST，PUT，DELETE，PATCH（这些都是http协议规定的），每个单词对应一种对服务器资源要执行的操作
+
+     ![image-20230220130833363](./Typora-image/image-20230220130833363.png)
+
+     ![image-20230404104319428](./Typora-image/image-20230404104319428.png)
+
+   * 前面我们获取数据其实用的就是GET请求方法，但是axios内部设置了默认请求方法就是GET，我们就没有写
+
+   * 但是提交数据需要使用POST请求方法
+
+2. 什么时候进行数据提交呢？
+
+   * 例如：多端要查看同一份订单数据，或者使用同一个账号进行登录，那订单/用户名+密码，就需要保存在服务器上，随时随地进行访问
+
+     ![image-20230404104328384](./Typora-image/image-20230404104328384.png)
+
+     ![image-20230404104333584](./Typora-image/image-20230404104333584.png)
+
+3. axios 如何提交数据到服务器呢？
+
+   * 需要学习，method 和 data 这2个新的选项了（大家不用担心，这2个学完，axios常用的选项就都学完了）
+
+     ```js
+     axios({
+       url: '目标资源地址',
+       method: '请求方法',
+       data: {
+         参数名: 值
+       }
+     }).then(result => {
+       // 对服务器返回的数据做后续处理
+     })
+     ```
+
+     
+
+4. 需求：注册账号，提交用户名和密码到服务器保存
+
+   > 注册用户 URL 网址：http://hmajax.itheima.net/api/register
+   >
+   > 请求方法：POST
+   >
+   > 参数名：
+   >
+   > username：用户名（要求中英文和数字组成，最少8位）
+   >
+   > password：密码（最少6位）
+
+   ![image-20230404104350387](./Typora-image/image-20230404104350387.png)
+
+5. 正确代码如下：
+
+   ```js
+   /*
+     注册用户：http://hmajax.itheima.net/api/register
+     请求方法：POST
+     参数名：
+       username：用户名（中英文和数字组成，最少8位）
+       password：密码  （最少6位）
+   
+     目标：点击按钮，通过axios提交用户和密码，完成注册
+   */
+   document.querySelector('.btn').addEventListener('click', () => {
+     axios({
+       url: 'http://hmajax.itheima.net/api/register',
+       method: 'POST',
+       data: {
+         username: 'itheima007',
+         password: '7654321'
+       }
+     })
+   })
+   ```
+
+
+###  小结
+
+1. 请求方法最常用的是哪2个，分别有什么作用？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>POST 提交数据，GET 查询数据
+   </li>
+   </ul>
+   </details>
+
+2. axios 的核心配置项？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>url：目标资源地址，method：请求方法，params：查询参数，data：提交的数据
    </li>
    </ul>
    </details>
