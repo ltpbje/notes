@@ -608,3 +608,128 @@ AJAX 的所有操作都是通过该对象进行的。
    </ul>
    </details>
 
+
+
+## 06.axios 错误处理
+
+### 目标
+
+掌握接收 axios 响应错误信息的处理语法
+
+
+
+### 讲解
+
+1. 如果注册相同的用户名，则会遇到注册失败的请求，也就是 axios 请求响应失败了，你会在控制台看到如图的错误：
+
+   ![image-20230220131753051](./Typora-image/image-20230220131753051.png)
+
+2. 在 axios 语法中要如何处理呢？
+
+   * 因为，普通用户不会去控制台里看错误信息，我们要编写代码拿到错误并展示给用户在页面上
+
+3. 使用 axios 的 catch 方法，捕获这次请求响应的错误并做后续处理，语法如下：
+
+   ```js
+   axios({
+     // ...请求选项
+   }).then(result => {
+     // 处理成功数据
+   }).catch(error => {
+     // 处理失败错误
+   })
+   ```
+
+4. 需求：再次重复注册相同用户名，提示用户注册失败的原因
+
+   ![image-20230404104440224](./Typora-image/image-20230404104440224.png)
+
+   ![image-20230404104447501](./Typora-image/image-20230404104447501.png)
+
+5. 对应代码
+
+   ```js
+   document.querySelector('.btn').addEventListener('click', () => {
+       axios({
+         url: 'http://hmajax.itheima.net/api/register',
+         method: 'post',
+         data: {
+           username: 'itheima007',
+           password: '7654321'
+         }
+       }).then(result => {
+         // 成功
+         console.log(result)
+       }).catch(error => {
+         // 失败
+         // 处理错误信息
+         console.log(error)
+         console.log(error.response.data.message)
+         alert(error.response.data.message)
+       })
+   })
+   ```
+
+
+
+###  小结
+
+1. axios 如何拿到请求响应失败的信息？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>通过 axios 函数调用后，在后面接着调用 .catch 方法捕获
+   </li>
+   </ul>
+   </details>
+
+## 07.HTTP 协议-请求报文
+
+### 目标
+
+了解 HTTP 协议中，请求报文的组成和作用
+
+
+
+### 讲解
+
+1. 首先，HTTP 协议规定了浏览器和服务器返回内容的<span style="color: red;">格式</span>
+
+2. 请求报文：是浏览器按照协议规定发送给服务器的内容，例如刚刚注册用户时，发起的请求报文：
+
+   ![image-20230404104508764](./Typora-image/image-20230404104508764.png)
+
+   ![image-20230220132229960](./Typora-image/image-20230220132229960.png)
+
+3. 这里的格式包含：
+
+   * 请求行：请求方法，URL，协议
+   * 请求头：以键值对的格式携带的附加信息，比如：Content-Type（指定了本次传递的内容类型）
+   * 空行：分割请求头，空行之后的是发送给服务器的资源
+   * 请求体：发送的资源
+
+4. 我们切换到浏览器中，来看看刚才注册用户发送的这个请求报文以及内容去哪里查看呢
+
+5. 代码：直接在上个代码基础上复制，然后运行查看请求报文对应关系即可
+
+
+
+### 小结
+
+1. 浏览器发送给服务器的内容叫做，请求报文
+
+2. 请求报文的组成是什么？
+
+   <details>
+   <summary>答案</summary>
+   <ul>
+   <li>请求行，请求头，空行，请求体
+   </li>
+   </ul>
+   </details>
+
+3. 通过 Chrome 的网络面板如何查看请求体？
+
+   ![image-20230613090258296](./Typora-image/image-20230613090258296.png)
+
