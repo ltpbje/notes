@@ -1367,3 +1367,43 @@ test()
 **Array对象方法**
 
 <img src= 'https://uploadfiles.nowcoder.com/images/20170801/9067279_1501580014742_4B001C5F03B58BB2DED6B768AE0D6761'>
+
+` js`基本数据类型包括： 
+
+ 
+
+  1.Number 
+
+  `typeof`  123 =>"number"  
+
+   2.String  
+
+   typeof  `'abc'` =>"string"  
+
+   3.Boolean  
+
+   `typeof   true `=>"boolean"  
+
+​    4.Function   
+
+   ` typeof   console.log() `=>"function"   
+
+​    5.Object   
+
+   `typeof   `null    =>"object"  
+
+ `  typeof  ` { } =>"object"  
+
+  ` typeof  ` [ ] =>"object"  
+
+   6.Undefined  
+
+   `typeof`   undefined =>"undefined"  
+
+   题中的Array属于数组对象  
+
+   `typeof` new Array()  =>"object"  
+
+   值得一提的是`typeof`打印出的类型都是字符串类型，且首字母小写  
+
+   例如：typeof(typeof undefined) =>"string"  
