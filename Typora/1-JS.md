@@ -202,6 +202,12 @@ const img = document.querySelector('img')
 
 ### ==通过classlist修改样式==
 
+==classList contains()== 方法解释
+
+该`contains()`方法将检查元素的`class`属性并检查它是否包含特定的类名。
+
+您需要将要检查的类名作为其参数传递。`true`如果类名存在或`false`不存在，该方法将返回。
+
 <img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909007.png">
 
 <img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305091909008.png">

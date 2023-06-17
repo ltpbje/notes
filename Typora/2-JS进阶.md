@@ -1306,6 +1306,64 @@ apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值
 
 delete是干什么的： 
 
- 
+#  牛客网评论区
 
 - ​    ==delete 操作符用于删除对象的某个属性；==如果没有指向这个属性的引用，那它最终会被释放。
+
+`typeof` 能判断类型有：number、string、boolean、symbol、undefined、function；  **object、****array、null** 的变量都返回 object 
+
+<img src='https://uploadfiles.nowcoder.com/images/20190829/990177409_1567082310187_97C622A575935FE641B060B0ED909865'>
+
+`Object.prototype.toString() `为 Object 对象的实例方法，默认情况下（即不重写该方法），返回参数的类型字符串。
+
+<img src='https://uploadfiles.nowcoder.com/images/20190829/990177409_1567082993145_78F6838F9534BC5011776164925615B5'>
+
+Array 为` js `的原生对象，它有一个静态方法：`Array.isArray()`，能判断参数1是否为数组 
+
+ 
+
+   <img src='https://uploadfiles.nowcoder.com/images/20190829/990177409_1567082310187_97C622A575935FE641B060B0ED909865'>
+
+### class和let一样都有暂时性死区，在被声明前无法访问
+
+也就是在当前作用域能找到，但是要在声明后才能访问
+**`es6中的class`和`let const`一样都不存在提升
+（实际存在提升，只是因为`TDZ`的作用，并不会像var那样得到undefined,而是直接抛出错误）**
+
+临时死区（Temporal Dead Zone），简写为` TDZ`。
+
+`let` 和 `const` 声明的变量不会被提升到[作用域](https://so.csdn.net/so/search?q=作用域&spm=1001.2101.3001.7020)顶部，如果在声明前访问这些变量，会导致错误：
+
+```js
+原来的代码
+var a = 1;
+function test(){
+    //console.log(a) 位置A
+class a {}
+   // console.log(a) 位置B
+}
+test();
+
+实际上提升后的
+var a = 1;
+function test(){
+    console.log(a) 位置A //在test()作用域内找得到a
+//是一个class但是存在TDZ暂时性死区，访问报错
+    class a {}
+    console.log(a) 位置B //a已经声明创建出来了
+}
+test()
+```
+
+-   in操作符，对于数组属性需要指定数字形式的**索引值**来表示数组的属性名称（固有属性除外，如length）。  
+-    所以说在这里，1 in [1]并不是表示数字1在不在数组里。而是表示数组中含不含有1这个索引index值。 数组长度为1，所以只含有的index值为0，这个表达式返回`fasle`。  
+
+- 任何数值除以0都会导致错误而终止程序执行。但是在 JavaScript 中，**会返回出特殊的值**，因此不会影响程序的执行。  
+-    比0大的数除以0，则会得到无穷大，所以 js 用 Infinity 来显示出来。  
+-    也就是1/0得到的是Infinity。`isNaN(1/0)`返回的是`false`。但是`isNaN(0/0)`返回的就是true  
+
+1 && 2 > 1，先判断右边的表达式，2>1返回true。1 && true返回的结果也是true。\>号的权重大于&&，所以先是右边开始
+
+**Array对象方法**
+
+<img src= 'https://uploadfiles.nowcoder.com/images/20170801/9067279_1501580014742_4B001C5F03B58BB2DED6B768AE0D6761'>
