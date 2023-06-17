@@ -1282,7 +1282,13 @@ apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值
 |   防抖   | 单位时间内频繁触发事件,==只执行最后一次== |           搜索框搜索输入、手机号、邮箱验证输入检测           |
 |   节流   |   单位时间内频繁触发事件,==只执行一次==   | 高频事件：鼠标移动`mousemove`、页面尺寸缩放resize、滚动条滚动scroll等等 |
 
+# 类
 
+类是用于创建对象的模板。他们用代码封装数据以处理该数据。`JS `中的类建立在原型上，但也具有某些语法和语义未与 ES5 类相似语义共享。
+
+## [定义类](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes#定义类)
+
+实际上，类是“特殊的[函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions)”，就像你能够定义的[函数表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/function)和[函数声明](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function)一样，类语法有两个组成部分：[类表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/class)和[类声明](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/class)。
 
 ## 节流综合案例
 
