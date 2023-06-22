@@ -2753,3 +2753,229 @@ AJAX 的所有操作都是通过该对象进行的。
 4. [FormData->mdn](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData)
 5. [BS的Model文档](https://v5.bootcss.com/docs/components/modal/#passing-options)
 6. [axios请求方式别名](https://www.axios-http.cn/docs/api_intro)
+
+# Day03-AJAX原理
+
+## 01.XMLHttpRequest - 基础使用
+
+![image-20230622095100853](./Typora-image/image-20230622095100853.png)
+
+AJAX原理 - XMLHttpRequest
+
+关系：axios 内部采用 XMLHttpRequest 与服务器交互
+
+### 使用 XMLHttpRequest (发送 - 请求 接收 - 响应)
+
+ 步骤：
+
+1. 创建 XMLHttpRequest 对象 
+
+2. 配置请求方法和请求 url 地址 
+
+3. 监听 loadend 事件，接收响应结果 
+4.  发起请求
+
+![image-20230622095226493](./Typora-image/image-20230622095226493.png)
+
+1. AJAX 原理是什么？
+
+➢ XMLHttpRequest 对象 
+
+2. 为什么学习 XHR？ 
+
+➢ 有更多与服务器数据通信方式
+➢ 了解 axios 内部原理 
+
+3. XHR 使用步骤？ 
+
+➢ 创建 XHR 对象
+➢ 调用 open 方法，设置 url 和请求方法
+➢ 监听 loadend 事件，接收结果 
+➢ 调用 send 方法，发起请求
+
+### XMLHttpRequest - 查询参数 
+
+定义：浏览器提供给服务器的额外信息，让服务器返回浏览器想要的数据
+
+ 语法：http://xxxx.com/xxx/xxx?**参数名1=值1&参数名2=值2**
+
+### XMLHttpRequest - 数据提交
+
+ 需求：通过 XHR 提交用户名和密码，完成注册功能 
+
+核心： 请求头设置 `Content-Type：application/json` 请求体携带 JSON 字符串
+
+## Promise（承诺）
+
+### 定义
+
+![image-20230622095631236](./Typora-image/image-20230622095631236.png)
+
+好处： 1. 逻辑更清晰 2. 了解 axios 函数内部运作机制 3. 能解决回调函数地狱问题
+
+1. 什么是 Promise？
+
+➢ 表示（管理）一个异步操作最终状态和结果值的对象 
+
+2. 为什么学习 Promise？ 
+
+➢ 成功和失败状态，可以关联对应处理程序 
+		 ➢ 了解 axios 内部原理 
+
+### Promise - 三种状态 
+
+作用：了解Promise对象如何关联的处理函数，以及代码执行顺序
+
+ 概念：一个Promise对象，必然处于以下几种状态之一 
+
+✓ 待定（pending） ：初始状态，既没有被兑现，也没有被拒绝 
+
+✓ 已兑现（fulfilled） ：意味着，操作成功完成 
+
+✓ 已拒绝（rejected） ：意味着，操作失败
+
+注意：Promise对象一旦被兑现/拒绝 .catch(回调函数) 就是已敲定了，状态无法再被改变
+
+![image-20230622095918219](./Typora-image/image-20230622095918219-1687399159124-3.png)
+
+### 总结
+
+1. Promise 对象有哪 3 种状态？ 
+   ➢ 待定 pending
+   ➢ 已兑现 fulfilled 
+   ➢ 已拒绝 rejected
+
+1. Promise 状态有什么用？
+    ➢ 状态改变后，调用关联的处理函数
+
+## 封装_简易axios
+
+需求：基于 Promise + XHR 封装 myAxios 函数，**获取省份列表**展示 步骤：
+
+1. 定义 myAxios 函数，接收配置对象，返回 Promise 对象 
+2.  发起 XHR 请求，默认请求方法为 GET 
+3. 调用成功/失败的处理程序 
+4. 使用 myAxios 函数，获取省份列表展示
+
+需求：修改 myAxios 函数支持传递查询参数，获取"辽宁省"，"大连市"**对应地区列表展示** 步骤：
+
+1. myAxios 函数调用后，判断 params 选项 
+2. 基于 URLSearchParams 转换查询参数字符串
+3. 使用自己封装的 myAxios 函数展示地区列表
+
+需求：修改 myAxios 函数支持传递请求体数据，**完成注册用户功能** 步骤：
+
+1. myAxios 函数调用后，判断 data 选项
+2.  转换数据类型，在 send 方法中发送 
+3.  使用自己封装的 myAxios 函数完成注册用户功能
+
+##  案例 - 天气预报
+
+需求：根据关键字，展示匹配城市列表 步骤： 
+
+1. 绑定 input 事件，获取关键字 
+2. 获取展示城市列表数据
+
+需求：展示用户搜索查看的城市天气 步骤：
+
+1. 检测搜索列表点击事件，获取城市 code 值 
+2.  复用获取展示城市天气函数
+
+# Day04-AJAX进阶
+
+## 同步代码和异步代码
+同步代码：逐行执行，需原地等待结果后，才继续向下执行 
+
+异步代码：调用后耗时，不阻塞代码继续执行（不必原地等待），在将来完成后触发一个回调函数
+
+1. 什么是同步代码？ 
+➢ 逐行执行，原地等待结果后，才继续向下执行 
+2. 什么是异步代码？
+➢ 调用后耗时，不阻塞代码执行，将来完成后触发回调函数 
+3. JS 中有哪些异步代码？
+➢ setTimeout / setInterval
+➢ 事件
+➢ AJAX 
+4. 异步代码如何接收结果?
+➢ 依靠回调函数来接收
+
+## 回调函数地狱
+
+需求：展示默认第一个省，第一个城市，第一个地区在下拉菜单中 
+
+概念：在回调函数中嵌套回调函数，一直嵌套下去就形成了回调函数地狱 
+
+缺点：可读性差，异常无法捕获，耦合性严重，牵一发动全身
+
+```
+ /**
+     * 目标：演示回调函数地狱
+     * 需求：获取默认第一个省，第一个市，第一个地区并展示在下拉菜单中
+     * 概念：在回调函数中嵌套回调函数，一直嵌套下去就形成了回调函数地狱
+     * 缺点：可读性差，异常无法获取，耦合性严重，牵一发动全身
+    */
+    axios({ url: 'http://hmajax.itheima.net/api/province' }).then(result => {
+      document.querySelector('.province').innerHTML = result.data.list[0];
+      const pname = result.data.list[0];
+      axios({ url: 'http://hmajax.itheima.net/api/city', params: { pname } }).then(result => {
+        console.log(result);
+        const cname = result.data.list[0];
+        document.querySelector('.city').innerHTML = cname;
+        axios({ url: 'http://hmajax.itheima.net/api/area', params: { pname, cname } }).then(result => {
+          console.log(result);
+          const area = result.data.list[0];
+          document.querySelector('.area').innerHTML = area;
+        })
+      })
+    })
+```
+
+1. 什么是回调函数地狱？
+
+➢ 在回调函数一直向下嵌套回调函数，形成回调函数地狱 
+
+2. 回调函数地狱问题？
+
+➢ 可读性差 
+
+➢ 异常捕获困难 
+
+➢ 耦合性严重
+
+## Promise - 链式调用
+
+概念：依靠 then() 方法会返回一个**新生成的 Promise 对象**特性，继续串联下一环任务，直到结束 
+
+细节：then() 回调函数中的返回值，会影响新生成的 Promise 对象最终状态和结果 
+
+好处：通过链式调用，**解决回调函数嵌套问题**
+
+![image-20230622161104678](./Typora-image/image-20230622161104678.png)
+
+1. 什么是 Promise 的链式调用？ 
+   ➢ 使用 then 方法返回新 Promise 对象特性，一直串联下去 
+2. then 回调函数中，return 的值会传给哪里？
+     ➢ 传给 then 方法生成的新 Promise 对象 
+3. Promise 链式调用有什么用？ 
+
+​	➢ 解决回调函数嵌套问题
+
+```js
+ /**
+     * 目标：把回调函数嵌套代码，改成Promise链式调用结构
+     * 需求：获取默认第一个省，第一个市，第一个地区并展示在下拉菜单中
+    */
+    let pname = '';
+    axios({ url: 'http://hmajax.itheima.net/api/province' }).then(result => {
+      pname = result.data.list[0];
+      document.querySelector('.province').innerHTML = result.data.list[0];
+      return axios({ url: "http://hmajax.itheima.net/api/city", params: { pname } })
+    }).then(result => {
+      document.querySelector('.city').innerHTML = result.data.list[0];
+      const cname = result.data.list[0];
+      return axios({ url: 'http://hmajax.itheima.net/api/area', params: { pname, cname } });
+    }).then(result => {
+      document.querySelector('.area').innerHTML = result.data.list[0];
+    })
+```
+
