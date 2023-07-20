@@ -476,4 +476,58 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 3. 打包并手动复制网页到 dist 下，引入打包后的 js，运行 
 
-核心：Webpack 打包后的代码，作用在前端网页中使用
+`核心`：Webpack 打包后的代码，作用在前端网页中使用
+
+![image-20230719185249220](./Typora-image/image-20230719185249220.png)
+
+#### 自动生成 html 文件
+
+[插件](https://webpack.docschina.org/plugins/html-webpack-plugin/)[ html-webpack-plugin](https://webpack.docschina.org/plugins/html-webpack-plugin/)[：](https://webpack.docschina.org/plugins/html-webpack-plugin/) 在 Webpack 打包时生成 html 文件
+
+步骤：
+
+1.下载 html-webpack-plugin 本地软件包
+
+2.配置 webpack.config.js 让 Webpack 拥有插件功能
+
+3.重新打包观察效果
+
+![image-20230719185501818](./Typora-image/image-20230719185501818.png)
+
+#### 打包 css 代码
+
+[加载器 ](https://webpack.docschina.org/loaders/css-loader/)[css](https://webpack.docschina.org/loaders/css-loader/)[-loader](https://webpack.docschina.org/loaders/css-loader/)[：](https://webpack.docschina.org/loaders/css-loader/)解析 css 代码
+
+[加载器](https://webpack.docschina.org/loaders/style-loader/)[ style-loader](https://webpack.docschina.org/loaders/style-loader/)[：](https://webpack.docschina.org/loaders/style-loader/)把解析后的 css 代码插入到 DOM
+
+步骤：
+
+1.准备 css 文件代码引入到 src/login/index.js 中（压缩转译处理等）
+
+2.下载 css-loader 和 style-loader 本地软件包
+
+3.配置 webpack.config.js 让 Webpack 拥有该加载器功能
+
+4.打包后观察效果
+
+注意：Webpack 默认只识别 js 代码
+
+![image-20230719185602354](./Typora-image/image-20230719185602354.png)
+
+#### 优化-提取 css 代码
+
+[插件 ](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)[mini-](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)[css](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)[-extract-plugin](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)[：](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)提取 css 代码
+
+步骤：
+
+1.下载 mini-css-extract-plugin 本地软件包  `npm i mini-css-extract-plugin --save-dev`
+
+2.配置 webpack.config.js 让 Webpack 拥有该插件功能
+
+3.打包后观察效果
+
+注意：不能和 style-loader 一起使用
+
+好处：css 文件可以被浏览器缓存，减少 js 文件体积
+
+![image-20230720104357187](./Typora-image/image-20230720104357187.png)
