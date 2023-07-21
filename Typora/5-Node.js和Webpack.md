@@ -531,3 +531,61 @@ Webpack 配置：影响 Webpack 打包过程和结果
 好处：css 文件可以被浏览器缓存，减少 js 文件体积
 
 ![image-20230720104357187](./Typora-image/image-20230720104357187.png)
+
+#### 优化-压缩过程
+
+问题：css 代码提取后没有压缩
+
+[解决](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)：使用 [css](https://webpack.docschina.org/plugins/css-minimizer-webpack-plugin/)[-minimizer-webpack-plugin](https://webpack.docschina.org/plugins/css-minimizer-webpack-plugin/) 插件
+
+步骤：
+
+1.下载 css-minimizer-webpack-plugin 本地软件包
+
+2.配置 webpack.config.js 让 webpack 拥有该功能
+
+3.打包重新观察
+
+![image-20230721110855214](./Typora-image/image-20230721110855214.png)
+
+#### 打包 less 代码
+
+[加载器](https://webpack.docschina.org/loaders/less-loader/)[ less-loader](https://webpack.docschina.org/loaders/less-loader/)[：](https://webpack.docschina.org/loaders/less-loader/)把 less 代码编译为 css 代码
+
+步骤：
+
+1.新建 less 代码（设置背景图）并引入到 src/login/index.js 中
+
+2.下载 less 和 less-loader 本地软件包
+
+3.配置 webpack.config.js 让 Webpack 拥有功能
+
+4.打包后观察效果
+
+注意：less-loader 需要配合 less 软件包使用
+
+![image-20230721111636388](./Typora-image/image-20230721111636388.png)
+
+#### 打包图片
+
+[资源模块：](https://webpack.docschina.org/guides/asset-modules/)Webpack5 内置资源模块（字体，图片等）打包，无需额外 loader
+
+步骤：
+
+1.配置 webpack.config.js 让 Webpack 拥有打包图片功能
+
+> 占位符 【hash】对模块内容做算法计算，得到映射的数字字母组合的字符串
+
+> 占位符 【ext】使用当前模块原本的占位符，例如：.png / .jpg 等字符串
+
+> 占位符 【query】保留引入文件时代码中查询参数（只有 URL 下生效）
+
+2.打包后观察效果和区别
+
+注意：判断临界值默认为 8KB
+
+> 大于 8KB 文件：发送一个单独的文件并导出 URL 地址
+
+> 小于 8KB 文件：导出一个 data URI（base64字符串）
+
+![image-20230721112254267](./Typora-image/image-20230721112254267.png)z
