@@ -594,3 +594,79 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 
 
+#### 用户登录 - 完成功能
+
+需求：完成登录功能的核心流程，以及 Alert 警告框使用
+
+步骤：
+
+1. 使用 npm 下载 axios（体验 npm 作用在前端项目中）
+2. 准备并修改 utils 工具包源代码导出实现函数
+3. 导入并编写逻辑代码，打包后运行观察效果
+
+![image-20230723100106526](./Typora-image/image-20230723100106526.png)
+
+#### 搭建开发环境
+
+问题：之前改代码，需重新打包才能运行查看，效率很低
+
+[开发环境：](https://webpack.docschina.org/guides/development/)配置 webpack-dev-server 快速开发应用程序
+
+作用：启动 Web 服务，自动检测代码变化，热更新到网页
+
+注意：dist 目录和打包内容是在内存里（更新快）
+
+步骤：
+
+1.下载 webpack-dev-server 软件包到当前项目
+
+2.设置模式为开发模式，并配置自定义命令
+
+3.使用 npm run dev 来启动开发服务器，试试热更新效果
+
+![image-20230723100314793](./Typora-image/image-20230723100314793.png)
+
+#### 打包模式
+
+[打包模式：](https://webpack.docschina.org/configuration/mode/)告知 Webpack 使用相应模式的内置优化
+
+分类：
+
+| **模式名称** | **模式名字** | **特点**                         | **场景** |
+| ------------ | ------------ | -------------------------------- | -------- |
+| 开发模式     | development  | 调试代码，实时加载，模块热替换等 | 本地开发 |
+| 生产模式     | production   | 压缩代码，资源优化，更轻量等     | 打包上线 |
+
+设置：
+
+方式1：在 webpack.config.js 配置文件设置 mode 选项
+
+方式2：在 package.json 命令行设置 mode 参数
+
+注意：命令行设置的优先级高于配置文件中的，推荐用命令行设置
+
+![image-20230723101137003](./Typora-image/image-20230723101137003.png)
+
+#### 打包模式的应用
+
+需求：在开发模式下用 style-loader 内嵌更快，在生产模式下提取 css 代码2
+
+[方案](https://webpack.docschina.org/configuration/mode/)[1](https://webpack.docschina.org/configuration/mode/)：webpack.config.js 配置导出函数，但是局限性大（只接受 2 种模式）
+
+ 方案2：借助 cross-env （跨平台通用）包命令，设置参数区分环境
+
+步骤：
+
+1.下载 cross-env 软件包到当前项目
+
+2.配置自定义命令，传入参数名和值（会绑定到 process.env 对象下）
+
+3.在 webpack.config.js 区分不同环境使用不同配置
+
+4.重新打包观察两种配置区别
+
+![image-20230723101504292](./Typora-image/image-20230723101504292.png)
+
+
+
+[方案](https://webpack.docschina.org/guides/production/)[3](https://webpack.docschina.org/guides/production/)：配置不同的 webpack.config.js （适用多种模式差异性较大情况）
