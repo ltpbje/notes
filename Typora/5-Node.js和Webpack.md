@@ -670,3 +670,15 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 
 [方案](https://webpack.docschina.org/guides/production/)[3](https://webpack.docschina.org/guides/production/)：配置不同的 webpack.config.js （适用多种模式差异性较大情况）
+
+#### 前端-注入环境变量
+
+需求：前端项目中，开发模式下打印语句生效，生产模式下打印语句失效
+
+问题：cross-env 设置的只在 Node.js 环境生效，前端代码无法访问 process.env.NODE_ENV 
+
+[解决](https://webpack.docschina.org/plugins/define-plugin)：使用 Webpack 内置的 DefinePlugin 插件
+
+作用：在编译时，将前端代码中匹配的变量名，替换为值或表达式
+
+![image-20230724110552966](./Typora-image/image-20230724110552966.png)
