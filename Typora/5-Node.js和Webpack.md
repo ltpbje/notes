@@ -418,7 +418,9 @@ Node.js 包：
 
 # Webpack 
 
-定义：本质上，**webpack** 是一个用于现代 JavaScript 应用程序的 *静态模块打包工具*。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，然后将你项目中所需的每一个模块组合成一个或多个 *bundles*，它们均为静态资源，用于展示你的内容。 
+[概念](https://www.webpackjs.com/concepts/)
+
+定义：本质上，**webpack** 是一个用于现代 JavaScript 应用程序的 *静态模块打包工具*。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，然后将你项目中所需的每一个模块组合成一个或多个 *bundles*（包），它们均为静态资源，用于展示你的内容。 
 
 静态模块：指的是编写代码过程中的，html，css，js，图片等固定内容的文件 
 
@@ -682,3 +684,80 @@ Webpack 配置：影响 Webpack 打包过程和结果
 作用：在编译时，将前端代码中匹配的变量名，替换为值或表达式
 
 ![image-20230724110552966](./Typora-image/image-20230724110552966.png)
+
+#### 开发环境调错 - source map
+
+问题：代码被压缩和混淆，无法正确定位源代码位置（行数和列数）
+
+[source map](https://webpack.docschina.org/guides/development/)[：](https://webpack.docschina.org/guides/development/)可以准确追踪 error 和 warning 在原始代码的位置
+
+设置：webpack.config.js 配置 [devtool](https://webpack.docschina.org/configuration/devtool/)[ ](https://webpack.docschina.org/configuration/devtool/)[选项](https://webpack.docschina.org/configuration/devtool/)
+
+inline-source-map 选项：把源码的位置信息一起打包在 js 文件内
+
+注意：source map 仅适用于开发环境，不要在生产环境使用（防止被轻易查看源码位置）
+
+![image-20230725085425773](./Typora-image/image-20230725085425773.png)
+
+#### 解析别名 alias
+
+[解析别名：](https://webpack.docschina.org/configuration/resolve)配置模块如何解析，创建 import 引入路径的别名，来确保模块引入变得更简单
+
+例如：原来路径如图，比较长而且相对路径不安全
+
+解决：在 webpack.config.js 中配置解析别名 @ 来代表 src 绝对路径
+
+1. [解析别名]([https://webpack.docschina.org/configuration/resolve#resolvealias](https://webpack.docschina.org/configuration/resolve))：配置模块如何解析，创建 import 或 require 的别名，来确保模块引入变得更简单
+
+2. 例如：
+
+   1. 原来路径如下：
+
+      ```js
+      import { checkPhone, checkCode } from '../src/utils/check.js'
+      ```
+
+   2. 配置解析别名：在 webpack.config.js 中设置
+
+      ```js
+      // ...
+      
+      const config = {
+        // ...
+        resolve: {
+          alias: {
+            '@': path.resolve(__dirname, 'src')
+          }
+        }
+      }
+      ```
+
+   3. 这样我们以后，引入目标模块写的路径就更简单了
+
+      ```js
+      import { checkPhone, checkCode } from '@/utils/check.js'
+      ```
+
+3. 修改代码的路径后，重新打包观察效果是否正常！
+
+## 优化-CDN使用
+
+[CDN](https://developer.mozilla.org/zh-CN/docs/Glossary/CDN)[定义](https://developer.mozilla.org/zh-CN/docs/Glossary/CDN)：内容分发网络，指的是一组分布在各个地区的服务器
+
+作用：把静态资源文件/第三方库放在 CDN 网络中各个服务器中，供用户就近请求获取
+
+好处：减轻自己服务器请求压力，就近请求物理延迟低，配套缓存策略
+
+![image-20230725112936192](./Typora-image/image-20230725112936192.png)
+
+![image-20230725113034133](./Typora-image/image-20230725113034133.png)
+
+需求：开发模式使用本地第三方库，生产模式下使用 CDN 加载引入
+
+步骤：
+
+1.在 html 中引入第三方库的 [CDN ](https://www.bootcdn.cn/)[地址](https://www.bootcdn.cn/)[ ](https://www.bootcdn.cn/)并用模板语法判断
+
+2.配置 webpack.config.js 中 [externals](https://webpack.docschina.org/configuration/externals) 外部扩展选项（防止某些 import 的包被打包）
+
+3.两种模式下打包观察效果
