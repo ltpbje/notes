@@ -761,3 +761,147 @@ inline-source-map 选项：把源码的位置信息一起打包在 js 文件内
 2.配置 webpack.config.js 中 [externals](https://webpack.docschina.org/configuration/externals) 外部扩展选项（防止某些 import 的包被打包）
 
 3.两种模式下打包观察效果
+
+步骤：
+
+1.在 html 中引入第三方库的 [CDN ](https://www.bootcdn.cn/)[地址](https://www.bootcdn.cn/)[ ](https://www.bootcdn.cn/)并用模板语法判断
+
+```html
+<% if(htmlWebpackPlugin.options.useCdn){ %>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+<% } %>
+```
+
+2.配置 webpack.config.js 中 [externals](https://webpack.docschina.org/configuration/externals) 外部扩展选项（防止某些 import 的包被打包）
+
+```js
+// 生产环境下使用相关配置
+if (process.env.NODE_ENV === 'production') {
+  // 外部扩展（让 webpack 防止 import 的包被打包进来）
+  config.externals = {
+    // key：import from 语句后面的字符串
+    // value：留在原地的全局变量（最好和 cdn 在全局暴露的变量一致）
+    'bootstrap/dist/css/bootstrap.min.css': 'bootstrap',
+    'axios': 'axios'
+  }
+}
+```
+
+```js
+// ...
+const config = {
+  // ...
+  plugins: [
+    new HtmlWebpackPlugin({
+      // ...
+      // 自定义属性，在 html 模板中 <%=htmlWebpackPlugin.options.useCdn%> 访问使用
+      useCdn: process.env.NODE_ENV === 'production'
+    })
+  ]
+}
+```
+
+3.两种模式下打包观察效果
+
+## 多页面打包
+
+[单页面](https://developer.mozilla.org/zh-CN/docs/Glossary/SPA)：单个 html 文件，切换 DOM 的方式实现不同业务逻辑展示，后续 Vue/React 会学到
+
+多页面：多个 html 文件，切换页面实现不同业务逻辑展示
+
+需求：把黑马头条-数据管理平台-内容页面一起引入打包使用
+
+步骤：
+
+1.准备源码（html，css，js）放入相应位置，并改用模块化语法导出
+
+2.下载 form-serialize 包并导入到核心代码中使用
+
+3.配置 webpack.config.js 多入口和多页面的设置
+
+4.重新打包观察效果
+
+2. 步骤：
+
+   1. 准备源码（html，css，js）放入相应位置，并改用模块化语法导出
+
+   2. 下载 form-serialize 包并导入到核心代码中使用
+
+   3. 配置 webpack.config.js 多入口和多页面的设置
+
+      ```js
+      // ...
+      const config = {
+        entry: {
+          '模块名1': path.resolve(__dirname, 'src/入口1.js'),
+          '模块名2': path.resolve(__dirname, 'src/入口2.js'),
+        },
+        output: {
+          path: path.resolve(__dirname, 'dist'),
+          filename: './[name]/index.js'  
+        }
+        plugins: [
+          new HtmlWebpackPlugin({
+            template: './public/页面2.html', // 模板文件
+            filename: './路径/index.html', // 输出文件
+            chunks: ['模块名2']
+          })
+          new HtmlWebpackPlugin({
+            template: './public/页面2.html', // 模板文件
+            filename: './路径/index.html', // 输出文件
+            chunks: ['模块名2']
+          })
+        ]
+      }
+      ```
+
+   4. 重新打包观察效果
+
+## 案例-发布文章页面打包
+
+需求：把发布文章页面一起打包
+
+步骤：
+
+1.准备发布文章页面源代码，改写成模块化的导出和导入方式
+
+2.修改 webpack.config.js 的配置，增加一个入口和出口
+
+3.打包观察效果
+
+## 优化-分割公共代码
+
+需求：把 2 个以上页面引用的公共代码提取
+
+步骤：
+
+1.配置 webpack.config.js 的 splitChunks 分割功能
+
+```js
+// ...
+const config = {
+  // ...
+  optimization: {
+    // ...
+    splitChunks: {
+      chunks: 'all', // 所有模块动态非动态移入的都分割分析
+      cacheGroups: { // 分隔组
+        commons: { // 抽取公共模块
+          minSize: 0, // 抽取的chunk最小大小字节
+          minChunks: 2, // 最小引用数
+          reuseExistingChunk: true, // 当前 chunk 包含已从主 bundle 中拆分出的模块，则它将被重用
+          name(module, chunks, cacheGroupKey) { // 分离出模块文件名
+            const allChunksNames = chunks.map((item) => item.name).join('~') // 模块名1~模块名2
+            return `./js/${allChunksNames}` // 输出到 dist 目录下位置
+          }
+        }
+      }
+    }
+      
+ 
+```
+
+
+
+2.打包观察效果
+
