@@ -275,6 +275,36 @@ v-html = "表达式 " → 动态设置元素 innerHTML
 
 v-for = "(item, index) in 数组"
 
-Ø item 每一项， index 下标
+Ø ==item== 每一项， ==index== 下标
 
-Ø 省略 index: v-for = "item in 数组"
+Ø 省略 index: v-for = "==item in 数组=="
+
+### 图书管理案例 - 小黑的书架
+
+**明确需求：**
+
+① 基本渲染 → ==v-for==
+
+② 删除功能 → 用 ==filter== 根据 id 从数组中删除对应项
+
+![image-20230805102140625](./image/image-20230805102140625.png)
+
+### v-for 中的 key
+
+**语法：**==key属性 = "唯一标识"==
+
+**作用：**给列表项添加的唯一标识。便于Vue进行列表项的正确排序复用。
+
+```html
+<ul>
+    <li v-for="(item, index) in booksList" :key="item.id">
+        <span>{{ item.name }}</span>
+        <span>{{ item.author }}</span>
+        <button @click="del(item.id)">删除</button>
+    </li>
+</ul>
+```
+
+key作用：给元素添加的==唯一标识==。
+
+![image-20230805102741904](./image/image-20230805102741904.png)
