@@ -501,3 +501,139 @@ computed: {
 ![image-20230816220941045](./image/image-20230816220941045.png)
 
 ### 综合案例 - 成绩案例
+
+需求说明：
+
+1. 渲染功能
+2. 删除功能
+3. 添加功能
+
+4. 统计总分，求平均分
+
+![image-20230819095615304](./image/image-20230819095615304.png)
+
+**业务技术点总结：**
+
+1. 渲染功能（不及格高亮）
+
+==v-if v-else== v-for ==v-bind:class==
+
+2. 删除功能
+
+点击传参 filter过滤覆盖原数组
+
+==.prevent== 阻止默认行为
+
+3. 添加功能
+
+v-model ==v-model修饰符(.trim .number)==
+
+==unshift== 修改数组更新视图
+
+4. 统计总分，求平均分
+
+==计算属性== reduce求和
+
+## watch 侦听器（监视器）
+
+作用：==监视数据变化==，执行一些 业务逻辑 或 异步操作。
+
+语法：
+
+==① 简单写法 → 简单类型数据，直接监视==
+
+```js
+data: { 
+    words: '苹果',
+    obj: {
+        words: '苹果'
+    }
+},
+watch: {
+    // 该方法会在数据变化时，触发执行
+    数据属性名 (newValue, oldValue) {
+        一些业务逻辑 或 异步操作。
+    },
+    '对象.属性名' (newValue, oldValue) {
+        一些业务逻辑 或 异步操作。
+    }
+}
+```
+
+![image-20230819220559323](./image/image-20230819220559323.png)
+
+② 完整写法 → 添加额外==配置项==
+
+(1) ==deep: true== 对复杂类型深度监视
+
+(2) ==immediate: true== 初始化立刻执行一次handler方法
+
+```js
+data: {
+    obj: {
+        words: '苹果',
+        lang: 'italy'
+    },
+},
+watch: {// watch 完整写法
+    数据属性名: {
+    deep: true, // 深度监视
+    handler (newValue) {
+        console.log(newValue)
+    }
+}
+}
+
+
+data: {
+    obj: {
+        words: '苹果',
+        lang: 'italy'
+    },
+},
+watch: {// watch 完整写法
+数据属性名: {
+    deep: true, // 深度监视
+    immediate: true, // 是否立刻执行一次handler
+    handler (newValue) {
+        console.log(newValue)
+    }
+ }
+}
+```
+
+
+
+![image-20230819220612492](./image/image-20230819220612492.png)
+
+需求：默认文本，==一进入页面，立刻翻译==一次
+
+watch侦听器的语法有几种？
+
+① 简单写法 → 监视简单类型的变化
+
+```js
+watch: {
+    数据属性名 (newValue, oldValue) {
+        一些业务逻辑 或 异步操作。
+    },
+    '对象.属性名' (newValue, oldValue) {
+        一些业务逻辑 或 异步操作。
+    }
+}
+```
+
+② 完整写法 → 添加额外的配置项 (深度监视复杂类型，立刻执行)
+
+```js
+watch: {// watch 完整写法
+    数据属性名: {
+        deep: true, // 深度监视(针对复杂类型)
+        immediate: true, // 是否立刻执行一次handler
+        handler (newValue) {
+            console.log(newValue)
+        }
+    }
+}
+```
+
