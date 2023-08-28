@@ -198,7 +198,7 @@ axios 使用 语法：
 
  语法：http://xxxx.com/xxx/xxx`?`参数名1=值1&参数名2=值2
 
-![image-20230624205756688](./Typora-image/image-20230624205756688.png)
+![f](./Typora-image/image-20230624205756688.png)
 
 语法：使用 axios 提供的 params 选项 
 
