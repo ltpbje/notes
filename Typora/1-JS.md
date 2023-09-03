@@ -1141,15 +1141,15 @@ test()方法用来查看正则表达式与指定的字符串是否匹配
 
 ![image-20230521161259471](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202305211614346.png) 
 
-![image-20230522084748698](./Typora-image/image-20230522084748698.png)
+![image-20230522084748698](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014807.png)
 
-![image-20230522084332670](./Typora-image/image-20230522084332670.png)
+![image-20230522084332670](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014808.png)
 
 ### 小兔鲜登录页面
 
-![image-20230522102645925](./Typora-image/image-20230522102645925.png)
+![image-20230522102645925](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014809.png)
 
-![image-20230522102720054](./Typora-image/image-20230522102720054.png)
+![image-20230522102720054](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014810.png)
 
 # 个人实战文档
 
@@ -1163,7 +1163,7 @@ http://erabbit.itheima.net/#/product/3995139
 
 ## 顶部导航模块
 
-<img src="./typora-image/assets/444.gif">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014811.gif">
 
 需求：
 
@@ -1173,13 +1173,13 @@ http://erabbit.itheima.net/#/product/3995139
 
 ## 图片切换模块
 
- <img src="./typora-image/assets/111.gif">
+ <img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014812.gif">
 
 
 
 ## 放大镜效果
 
-<img src="./typora-image/assets/555.gif">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014813.gif">
 
 
 
@@ -1298,11 +1298,11 @@ http://erabbit.itheima.net/#/product/3995139
 
 ### 点击模块
 
- <img src="./typora-image/assets/666.gif">
+ <img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014814.gif">
 
 ### tab栏切换模块
 
-<img src="./typora-image/assets/777.gif">
+<img src="https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291014815.gif">
 
 
 

@@ -6,7 +6,7 @@
 
 定义:
 
-![image-20230707111521355](./Typora-image/image-20230707111521355.png)
+![image-20230707111521355](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006680.png)
 
 作用：使用 Node.js 编写服务器端程序
 
@@ -16,7 +16,7 @@
 
 ## 什么是前端工程化？
 
-前端工程化：开发项目直到上线，过程中集成的所有工具和技术 Node.js 是前端工程化的基础（因为 Node.js 可以主动读取前端代码内容）![image-20230707111806865](./Typora-image/image-20230707111806865.png)
+前端工程化：开发项目直到上线，过程中集成的所有工具和技术 Node.js 是前端工程化的基础（因为 Node.js 可以主动读取前端代码内容）![image-20230707111806865](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006682.png)
 
 ## Node.js 为何能执行 JS？
 
@@ -24,7 +24,7 @@
 
  其次：Node.js 是基于 Chrome V8 引擎进行封装（运行环境） 
 
-区别：都支持 ECMAScript 标准语法，Node.js 有独立的 API![image-20230707112317908](./Typora-image/image-20230707112317908.png)
+区别：都支持 ECMAScript 标准语法，Node.js 有独立的 API![image-20230707112317908](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006683.png)
 
 ==注意：Node.js 环境没有 DOM 和 BOM 等==
 
@@ -46,13 +46,13 @@
 
 2. 如果有显示，则代表安装成功
 
-![image-20230707112513751](./Typora-image/image-20230707112513751.png)
+![image-20230707112513751](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006684.png)
 
 ### 使用 Node.js
 
 需求：新建 JS 文件，并编写代码后，在 node 环境下执行 
 
-命令：在 VSCode 集成终端中，输入 node xxx.js，回车即可执行![image-20230707112700420](./Typora-image/image-20230707112700420.png)
+命令：在 VSCode 集成终端中，输入 node xxx.js，回车即可执行![image-20230707112700420](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006685.png)
 
 1. Node.js 是什么？ 
 ➢ 基于 Chrome 的 V8 引擎封装，独立执行 JavaScript 代码的环境 
@@ -115,7 +115,7 @@ URL 中的端口号
 
 端口号范围：0-65535 之间的任意整数 
 
-![image-20230707223606990](./Typora-image/image-20230707223606990-1688740568272-1.png)
+![image-20230707223606990](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006686.png)
 
 注意：http 协议，默认访问 80 端口 http://hmajax.itheima.net:80/api/province
 
@@ -125,7 +125,7 @@ URL 中的端口号
 
 注意：0-1023t 和一些特定端口号被占用，我们自己编写服务程序请避开使用
 
-![image-20230708164730449](./Typora-image/image-20230708164730449.png)
+![image-20230708164730449](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006687.png)
 
 1. 端口号的作用？
 
@@ -168,7 +168,7 @@ URL 中的端口号
 
 需求：基于 Web 服务，开发提供网页资源的功能 浏览时钟   
 
-![image-20230712111122111](./Typora-image/image-20230712111122111.png)
+![image-20230712111122111](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006688.png)
 
 步骤： 
 
@@ -300,7 +300,7 @@ URL 中的端口号
 
 ## npm - 软件包管理器
 
-![image-20230719180636533](./Typora-image/image-20230719180636533.png)
+![image-20230719180636533](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006689.png)
 
 使用： 
 
@@ -312,7 +312,7 @@ URL 中的端口号
 
 需求：使用 dayjs 软件包，来格式化日期时间
 
-1 图解：![image-20230719180754691](./Typora-image/image-20230719180754691.png)
+1 图解：![image-20230719180754691](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006690.png)
 
 1. npm 软件包管理器作用？
 
@@ -338,7 +338,7 @@ URL 中的端口号
 
 原因：因为，自己用 npm 下载依赖比磁盘传递拷贝要快得多 
 
-解决：项目终端输入命令：npm i 下载 package.json 中记录的所有软件包![image-20230719181328823](./Typora-image/image-20230719181328823.png)
+解决：项目终端输入命令：npm i 下载 package.json 中记录的所有软件包![image-20230719181328823](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006691.png)
 
 1. 当项目中只有 package.json 没有 node_modules 怎么办？ 
 
@@ -392,7 +392,7 @@ Node.js 模块化：
 
 使用：采用特定的标准语法导出和导入进行使用
 
-![image-20230719182027572](./Typora-image/image-20230719182027572.png)
+![image-20230719182027572](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006692.png)
 
 CommonJS 标准：一般应用在 Node.js 项目环境中 
 
@@ -410,11 +410,11 @@ Node.js 包：
 
 ​		✓ 全局软件包：作用在所有项目，一般封装的命令/工具，支撑项目运行
 
-![image-20230719182208231](./Typora-image/image-20230719182208231.png)
+![image-20230719182208231](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006693.png)
 
 常用命令：
 
-![image-20230719182222762](./Typora-image/image-20230719182222762.png)
+![image-20230719182222762](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006694.png)
 
 # Webpack 
 
@@ -436,7 +436,7 @@ Node.js 包：
 
 因为：很多项目还是基于 Webpack 构建，并为 Vue React 脚手架使用做铺垫！
 
-![image-20230719183216728](./Typora-image/image-20230719183216728.png)
+![image-20230719183216728](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006695.png)
 
 ## 使用 Webpack
 
@@ -450,7 +450,7 @@ Node.js 包：
 
 3. 运行打包命令，自动产生 dist 分发文件夹（压缩和优化后，用于最终运行的代码）
 
-![image-20230719183409298](./Typora-image/image-20230719183409298.png)
+![image-20230719183409298](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006696.png)
 
 ### 修改 Webpack 打包入口和出口
 
@@ -466,7 +466,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 注意：只有和入口产生直接/间接的引入关系，才会被打包
 
-![image-20230719183551722](./Typora-image/image-20230719183551722.png)
+![image-20230719183551722](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006697.png)
 
 ### 案例 用户登录 - 长度判断 
 
@@ -482,7 +482,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 `核心`：Webpack 打包后的代码，作用在前端网页中使用
 
-![image-20230719185249220](./Typora-image/image-20230719185249220.png)
+![image-20230719185249220](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006698.png)
 
 #### 自动生成 html 文件
 
@@ -496,7 +496,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 3.重新打包观察效果
 
-![image-20230719185501818](./Typora-image/image-20230719185501818.png)
+![image-20230719185501818](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006699.png)
 
 #### 打包 css 代码
 
@@ -516,7 +516,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 注意：Webpack 默认只识别 js 代码
 
-![image-20230719185602354](./Typora-image/image-20230719185602354.png)
+![image-20230719185602354](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006700.png)
 
 #### 优化-提取 css 代码
 
@@ -534,7 +534,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 好处：css 文件可以被浏览器缓存，减少 js 文件体积
 
-![image-20230720104357187](./Typora-image/image-20230720104357187.png)
+![image-20230720104357187](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006701.png)
 
 #### 优化-压缩过程
 
@@ -550,7 +550,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 3.打包重新观察
 
-![image-20230721110855214](./Typora-image/image-20230721110855214.png)
+![image-20230721110855214](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006702.png)
 
 #### 打包 less 代码
 
@@ -568,7 +568,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 注意：less-loader 需要配合 less 软件包使用
 
-![image-20230721111636388](./Typora-image/image-20230721111636388.png)
+![image-20230721111636388](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006703.png)
 
 #### 打包图片
 
@@ -592,7 +592,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 > 小于 8KB 文件：导出一个 data URI（base64字符串）
 
-![image-20230721112254267](./Typora-image/image-20230721112254267.png)
+![image-20230721112254267](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006704.png)
 
 
 
@@ -606,7 +606,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 2. 准备并修改 utils 工具包源代码导出实现函数
 3. 导入并编写逻辑代码，打包后运行观察效果
 
-![image-20230723100106526](./Typora-image/image-20230723100106526.png)
+![image-20230723100106526](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006705.png)
 
 #### 搭建开发环境
 
@@ -626,7 +626,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 3.使用 npm run dev 来启动开发服务器，试试热更新效果
 
-![image-20230723100314793](./Typora-image/image-20230723100314793.png)
+![image-20230723100314793](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006706.png)
 
 #### 打包模式
 
@@ -647,7 +647,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 注意：命令行设置的优先级高于配置文件中的，推荐用命令行设置
 
-![image-20230723101137003](./Typora-image/image-20230723101137003.png)
+![image-20230723101137003](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006707.png)
 
 #### 打包模式的应用
 
@@ -667,7 +667,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 4.重新打包观察两种配置区别
 
-![image-20230723101504292](./Typora-image/image-20230723101504292.png)
+![image-20230723101504292](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006708.png)
 
 
 
@@ -683,7 +683,7 @@ Webpack 配置：影响 Webpack 打包过程和结果
 
 作用：在编译时，将前端代码中匹配的变量名，替换为值或表达式
 
-![image-20230724110552966](./Typora-image/image-20230724110552966.png)
+![image-20230724110552966](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006709.png)
 
 #### 开发环境调错 - source map
 
@@ -697,7 +697,7 @@ inline-source-map 选项：把源码的位置信息一起打包在 js 文件内
 
 注意：source map 仅适用于开发环境，不要在生产环境使用（防止被轻易查看源码位置）
 
-![image-20230725085425773](./Typora-image/image-20230725085425773.png)
+![image-20230725085425773](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006710.png)
 
 #### 解析别名 alias
 
@@ -748,9 +748,9 @@ inline-source-map 选项：把源码的位置信息一起打包在 js 文件内
 
 好处：减轻自己服务器请求压力，就近请求物理延迟低，配套缓存策略
 
-![image-20230725112936192](./Typora-image/image-20230725112936192.png)
+![image-20230725112936192](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006711.png)
 
-![image-20230725113034133](./Typora-image/image-20230725113034133.png)
+![image-20230725113034133](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202308291006712.png)
 
 需求：开发模式使用本地第三方库，生产模式下使用 CDN 加载引入
 
