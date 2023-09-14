@@ -1188,3 +1188,136 @@ this.msg = msg
 Bus.$emit('sendMsg', '这是一个消息')
 ```
 
+![image-20230914203829826](./image/image-20230914203829826.png)
+
+### 非父子通信 (拓展) - provide & inject
+
+provide & inject 作用：==跨层级==共享数据。
+
+1. 父组件 provide 提供数据
+
+```js
+export default {
+provide () {
+	return {
+        // 普通类型【非响应式】
+        color: this.color, 
+        // 复杂类型【响应式】
+        userInfo: this.userInfo, 
+        }
+}
+}
+```
+
+2. 子/孙组件 inject 取值使用
+
+```js
+export default {
+    inject: ['color','userInfo'],
+    created () {
+        console.log(this.color, this.userInfo)
+    }
+}
+```
+
+![image-20230914204112490](./image/image-20230914204112490.png)
+
+
+
+## 进阶语法
+
+### v-model 原理
+
+**原理：**v-model本质上是一个==语法糖==。例如应用在输入框上，就是 ==value属性== 和 ==input事件== 的合写。
+
+**作用：**提供数据的双向绑定
+
+① 数据变，视图跟着变 ==:value== 
+
+② 视图变，数据跟着变 ==@input==
+
+**注意：**==$event== 用于在模板中，获取事件的形参
+
+```vue
+<template>
+    <div id="app" >
+        <input v-model="msg" type="text">
+        <input :value="msg" @input="msg = $event.target.value" type="text">
+    </div>
+</template>
+```
+
+### 表单类组件封装 & v-model 简化代码
+
+1. 表单类组件 ==封装==→ 实现 子组件 和 父组件数据 的==双向绑定==
+
+① ==父传子==：数据 应该是父组件 ==props== 传递 过来的，==拆解 v-model== 绑定数据
+
+② ==子传父==：监听输入，子传父传值给父组件修改
+
+父组件（使用）
+
+```vue
+<BaseSelect :cityId="selectId" @事件名="selecteId = $event" />
+```
+
+子组件（封装）
+
+```vue
+<select :value="cityId" @change="handleChange">...</select>
+<script>
+props: {
+    cityId: String
+},
+methods: {
+    handleChange (e) {
+        this.$emit('事件名', e.target.value)
+    }
+}
+</script>
+```
+
+2. 父组件` v-model` ==简化代码==，实现 子组件 和 父组件数据 ==双向绑定==
+
+① 子组件中：props 通过 ==value== 接收，事件触发 ==input== 
+
+②父组件中：==v-model==给组件直接绑数据==(:value+@input)==
+
+父组件（使用）
+
+```vue
+<BaseSelect v-model="selectId"></BaseSelect>
+```
+子组件（封装）
+
+```vue
+<select :value="value" @change="handleChange">...</select>
+<script>
+props: {
+    value: String
+},
+methods: {
+    handleChange (e) {
+        this.$emit('事件名', e.target.value)
+    }
+}
+</script>
+```
+
+![image-20230914205600185](./image/image-20230914205600185.png)
+
+1. 表单类基础组件封装思路
+
+① ==父传子==：父组件动态传递 ==prop== 数据，拆解v-model，绑定数据
+
+② ==子传父==：监听输入，子传父传值给父组件修改
+
+本质：实现了实现 ==子组件 和 父组件数据 的双向绑定==
+
+2. v-model 简化代码的核心步骤
+
+① 子组件中：props 通过 ==value== 接收，事件触发 ==input== 
+
+② 父组件中： ==v-model== 给组件直接绑数据
+
+3. 小作业：封装输入框组件，利用v-model简化代码
