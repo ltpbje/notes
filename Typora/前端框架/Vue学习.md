@@ -1321,3 +1321,159 @@ methods: {
 ② 父组件中： ==v-model== 给组件直接绑数据
 
 3. 小作业：封装输入框组件，利用v-model简化代码
+
+### .sync 修饰符
+
+**作用：**可以实现 ==子组件== 与 ==父组件数据== 的 ==双向绑定==，简化代码
+
+**特点：**prop属性名，可以==自定义==，非固定为 ==value==
+
+**场景：**封装弹框类的基础组件， ==visible属性== true显示 false隐藏
+
+**本质：**就是 ==:属性名== 和 ==@update:属性名== 合写
+
+### ref 和 $refs 
+
+**作用：**利用 ref 和 $refs 可以用于 ==获取 dom 元素==, 或 ==组件实例==
+
+**==特点==：**查找范围 → ==当前组件内 (更精确稳定)==
+
+**① 获取 dom：**
+
+1. 目标标签 – 添加 ref 属性
+
+` <div ref="chartRef">我是渲染图表的容器</div> `
+
+2. 恰当时机, 通过 this.$refs.xxx, 获取目标标签
+
+   ```js
+   mounted () {
+   	console.log(this.$refs.chartRef)
+   },
+   // 基于准备好的dom，初始化echarts实例
+   const myChart = echarts.init(document.querySelector('.box'));
+   ```
+
+   **② 获取组件：**
+
+   1. 目标组件 – 添加 ref 属性
+
+    ```vue
+     <BaseForm ref="baseForm"></BaseForm> 
+    ```
+
+      
+   
+   2. 恰当时机, 通过 this.$refs.xxx, 获取目标组件，就可以==调用组件对象里面的方法==
+   
+   ```vue
+   this.$refs.baseForm.组件方法()
+   ```
+   
+   ### Vue异步更新、$nextTick
+
+#### Vue的异步更新机制是什么
+
+简单来说，当Vue的数据发生变化时，它并不会立即更新页面，而是将更新操作放在一个队列中，等到浏览器空闲时再批量执行这些更新操作。这样做的好处是，可以减少浏览器的重绘次数，提高页面的性能。
+
+**需求：编辑标题, 编辑框自动聚焦**
+
+1. 点击编辑，显示编辑框
+2. 让编辑框，==立刻获取焦点==
+
+```js
+this.isShowEdit = true // 显示输入框
+this.$refs.inp.focus() // 获取焦点
+```
+
+问题："显示之后"，立刻获取焦点是不能成功的！
+
+==**原因：**Vue 是 异步更新 DOM (提升性能)==![image-20230923163303219](./image/image-20230923163303219.png)
+
+$nextTick：==等 DOM 更新后,== 才会触发执行此方法里的函数体
+
+**语法:** this.$nextTick(函数体) 
+
+```js
+this.$nextTick(() => {
+​	this.$refs.inp.focus()
+})
+```
+
+1. Vue是异步更新 DOM 的
+2. 想要在 DOM 更新完成之后做某件事，可以使用 $nextTick
+
+```
+this.$nextTick(() => {
+	// 业务逻辑
+})
+```
+
+# Vue 核心技术与实战day05
+
+## **目录**
+
+自定义指令
+
+基本语法 (全局&局部注册) / 指令的值 / v-loading 指令封装
+
+ 插槽
+
+默认插槽 / 后备内容 / 具名插槽 / 作用域插槽
+
+ 综合案例：商品列表
+
+MyTag 组件封装 / MyTable 组件封装
+
+ 路由入门
+
+单页应用程序 / 路由概念 / VueRouter 的基本使用 / 组件目录存放问题
+
+## 自定义指令
+
+自定义指令：自己定义的指令, 可以==封装一些 dom 操作==， 扩展额外功能
+
+全局注册 - 语法
+
+```js
+Vue.directive('指令名', {
+"inserted" (el) {
+		// 可以对 el 标签，扩展额外功能
+		el.focus()
+	}
+})
+```
+
+局部注册 – 语法
+
+
+```js
+directives: {"指令名": {
+    inserted () {
+    // 可以对 el 标签，扩展额外功能
+        el.focus()
+    }
+}
+}
+<input v-指令名 type="text">
+使用：
+mounted () {
+```
+
+需求：当页面加载时，让元素将获得焦点
+ ==(autofocus在safari浏览器有兼容性)==
+ 操作dom:dom元素.focus()
+
+```js
+mounted (){
+	this.$refs.inp.focus()
+}
+```
+
+麻烦
+使用：
+
+```js
+<input v-指令名type="text">
+```
+   简洁
