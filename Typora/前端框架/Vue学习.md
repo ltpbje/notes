@@ -249,7 +249,7 @@ v-html = "表达式 " → 动态设置元素 innerHTML
 
 ### Vue 指令 v-bind :
 
-**1. 作用：** 动态的设置html的标签属性 → src url title ... 
+**1. 作用：** 动态的设置html的标签属性 → src url title /... 
 
 **2. 语法：** v-bind:属性名="表达式"
 
@@ -1477,3 +1477,241 @@ mounted (){
 <input v-指令名type="text">
 ```
    简洁
+
+自定义指令的作用?
+
+封装一些 dom 操作，扩展额外功能，例如获取焦点
+
+自定义指令的使用步骤?
+
+1. 注册 (全局注册 或 局部注册)
+
+在 inserted 钩子函数中，配置指令dom逻辑
+
+2. 标签上 v-指令名 使用
+
+### 指令的值
+
+需求：实现一个 color 指令 - 传入不同的颜色, 给标签设置文字颜色
+
+●语法：在绑定指令时，可以通过“等号”的形式为指令 绑定 ==具体的参数值==
+
+```js
+<div v-color="color">我是内容</div>
+```
+
+●通过 ==binding.value== 可以拿到指令值，指令值修改会 ==触发 update 函数==。
+
+```vue
+directives: {
+color: {
+    inserted (el, binding) {
+        el.style.color = binding.value
+    },
+	update (el, binding) {	
+		el.style.color = binding.value
+		}
+	}
+}
+```
+
+1. 通过指令的值相关语法，可以应对更复杂指令封装场景
+2. ==指令值的语法：==
+
+==① v-指令名 = "指令值"== ，通过 等号 可以绑定指令的值
+
+② 通过 ==binding.value== 可以拿到指令的值
+
+③ 通过 ==update 钩子==，可以监听指令值的变化，进行dom更新操作
+
+### v-loading 指令封装
+
+场景：实际开发过程中，发送==请求需要时间==，在请求的数据未回来时，页面会处于==空白状态== => ==用户体验不好==
+
+需求：封装一个 v-loading 指令，实现加载中的效果
+分析：
+
+1. 本质loading效果就是一个蒙层，盖在了盒子上
+
+2. 数据请求中，开启loading状态，添加蒙层
+
+3. 数据请求完毕，关闭loading状态，移除蒙层
+
+
+实现：
+
+1. 准备一个loading类，通过伪元素定位，设置宽高，实现蒙层
+2. 开启关闭loading状态（添加移除蒙层），本质只需要添加移除类即可
+3. 结合自定义指令的语法进行封装复用
+
+```vue
+.loading:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff url("./loading.gif")
+    no-repeat center;
+}
+```
+
+1. 通过指令相关语法，封装了指令 v-loading 实现了请求的loading效果
+2. 核心思路：
+
+(1) 准备类名 loading，通过伪元素提供遮罩层
+
+(2) 添加或移除类名，实现loading蒙层的添加移除
+
+(3) 利用指令语法，封装 v-loading 通用指令
+
+==inserted== 钩子中，==binding.value== 判断指令的值，设置默认状态
+
+==update== 钩子中，==binding.value== 判断指令的值，==更新类名状态==
+
+## 插槽
+
+### 默认插槽
+
+作用：让组件内部的一些 ==结构== 支持 ==自定义==
+
+需求: 将需要多次显示的对话框, 封装成一个组件
+
+问题：组件的内容部分，==不希望写死==，希望能使用的时候==自定义==。怎么办？
+
+![image-20231001110921021](./image/image-20231001110921021.png)
+
+插槽基本语法：
+
+1. 组件内需要定制的结构部分，改用`<slot></slot>`占位
+2. 使用组件时, `<MyDialog></MyDialog>`标签内部, 传入结构替换slot
+
+```vue
+<template>
+    <div class="dialog">
+    <div class="dialog-header">
+        <h3>友情提示</h3>
+        <span class="close">✖ </span>
+    </div>
+    <div class="dialog-content">
+        <slot></slot>
+    </div>
+        <div class="dialog-footer">
+            <button>取消</button>
+            <button>确认</button>
+        </div>
+    </div>
+</template>
+<MyDialog>
+	你确认要退出本系统么？
+</MyDialog>
+```
+
+场景：当组件内某一部分结构不确定，想要自定义怎么办?
+
+用插槽 slot 占位封装
+
+使用：插槽使用的基本步骤?
+
+1. 先在组件内用 slot 占位
+2. 使用组件时, 传入具体标签内容插入
+
+### 后备内容（默认值）
+
+通过插槽完成了内容的定制，传什么显示什么, 但是如果不传，则是空白
+
+能否给插槽设置 ==默认显示内容== 呢？
+
+插槽后备内容：封装组件时，可以为预留的 `<slot>` 插槽提供后备内容（默认内容）。
+
+● 语法: 在 `<slot> `标签内，放置内容, 作为默认显示内容
+
+```vue
+<MyDialog></MyDialog>
+```
+
+● 效果:
+
+  	●外部使用组件时，不传东西，则slot会显示后备内容
+
+```vue
+<MyDialog>我是内容</MyDialog>
+```
+
+```vue
+<template>
+    <div class="dialog">
+        <div class="dialog-header">
+        <h3>友情提示</h3>
+        <span class="close">✖ </span>
+    </div>
+    <div class="dialog-content">
+        <slot>我是后备内容</slot>//默认显示的内容
+    </div>
+        <div class="dialog-footer">
+            <button>取消</button>
+            <button>确认</button>
+        </div>
+    </div>
+</template>
+```
+
+如何给插槽设置默认显示内容?
+
+​	在slot标签内，写好后备内容
+
+什么时候插槽后备内容会显示?
+
+​	当使用组件并未给我们传入具体标签或内容时
+
+### 具名插槽
+
+需求：一个组件内有多处结构，需要外部传入标签，进行定制
+
+默认插槽：一个的定制位置
+
+具名插槽语法:
+
+1. 多个slot使用name属性区分名字
+
+```vue
+<div class="dialog-header">
+	<slot name="head"></slot>
+</div>
+<div class="dialog-content">
+	<slot name="content"></slot>
+</div>
+<div class="dialog-footer">
+	<slot name="footer"></slot>
+</div>
+```
+
+2. template配合v-slot:名字来分发对应标签
+
+```vue
+<MyDialog>
+	<template v-slot:head>
+    	大标题
+    </template>
+    <template v-slot:content>
+    	内容文本
+    </template>
+    <template v-slot:footer>
+   	 	<button>按钮</button>
+    </template>
+</MyDialog>
+```
+
+3. ==v-slot:插槽名== 可以简化成 #插槽名
+
+组件内 有多处不确定的结构 怎么办?
+
+具名插槽
+
+1. slot占位, 给name属性起名字来区分
+2. template配合 ==v-slot:插槽名== 分发内容
+
+v-slot:插槽名 可以简化成什么?
+
+==#插槽名==
