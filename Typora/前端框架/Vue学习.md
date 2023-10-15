@@ -2051,7 +2051,7 @@ import Friend from './views/Friend.vue'
 
 目标：将路由模块抽离出来。 好处：==拆分模块，利于维护==
 
-![image-20231013093738850](./image/image-20231013093738850.png)
+![image-20231013093738850](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054201.png)
 
 ==绝对路径：@指代src目录，可以用于快速引入组件==
 
@@ -2073,7 +2073,7 @@ vue-router 提供了一个全局组件 router-link (取代 a 标签)
 
 ② ==能高亮==，默认就会提供==高亮类名==，可以直接设置高亮样式
 
-![image-20231013094042698](./image/image-20231013094042698.png)
+![image-20231013094042698](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054203.png)
 
 1. router-link是什么?
 
@@ -2101,7 +2101,7 @@ to="/my" 可以匹配 /my /my/a /my/b ....
 
 to="/my" 仅可以匹配 /my
 
-![image-20231014211407091](./image/image-20231014211407091.png)
+![image-20231014211407091](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054204.png)
 
 小结
 
@@ -2123,7 +2123,7 @@ const router = new VueRouter({
 })
 ```
 
-![image-20231014212120449](./image/image-20231014212120449.png)
+![image-20231014212120449](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054206.png)
 
 小结
 
@@ -2152,7 +2152,7 @@ linkExactActiveClass 精确匹配 类名自定义
 
 ​	● $route.query.参数名
 
-![image-20231014212627427](./image/image-20231014212627427.png)
+![image-20231014212627427](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054207.png)
 
 2. 动态路由传参
 
@@ -2177,3 +2177,265 @@ l to="/path==/参数值=="
 ③ 对应页面组件接收传递过来的值
 
 l $route==.params.参数名==
+
+#### 小结
+
+声明式导航跳转时, 有几种方式传值给路由页面?
+
+① 查询参数传参 (多个参数)
+
+跳转：to="/path==?参数名=值=="
+
+接收：==$route.query.参数名==
+
+② 动态路由传参 (简洁优雅)
+
+路由： /path/==:参数名==
+
+跳转： to="/path==/值=="
+
+接收：==$route.params.参数名==
+
+#### 动态路由参数可选符
+
+**问题：**配了路由 ==path: "/search/:words"== 为什么按下面步骤操作，会未匹配到组件，显示空白？
+
+**原因：** /search/:words 表示，必须要传参数。如果不传参数，也希望匹配，可以加个可选符 =="?"==
+
+```js
+const router = new VueRouter({
+    routes: [
+        { path: '/', redirect: '/home' },
+        { path: '/home', component: Home },
+        { path: '/search/:words?', component: Search }
+    ]
+})
+```
+
+![image-20231015105455573](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054208.png)
+
+### Vue路由 - 重定向
+
+**问题：**网页打开， url 默认是 / 路径，未匹配到组件时，会出现空白
+
+**说明：**重定向 → 匹配path后, 强制跳转path路径
+
+**==语法==：** { path: 匹配路径, redirect: 重定向到的路径 },
+
+```js
+const router = new VueRouter({
+    routes: [
+        { path: '/', redirect: '/home'},
+        { path: '/home', component: Home },
+        { path: '/search/:words', component: Search }
+    ]
+})
+```
+
+![image-20231015110827975](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054209.png)
+
+### Vue路由 - 404
+
+**作用：**当路径找不到匹配时，给个提示页面
+
+**位置：**配在路由最后
+
+**语法：**path: "*" (任意路径) – 前面不匹配就命中最后这个
+
+```js
+import NotFind from '@/views/NotFind'
+    const router = new VueRouter({
+    routes: [
+        { path: '/', redirect: '/home' },
+        { path: '/home', component: Home },
+        { path: '/search/:words?', component: Search },
+        { path: '*', component: NotFind }
+    ]
+})
+```
+
+### Vue路由 - 模式设置
+
+问题: 路由的路径看起来不自然, 有#，能否切成真正路径形式?
+
+● hash路由(默认) 例如: http://localhost:8080/#/home
+
+●history路由(常用) 例如: http://localhost:8080/home (以后上线需要服务器端支持)
+
+```js
+const router new VueRouter({
+    routes,
+	mode:"history
+}
+```
+
+### 编程式导航
+
+#### 基本跳转
+
+问题：点击按钮跳转如何实现？
+
+编程式导航：用JS代码来进行跳转
+
+两种语法:
+
+① path 路径跳转
+
+② name 命名路由跳转
+
+
+
+① ==path 路径跳转 (简易方便)==
+
+```js
+this.$router.push('路由路径')
+this.$router.push({
+    path: '路由路径'
+})
+```
+
+![image-20231015153834777](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054210.png)
+
+② name 命名路由跳转 (适合 path 路径长的场景)
+
+```js
+this.$router.push({
+    name: '路由名'
+})
+{ name: '路由名', path: '/path/xxx', component: XXX },
+```
+
+#### 路由传参
+
+问题：点击搜索按钮，跳转需要传参如何实现？
+
+两种传参方式：查询参数 + 动态路由传参
+
+==两种跳转方式，对于两种传参方式都支持：==
+
+① path 路径跳转传参
+
+② name 命名路由跳转传参
+
+
+
+==① path 路径跳转传参 (query 查询参数 传参)==
+
+```js
+this.$router.push('/路径?参数名1=参数值1&参数2=参数值2')
+this.$router.push({
+    path: '/路径',
+    query: {
+        参数名1: '参数值1',
+        参数名2: '参数值2'
+    }
+})
+```
+
+![image-20231015155205536](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054211.png)
+
+==② name 命名路由跳转传参 (query传参)==
+
+```js
+this.$router.push({
+    name: '路由名字',
+    query: {
+        参数名1: '参数值1',
+        参数名2: '参数值2'
+    }
+})
+//$route.query.参数名 接收
+```
+
+![image-20231015161330878](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054212.png)
+
+==① path 路径跳转传参 (动态路由传参)==
+
+```js
+this.$router.push('/路径/参数值')
+    this.$router.push({
+    path: '/路径/参数值'
+})
+```
+
+![image-20231015161522736](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054213.png)
+
+==② name 命名路由跳转传参 (动态路由传参)==
+
+```js
+this.$router.push({
+    name: '路由名字',
+    params: {
+        参数名: '参数值',
+    }
+})
+```
+
+![image-20231015161617841](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054214.png)
+
+### 小结
+
+编程式导航有几种跳转方式 ?
+
+① 通过路径跳转 (简易方便)
+
+② 通过路由名字跳转 (适合路径名字长的场景)
+
+```js
+this.$router.push('路由路径')
+this.$router.push({
+    path: '路由路径'
+})
+```
+
+```js
+this.$router.push({
+name: '路由名'
+})
+{ name: '路由名', path: '/path/xxx', ... },
+```
+
+编程式导航，如何跳转传参 ?
+
+2. name 命名路由跳转
+
+① query传参
+```js
+this.$router.push({
+        name: '路由名字',
+        query: {
+        参数名1: '参数值1',
+        参数名2: '参数值2'
+	}
+})
+```
+② 动态路由传参 (需要配动态路由)
+
+```js
+this.$router.push({
+    name: '路由名字',
+    params: {
+        参数名: '参数值',
+    }
+})
+```
+
+### 面经基础版
+
+==分析：配路由 + 实现功能==
+
+1. 配路由
+
+① 首页 和 面经详情，两个一级路由
+
+② 首页内嵌四个可切换页面 (==嵌套二级路由==)
+
+2. 实现功能
+
+① 首页请求渲染
+
+② ==跳转传参== 到 详情页，详情页渲染
+
+③ ==组件缓存==，优化性能
+
+![image-20231015165253128](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054215.png)
