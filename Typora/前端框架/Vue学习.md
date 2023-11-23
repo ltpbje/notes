@@ -2439,3 +2439,487 @@ this.$router.push({
 ③ ==组件缓存==，优化性能
 
 ![image-20231015165253128](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202310152054215.png)
+
+#### 组件缓存 keep-alive
+
+问题：从面经 点到 详情页，又点返回，数据重新加载了 → 希望回到原来的位置
+
+原因：路由跳转后，组件被销毁了，返回回来组件又被重建了，所以数据重新被加载了
+
+解决：利用 keep-alive 将组件缓存下来
+
+**1. keep-alive是什么**
+
+keep-alive 是 Vue 的内置组件，当它包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。
+
+keep-alive 是一个抽象组件：它自身不会渲染成一个 DOM 元素，也不会出现在父组件链中。
+
+**2. keep-alive的优点**
+
+在组件切换过程中 把切换出去的组件保留在内存中，防止重复渲染DOM，
+
+减少加载时间及性能消耗，提高用户体验性。
+
+```js
+<template>
+    <div class="h5-wrapper">
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+    </div>
+</template>
+```
+
+问题：缓存了所有被切换的组件
+
+**3.** **keep-alive的****三个属性**
+
+① include ： 组件名数组，只有匹配的组件会被缓存
+
+② exclude ： 组件名数组，任何匹配的组件都不会被缓存
+
+③ max ： 最多可以缓存多少组件实例
+
+**4. keep-alive的使用会触发两个生命周期函数**
+
+activated 当组件==被激活（使用）==的时候触发 → 进入这个页面的时候触发
+
+deactivated 当组件==不被使用==的时候触发 → 离开这个页面的时候触发
+
+**组件缓存后就不会执行组件的created, mounted, destroyed 等钩子了**
+
+所以其提供了==actived== 和 ==deactived==钩子，帮我们实现业务需求。
+
+```js
+activated () {
+	console.log('actived 激活 → 进入页面');
+},
+deactivated() {
+	console.log('deactived 失活 → 离开页面');
+}
+```
+#### 总结
+
+1. keep-alive是什么
+
+Vue 的内置组件，包裹动态组件时，可以缓存
+
+2. keep-alive的优点
+
+组件切换过程中 把切换出去的组件保留在内存中(提升性能)
+
+3. keep-alive的三个属性 (了解)
+
+==① include ： 组件名数组，只有匹配的组件会被缓存==
+
+② exclude ： 组件名数组，任何匹配的组件都不会被缓存
+
+③ max ： 最多可以缓存多少组件实例
+
+4. keep-alive的使用会触发两个生命周期函数 (了解)
+
+activated 当组件==被激活（使用）==的时候触发 → 进入页面触发
+
+deactivated 当组件==不被使用==的时候触发 → 离开页面触发
+
+1. 项目案例实现的基本步骤分哪两大步?
+
+==① 配路由 ② 实现页面功能==
+
+2. 嵌套路由的关键配置项是什么？
+
+==children==
+
+3. 路由传参两种方式？
+
+① 查询参数传参，==$route.query.参数名 (适合多个参数)==
+
+② 动态路由传参，==$route.params.参数名 (更简洁直观)==
+
+4. 缓存组件可以用哪个内置组件？
+
+==keep-alive==
+
+三个属性： include exclude max
+
+两个钩子： ==activated== ==deactivated==
+
+### 自定义创建项目
+
+目标：基于 VueCli 自定义创建项目架子
+
+![image-20231022100453322](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202311042137580.png)
+
+### ESlint 代码规范
+
+**目标：认识代码规范**
+
+代码规范：一套写代码的约定规则。例如："赋值符号的左右是否需要空格" "一句结束是否是要加;" ... 
+
+老话说："==没有规矩不成方圆==" → 正规的团队 需要 ==统一==的编码风格
+
+JavaScript Standard Style 规范说明 https://standardjs.com/rules-zhcn.html
+
+下面是这份规则中的一小部分：
+
+l 字符串使用单引号 'abc'
+
+l 无分号 const name = 'zs'
+
+l 关键字后加空格 if (name = 'ls') { ... }
+
+l 函数名后加空格 function name (arg) { ... }
+
+l 坚持使用全等 === 摒弃 ==
+
+... 
+
+**目标：学会解决代码规范错误**
+
+如果你的代码不符合 standard 的要求，ESlint 会跳出来刀子嘴，豆腐心地提示你。
+
+比如：在main.js中随意做一些改动，添加一些分号，空行。
+
+![image-20231022104714787](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202311042137581.png)
+
+**目标：学会解决代码规范错误**
+
+两种解决方案：
+
+① 手动修正
+
+根据错误提示来一项一项==手动==修改纠正。
+
+如果你不认识命令行中的语法报错是什么意思，根据错误代码去 [ESLint 规则表] 中查找其具体含义。
+
+② 自动修正
+
+基于 vscode 插件 ESLint ==高亮错误==，并==通过配置== ==自动== 帮助我们==修复==错误。
+
+```json
+// 当保存的时候，eslint自动帮我们修复错误
+"editor.codeActionsOnSave": {
+	"source.fixAll": true
+},
+// 保存代码，不自动格式化
+"editor.formatOnSave": false
+```
+
+# Vue 核心技术与实战day07
+
+## vuex概述
+
+目标：明确 vuex 是什么，应用场景，优势
+
+**1. 是什么：**
+
+vuex 是一个 vue 的 ==状态管理工具==，状态就是数据。
+
+大白话：vuex 是一个插件，可以帮我们==管理 vue 通用的数据 (多组件共享的数据)==
+
+**2. 场景：**
+
+① 某个状态 在 ==很多个组件== 来使用 (个人信息)
+
+② 多个组件 ==共同维护== 一份数据 (购物车)
+
+**3. 优势：**
+
+① 共同维护一份数据，==数据集中化管理==
+
+② ==响应式变化==
+
+③ 操作简洁 (vuex提供了一些辅助函数)
+
+![image-20231022160529959](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202311042137582.png)
+
+## 构建 vuex [多组件数据共享] 环境
+
+目标：基于脚手架创建项目，构建 vuex 多组件数据共享环境
+
+效果是三个组件, 共享一份数据:
+
+● 任意一个组件都可以修改数据
+
+● 三个组件的数据是同步的
+
+## 创建一个空仓库
+
+目标：安装 vuex 插件，初始化一个空仓库
+
+![image-20231022171548729](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202311042137583.png)
+
+## 核心概念 - state 状态
+
+目标：明确如何给仓库 提供 数据，如何 使用 仓库的数据
+
+1. 提供数据：
+
+​	State 提供唯一的公共数据源，所有共享的数据都要统一放到 Store 中的 State 中存储。
+
+在 state 对象中可以添加我们要共享的数据。
+
+```js
+// 创建仓库
+const store = new Vuex.Store({
+// state 状态, 即数据, 类似于vue组件中的data
+// 区别：
+// 1. data 是组件自己的数据
+// 2. state 是所有组件共享的数据
+state: {
+    count: 101
+}
+})
+```
+
+2. 使用数据：
+
+① 通过 store 直接访问
+
+② 通过辅助函数
+
+
+
+==① 通过 store 直接访问==
+
+```cmd
+获取 store：
+(1) this.$store
+(2) import 导入 store
+模板中： {{ $store.state.xxx }}
+组件逻辑中： this.$store.state.xxx
+JS模块中： store.state.xxx
+```
+
+==② 通过辅助函数==
+
+mapState是辅助函数，帮助我们把store中的数据==自动==映射到组件的计算属性中
+	`import mapState from 'vuex'`
+
+```js
+{{ count }}
+// 把state中数据，定义在组件内的计算属性中
+computed: {
+count () {
+    return this.$store.state.count
+}
+},
+```
+
+![image-20231105195113604](./image/image-20231105195113604.png)
+
+## 核心概念 - mutations
+
+目标：明确 vuex 同样遵循单向数据流，组件中不能直接修改仓库的数据
+
+通过 strict: true 可以开启严格模式
+
+![image-20231105195424246](./image/image-20231105195424246.png)
+
+this.$store.state.count++ (==错误写法==)
+
+目标：掌握 mutations 的操作流程，来修改 state 数据。 (state数据的修改只能通过 mutations )
+
+```js
+const store = new Vuex.Store({
+    state: {
+        count: 0
+    },
+    // 定义mutations
+    mutations: {
+        // 第一个参数是当前store的state属性
+        addCount (state) {
+            state.count += 1
+        }
+	}
+})
+```
+
+2. 组件中提交调用 mutations
+
+```js
+this.$store.commit('addCount')
+```
+
+目标：掌握 mutations 传参语法
+
+提交 mutation 是可以传递参数的 `this.$store.commit( 'xxx', 参数 )`
+
+1. 提供 mutation 函数 (带参数 - 提交载荷 payload )
+
+```js
+mutations: {
+...
+addCount (state, n) {
+	state.count += n
+}
+},
+```
+
+2. 页面中提交调用 mutation
+
+  ```js
+  this.$store.commit('addCount', 10)
+  ```
+
+  
+
+
+
+Tips: 提交参数只能一个，如果有多个参数，包装成一个对象传递
+
+```js
+this.$store.commit('addCount', {
+count: 10,
+...
+})
+```
+
+mutations - 练习
+
+目标：减法功能，巩固 mutations 传参语法
+
+![image-20231105195911588](./image/image-20231105195911588.png)
+
+mutations - 练习
+
+目标：实时输入，实时更新，巩固 mutations 传参语法![image-20231105211558856](./image/image-20231105211558856.png)
+
+### 辅助函数 - mapMutations
+
+目标：掌握辅助函数 mapMutations，映射方法
+
+mapMutations 和 mapState很像，它是把位于==mutations中的方法==提取了出来，映射到==组件methods==中
+
+```js
+mutations: {
+subCount (state, n) {
+    state.count -= n
+},
+}
+```
+
+![image-20231105211840034](./image/image-20231105211840034.png)
+
+## 核心概念 - actions
+
+目标：明确 actions 的基本语法，处理异步操作。
+
+需求: 一秒钟之后, 修改 state 的 count 成 666。
+
+说明：==mutations 必须是同步的 (便于监测数据变化，记录调试)==
+
+![image-20231123213535535](./image/image-20231123213535535.png)
+
+```js
+mutations: {
+    changeCount (state, newCount) {
+        state.count = newCount
+    }
+}
+```
+
+1. 提供action 方法
+
+   ```jsx
+   actions: {
+   setAsyncCount (context, num) {
+   // 一秒后, 给一个数, 去修改 num
+   setTimeout(() => {
+   context.commit('changeCount', num)
+   }, 1000)
+   }
+   }
+   ```
+
+   
+
+2. 页面中 dispatch 调用
+
+   ```jsx
+   this.$store.dispatch('setAsyncCount', 200)
+   ```
+
+### 辅助函数 - mapActions
+
+目标：掌握辅助函数 mapActions，映射方法
+
+mapActions 是把位于 ==actions中的方法==提取了出来，映射到==组件methods==中
+
+```jsx
+actions: {
+    changeCountAction (context, num) {
+        setTimeout(() => {
+            context.commit('changeCount', num)
+        }, 1000)
+    }
+}
+```
+
+```jsx
+import { mapActions } from 'vuex'
+methods: {
+...mapActions(['changeCountAction'])
+}
+```
+
+```jsx
+methods: {
+    changeCountAction (n) {
+        this.$store.dispatch('changeCountAction', n)
+    },
+}
+this.changeCountAction(666) 调用
+```
+
+## 核心概念 - getters
+
+目标：掌握核心概念 getters 的基本语法 (类似于计算属性)
+
+说明：除了state之外，有时我们还需要从state中==派生出一些状态==，这些状态是依赖state的，此时会用到getters
+
+例如：state中定义了list，为 1-10 的数组，组件中，需要显示所有大于5的数据
+
+```jsx
+state: {
+    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+```
+
+1. 定义 getters
+
+```jsx
+getters: {
+// 注意：
+// (1) getters函数的第一个参数是 state
+// (2) getters函数必须要有返回值
+    filterList (state) {
+        return state.list.filter(item => item > 5)
+    }
+}
+```
+
+2. 访问getters
+
+① 通过 store 访问 getters
+
+```jsx
+{{ $store.getters.filterList }}
+```
+
+② 通过辅助函数 mapGetters 映射
+
+```jsx
+computed: {
+    ...mapGetters(['filterList'])
+},
+{{ filterList }}
+```
+
+## 核心概念 - 模块 module (进阶语法)
+
+目标：掌握核心概念 module 模块的创建
+
+由于 vuex 使用==单一状态树==，应用的所有状态==会集中到一个比较大的对象==。当应用变得非常复杂时，
+
+store 对象就有可能变得相当臃肿。(当项目变得越来越大的时候，Vuex会变得越来越难以维护)
