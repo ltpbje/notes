@@ -2923,3 +2923,87 @@ computed: {
 由于 vuex 使用==单一状态树==，应用的所有状态==会集中到一个比较大的对象==。当应用变得非常复杂时，
 
 store 对象就有可能变得相当臃肿。(当项目变得越来越大的时候，Vuex会变得越来越难以维护)
+
+![image-20231204213217220](./image/image-20231204213217220.png)
+
+目标：掌握核心概念 module 模块的创建
+
+模块拆分：user模块: store/modules/user.js
+
+```jsx
+const state = {
+userInfo: {
+    name: 'zs',
+    age: 18
+}
+}
+const mutations = {}
+const actions = {}
+const getters = {}
+export default {
+    state,
+    mutations,
+    actions,
+    getters
+}
+```
+
+```jsx
+import user from './modules/user'
+const store = new Vuex.Store({
+modules: {
+    user
+}
+})
+```
+
+![image-20231204213520311](./image/image-20231204213520311.png)
+
+目标：掌握模块中 ==state== 的访问语法
+
+尽管已经分模块了，但其实子模块的状态，还是会挂到根级别的 state 中，属性名就是模块名
+
+使用模块中的数据：
+
+① 直接通过模块名访问 ==$store.state.模块名.xxx==
+
+② 通过 mapState 映射
+
+默认根级别的映射 ==mapState([ 'xxx' ])==
+
+子模块的映射 ==mapState('模块名', ['xxx'])== - 需要开启命名空间
+
+```jsx
+export default {
+    namespaced: true,
+    state,
+    mutations,
+    actions,
+    getters
+}
+```
+
+![image-20231204213639696](./image/image-20231204213639696.png)
+
+目标：掌握模块中 ==getters== 的访问语法
+
+使用模块中 getters 中的数据：
+
+① 直接通过模块名访问 ==$store.getters['模块名/xxx ']==
+
+② 通过 mapGetters 映射
+
+默认根级别的映射 ==mapGetters([ 'xxx' ])==
+
+子模块的映射 ==mapGetters('模块名', ['xxx'])== - 需要开启命名空间
+
+```jsx
+export default {
+    namespaced: true,
+    state,
+    mutations,
+    actions,
+    getters
+}
+```
+
