@@ -3031,3 +3031,133 @@ getters
 }
 ```
 
+### src文件夹的意思
+
+> 在前端项目中，src 文件夹通常代表“source”的缩写，意为源代码。以下是关于 src 文件夹在前端项目中常见的一些用途和意义：
+
+源代码目录：src 文件夹通常包含所有的源代码文件，包括HTML、CSS、JavaScript等。这通常是开发者直接编辑和写代码的地方。
+分离开发与构建：许多项目使用 src 和 dist（或类似名称）这两个文件夹来区分开发阶段和构建阶段。开发阶段的所有文件都在 src 文件夹中，而构建阶段生成的最终产品（例如压缩后的JavaScript文件、CSS文件等）则放在 dist 文件夹中。
+前端资源：除了代码文件外，src 文件夹还可能包含一些前端的资源文件，如图片、图标、视频等。
+模块化和组件化：在现代的前端框架和库中，如React、Vue等，src 文件夹可能进一步被分解为多个子目录，代表不同的模块或组件。这样可以帮助开发者更清晰地组织代码，并更容易地进行维护和扩展。
+开发服务器：在某些项目中，开发服务器可能会监视 src 文件夹中的变化，当文件被修改时自动重新加载页面或应用，这对于快速开发和调试非常有用。
+请注意，不同的项目和团队可能会有不同的目录结构和命名约定，但上述描述提供了一种常见的使用模式。
+
+### dist文件夹的意思
+
+>  在前端项目中，“dist”文件夹是一个重要的部分，通常被用作存放构建后的文件。这个名称是“distribution”的缩写，意为“发布”。在开发过程中，代码和资源文件通常会经过编译、压缩等处理，以优化性能和加载速度。处理后的文件会存放在“dist”文件夹中，这些文件是最终用于部署到服务器上的版本。
+
+具体来说，“dist”文件夹可能包含以下内容：
+
+编译后的代码：原始的源代码会经过编译，转换成浏览器能够直接执行的代码。例如，TypeScript或ES6代码会被编译成普通的JavaScript代码。
+压缩后的资源：为了加快页面加载速度，图片、CSS和JavaScript文件通常会经过压缩。这些压缩后的资源会存放在“dist”文件夹中。
+静态资源：除了编译和压缩后的文件外，“dist”文件夹还可能包含其他静态资源，如HTML文件、字体文件等。
+总的来说，“dist”文件夹是前端项目构建过程中的一个重要环节，它存放了经过优化处理的代码和资源文件，用于最终的发布和部署。
+
+## 综合案例 - 购物车
+
+**目标：**功能分析，创建项目，构建分析基本结构
+
+1. 功能模块分析
+
+① 请求动态渲染购物车，==数据存 vuex==
+
+② 数字框控件 ==修改数据==
+
+③ ==动态计算== 总价和总数量
+
+2. 脚手架新建项目 (注意：勾选vuex)
+
+vue create vue-cart-demo
+
+3. 将原本src内容清空，替换成素材的《vuex-cart-准备代码》并分析
+
+![image-20231223105654680](./image/image-20231223105654680.png)
+
+**目标：**构建 cart 购物车模块
+
+说明：既然明确数据要存 vuex，建议分模块存，购物车数据存 cart 模块，将来还会有 user 模块，article 模块...
+
+1. 新建 `store/modules/cart.js`
+
+```jsx
+export default {
+    namespaced: true,
+    state () {
+        return {
+    	    list: []
+        }
+    },
+}
+```
+
+
+
+
+2. 挂载到 vuex 仓库上 `store/index.js`
+
+```jsx
+import cart from './modules/cart'
+const store = new Vuex.Store({
+modules: {
+    cart
+}
+})
+export default store
+```
+
+![image-20231223105946230](./image/image-20231223105946230.png)
+
+**目标：**基于 json-server 工具，准备后端接口服务环境
+
+1. 安装全局工具 json-server （全局工具仅需要安装一次）[官网](https://www.npmjs.com/package/json-server)
+
+`yarn global add json-server `或 `npm i json-server -g`
+
+2. 代码根目录新建一个 db 目录
+3. 将资料 index.json 移入 db 目录
+4. 进入 db 目录，执行命令，启动后端接口服务
+
+`json-server index.json`
+
+5. 访问接口测试 http://localhost:3000/cart
+
+   推荐：` json-server --watch index.json (可以实时监听 json 文件的修改)`
+
+![image-20231223110409649](./image/image-20231223110409649.png)
+
+**目标：**请求获取数据存入 vuex, 映射渲染
+
+```jsx
+state: { list: [] },
+mutations: {
+    updateList (state, payload) {
+        state.list = payload
+    }
+},
+actions: {
+    async getList (ctx) {
+        const res = await axios.get('http://localhost:3000/cart')
+        ctx.commit('updateList', res.data)
+    }
+}
+```
+
+![image-20231223110854879](./image/image-20231223110854879.png)
+
+```jsx
+mutations: {
+    updateCount (state, payload) {
+        const goods = state.list.find((item) => item.id === payload.id)
+        goods.count = payload.count
+    }
+},
+actions: {
+    async updateCountAsync (ctx, payload) {
+        await axios.patch('http://localhost:3000/cart/' + payload.id, {
+            count: payload.count
+        })
+        ctx.commit('updateCount', payload)
+    }
+},
+```
+
