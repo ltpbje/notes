@@ -3144,6 +3144,8 @@ actions: {
 
 ![image-20231223110854879](./image/image-20231223110854879.png)
 
+**目标：**修改数量功能完成
+
 ```jsx
 mutations: {
     updateCount (state, payload) {
@@ -3161,3 +3163,30 @@ actions: {
 },
 ```
 
+![image-20231223111938726](./image/image-20231223111938726.png)
+
+**目标：**底部 getters 统计
+
+1. 提供 getters
+
+```jsx
+getters: {
+    total (state) {
+        return state.list.reduce((sum, item) => sum + item.count, 0)
+    },
+    totalPrice (state) {
+        return state.list.reduce((sum, item) => sum + item.count *
+        item.price, 0)
+    }
+}
+```
+
+2. 使用 getters
+
+```jsx
+computed: {
+...mapGetters('cart', ['total', 'totalPrice'])
+}
+```
+
+   
