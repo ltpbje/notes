@@ -3230,3 +3230,178 @@ computed: {
 ② utils 工具模块：自己封装的一些工具方法模块
 
 ### vant 组件库
+
+**目标：认识第三方 Vue组件库 vant-ui**
+
+组件库：第三方 封装 好了很多很多的 组件，整合到一起就是一个组件库。
+
+https://vant-contrib.gitee.io/vant/v2/#/zh-CN/
+
+#### 其他 Vue 组件库
+
+**目标：了解其他 Vue 组件库**
+
+Vue的组件库并不是唯一的，vant-ui 也仅仅只是组件库的一种。
+
+一般会按照不同平台进行分类：
+
+① PC端： element-ui (element-plus)  ant-design-vue
+
+② 移动端：vant-ui  Mint UI (饿了么) Cube UI (滴滴)
+
+#### vant 全部导入 和 按需导入
+
+**目标：明确 全部导入 和 按需导入 的区别**
+
+![image-20240106193521148](./image/image-20240106193521148.png)
+
+**目标：阅读文档，掌握** **全部导入** **的基本使用**
+
+官网：[vant-ui][https://vant-contrib.gitee.io/vant/v2/#/zh-CN/]
+
+##### 全部导入：
+
+全部导入：
+
+① 安装 vant-ui
+
+```cmd
+yarn add vant@latest-v2
+```
+
+② main.js 中注册
+
+```jsx
+import Vant from 'vant'
+import 'vant/lib/index.css'
+// 把vant中所有的组件都导入了
+Vue.use(Vant)
+```
+
+③ 使用测试
+
+```jsx
+<van-button type="primary">主要按钮</van-button>
+<van-button type="info">信息按钮</van-button>
+```
+
+##### 按需导入：
+
+① 安装 vant-ui (已安装)
+
+```cmd
+yarn add vant@latest-v2
+```
+
+② 安装插件
+
+```cmd
+npm i babel-plugin-import -D
+```
+
+③ babel.config.js 中配置
+
+```jsx
+module.exports = {
+    presets: [
+        '@vue/cli-plugin-babel/preset'
+    ],
+    plugins: [
+    ['import', {
+            libraryName: 'vant',
+            libraryDirectory: 'es',
+            style: true
+        }, 'vant']
+    ]
+}
+```
+
+④ main.js 按需导入注册
+
+```jsx
+import Vue from 'vue';
+import { Button } from 'vant';
+Vue.use(Button);
+```
+
+⑤ 测试使用
+
+```jsx
+<van-button type="primary">主要按钮</van-button>
+<van-button type="info">信息按钮</van-button>
+```
+
+⑥ 提取到 vant-ui.js 中，main.js 导入
+
+```jsx
+// 导入按需导入的配置文件
+import '@/utils/vant-ui'
+```
+
+### 项目中的 vw 适配
+
+**目标：基于 postcss 插件 实现项目 vw 适配**
+
+[官方配置][https://vant-contrib.gitee.io/vant/v2/#/zh-CN/advanced-usage]
+
+① 安装插件
+
+```cmd
+yarn add postcss-px-to-viewport@1.1.1 -D
+```
+
+② 根目录新建 postcss.config.js 文件，填入配置
+
+```jsx
+// postcss.config.js
+module.exports = {
+    plugins: {
+        'postcss-px-to-viewport': {
+        // 标准屏宽度
+        viewportWidth: 375
+    }
+}
+}
+```
+
+### 路由设计配置
+
+**目标：分析项目页面，设计路由，配置一级路由**
+
+但凡是单个页面，独立展示的，都是一级路由![image-20240106194457272](./image/image-20240106194457272.png)
+
+目标：阅读vant组件库文档，实现 **底部导航 tabbar**
+
+tabbar标签页：
+
+① vant-ui.js 按需引入
+
+```jsx
+import { Tabbar, TabbarItem } from 'vant'
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+```
+
+② layout.vue 粘贴官方代码测试
+
+```jsx
+<van-tabbar>
+    <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="search">标签</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>
+```
+
+③ 修改文字、图标、颜色
+
+```jsx
+<van-tabbar active-color="#ee0a24" inactive-color="#000">
+    <van-tabbar-item icon="wap-home-o">首页</...>
+    <van-tabbar-item icon="apps-o">分类页</...>
+    <van-tabbar-item icon="shopping-cart-o">购物车</...>
+    <van-tabbar-item icon="user-o">我的</...>
+</van-tabbar>
+```
+
+目标：基于底部导航，完成**二级路由配置**
