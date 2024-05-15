@@ -1111,7 +1111,7 @@ behaviors是小程序中，`用于实现组件间代码共享`的特性，类似
 
 ### 1.什么是Vant Weapp
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a756c37505cd4fcd90ff02b755819d04~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?) [youzan.github.io/vant-weapp/…](https://link.juejin.cn?target=https%3A%2F%2Fyouzan.github.io%2Fvant-weapp%2F%23%2Fhome "https://youzan.github.io/vant-weapp/#/home")
+![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a756c37505cd4fcd90ff02b755819d04~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?) [Vant Weapp 官方文档地址](https://youzan.github.io/vant-weapp/#/home)
 
 ### 2.安装Vant组件库
 
