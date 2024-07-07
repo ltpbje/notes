@@ -18,31 +18,31 @@
 
 **1.下载安装 HbuilderX 编辑器**
 
-![下载安装 HbuilderX 编辑器](./assets/uniapp_picture_1.png)
+![下载安装 HbuilderX 编辑器](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937643.png)
 
 **2.通过 HbuilderX 创建 uni-app vue3 项目**
 
-![通过 HbuilderX 创建 uni-app vue3 项目](./assets/uniapp_picture_2.png)
+![通过 HbuilderX 创建 uni-app vue3 项目](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937645.png)
 
 **3.安装 uni-app vue3 编译器插件**
 
-![安装 uni-app vue3 编译器插件](./assets/uniapp_picture_3.png)
+![安装 uni-app vue3 编译器插件](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937646.png)
 
 **4.编译成微信小程序端代码**
 
-![编译成微信小程序端代码](./assets/uniapp_picture_4.png)
+![编译成微信小程序端代码](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937647.png)
 
 **5.开启服务端口**
 
-![开启服务端口](./assets/uniapp_picture_5.png)
+![开启服务端口](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937648.png)
 
 **小技巧分享：模拟器窗口分离和置顶**
 
-![模拟器窗口分离和置顶](./assets/uniapp_picture_6.png)
+![模拟器窗口分离和置顶](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937649.png)
 
 **HBuildeX 和 微信开发者工具 关系**
 
-![HBuildeX 和 微信开发者工具 关系](./assets/uniapp_picture_7.png)
+![HBuildeX 和 微信开发者工具 关系](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937650.png)
 
 ::: tip 温馨提示
 [HBuildeX](https://www.dcloud.io/hbuilderx.html) 和 [uni-app](https://uniapp.dcloud.net.cn/) 都属于 [DCloud](https://dcloud.io) 公司的产品。
@@ -75,7 +75,7 @@
 #### 案例练习
 
 **效果预览**
-![案例练习](./assets/uniapp_case_1.png)
+![案例练习](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937651.png)
 
 **参考代码**
 
@@ -151,7 +151,7 @@ uni-app 项目每个页面是一个 `.vue` 文件，数据绑定及事件处理�
 2.  点击大图预览
 
 **效果预览**
-![案例练习](./assets/uniapp_case_2.png)
+![案例练习](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937652.png)
 
 **参考代码**
 
@@ -347,10 +347,10 @@ git clone -b vite-ts https://gitee.com/dcloud/uni-preset-vue.git
 选择自己习惯的编辑器开发 uni-app 项目即可。
 
 **HbuilderX 和 微信开发者工具 关系**
-![HbuilderX 和 微信开发者工具 关系](./assets/uniapp_picture_7.png)
+![HbuilderX 和 微信开发者工具 关系](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937650.png)
 
 **VS Code 和 微信开发者工具 关系**
-![VS Code 和 微信开发者工具 关系](./assets/uniapp_picture_8.png)
+![VS Code 和 微信开发者工具 关系](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937653.png)
 
 ### 用 VS Code 开发课后练习
 
@@ -404,7 +404,7 @@ git clone -b vite-ts https://gitee.com/dcloud/uni-preset-vue.git
 
 #### 项目架构图
 
-![项目架构图](./assets/index_picture_1.png)
+![项目架构图](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937654.png)
 
 ### 拉取项目模板代码
 
@@ -750,7 +750,7 @@ export const http = <T>(options: UniApp.RequestOptions) => {
 
 如果没有统一代码风格，团队协作不便于查看代码提交时所做的修改。
 
-![diff](./assets/index_picture_2.png)
+![diff](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937656.png)
 
 #### 统一代码风格
 
@@ -885,7 +885,7 @@ npm run lint-staged     // [!code ++]
 
 **参考效果**：自定义导航栏的样式需要适配不同的机型。
 
-![自定义导航栏](./image/home_picture_1.png)
+![自定义导航栏](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937657.png)
 
 ::: tip 操作步骤
 
@@ -979,7 +979,7 @@ npm run lint-staged     // [!code ++]
 
 可通过 `uni.getSystemInfoSync()` 获取屏幕边界到安全区的距离。
 
-![安全区域](./image/home_picture_2.png)
+![安全区域](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937658.png)
 
 #### 核心代码参考
 
@@ -1022,7 +1022,7 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
 
 轮播图组件需要在首页和分类页使用，需要封装成通用组件。
 
-![轮播组件](./image/home_picture_3.png)
+![轮播组件](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937659.png)
 
 **静态结构**
 
@@ -1269,7 +1269,7 @@ defineProps<{
 
 **参考效果**
 
-![1677150782440](./image/home_picture_4.png)
+![1677150782440](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937660.png)
 
 **准备工作**
 
@@ -1413,7 +1413,7 @@ defineProps<{
 
 **参考效果**
 
-![热门推荐](./image/home_picture_5.png)
+![热门推荐](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937661.png)
 
 **静态结构**
 
@@ -1611,7 +1611,7 @@ defineProps<{
 
 猜你喜欢功能，后端根据用户的浏览记录等信息向用户随机推荐的一系列商品，前端负责把商品在**多个页面中展示**。
 
-![猜你喜欢](./image/home_picture_6.png)
+![猜你喜欢](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937662.png)
 
 **准备工作**
 
@@ -2025,7 +2025,7 @@ const onRefresherrefresh = async () => {
 
 骨架屏作用是缓解用户等待时的焦虑情绪，属于用户体验优化方案。
 
-![骨架屏](./image/home_picture_7.png)
+![骨架屏](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937663.png)
 
 **生成骨架屏**
 
@@ -2033,7 +2033,7 @@ const onRefresherrefresh = async () => {
 
 使用时需要把自动生成的 `xxx.skeleton.vue` 和 `xxx.skeleton.wxss` 封装成 `vue` 组件。
 
-![骨架屏](./image/home_picture_8.png)
+![骨架屏](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937664.png)
 
 ## 小兔鲜儿 - 推荐模块
 
@@ -2045,7 +2045,7 @@ const onRefresherrefresh = async () => {
 
 推荐模块的布局结构是相同的，因此我们可以复用相同的页面及交互，只是所展示的数据不同。
 
-![热门推荐](./assets/hot_picture_1.png)
+![热门推荐](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937665.png)
 
 **静态结构**
 
@@ -2362,7 +2362,7 @@ export type SubTypeItem = {
 
 需要根据当前用户选中的 Tabs 加载对应的列表数据。
 
-![Tab 交互](./assets/hot_picture_2.png)
+![Tab 交互](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937666.png)
 
 #### Tabs 交互基础
 
@@ -2551,7 +2551,7 @@ const onScrolltolower = async () => {
 
 商品分类页中的广告位，可复用之前定义的轮播图组件 `XtxSwiper`。
 
-![分类页](./assets/category_picture_1.png)
+![分类页](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937667.png)
 
 **静态结构**
 
@@ -2949,7 +2949,7 @@ const subCategoryList = computed(() => {
 
 实现步骤参考首页的骨架屏。
 
-![分类页骨架屏](./assets/category_picture_2.png)
+![分类页骨架屏](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937668.png)
 
 ### 代码参考(总)
 
@@ -3065,7 +3065,7 @@ const subCategoryList = computed(() => {
 
 用户点击商品列表，跳转到对应的商品详情页。
 
-![商品详情](./assets/goods_picture_1.png)
+![商品详情](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937669.png)
 
 **静态结构**
 
@@ -3672,7 +3672,7 @@ export type AddressItem = {
 
 当轮播图滑动切换的时候更新**自定义下标**，当图片被点击的时候**大图预览**。
 
-![轮播图交互](./assets/goods_picture_2.png)
+![轮播图交互](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937670.png)
 
 #### 参考代码
 
@@ -3719,7 +3719,7 @@ const onTapImage = (url: string) => {
 
 `uni-ui` 弹出层组件：[uni-popup](https://uniapp.dcloud.net.cn/component/uniui/uni-popup.html)
 
-![弹出层交互](./assets/goods_picture_3.png)
+![弹出层交互](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937671.png)
 
 **静态结构**
 
@@ -4028,7 +4028,7 @@ const emit = defineEmits<{
 
 课后练习，大家自主独立完成。
 
-![骨架屏](./assets/goods_picture_4.png)
+![骨架屏](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937673.png)
 
 ### 参考代码(总)
 
@@ -4492,13 +4492,13 @@ page {
 
 用户在使用小程序时，其实已登录微信，其本质上就是：**微信授权给小程序读取微信用户信息**。
 
-![微信授权登录](./assets/login_picture_1.png)
+![微信授权登录](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937674.png)
 
 **传统登录方式**
 
 传统登录方式，一般是通过输入密码或者手机验证码实现登录。
 
-![传统密码登录](./assets/login_picture_2.png)
+![传统密码登录](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937675.png)
 
 温馨提示：接口文档中提供练习使用的登录接口，大家可在课后自行完成。
 
@@ -4711,7 +4711,7 @@ onLoad(async () => {
 
 **后端**：解密手机号信息，把手机号和用户登录态关联在一起。
 
-![授权登录](./assets/login_picture_3.png)
+![授权登录](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937676.png)
 
 **参考代码**
 
@@ -5010,7 +5010,7 @@ const loginSuccess = (profile: LoginResult) => {
 1. 渲染当前登录会员的昵称和头像，从 Store 中获取。
 2. 猜你喜欢分页加载，可封装成**组合式函数**实现复用逻辑。
 
-![我的](./assets/member_picture_1.png)
+![我的](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937677.png)
 
 #### 静态结构
 
@@ -5322,7 +5322,7 @@ const { guessRef, onScrolltolower } = useGuessList() // [!code ++]
 1. 按模块管理页面，方便项目维护。
 2. 减少主包体积，用到的时候再加载分包，属于**性能优化**解决方案。
 
-![新建分包页面](./assets/member_picture_2.png)
+![新建分包页面](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937678.png)
 
 ::: tip 温馨提示
 
@@ -5473,7 +5473,7 @@ page {
 
 **参考效果**
 
-![登录状态](./assets/member_picture_3.png)
+![登录状态](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937679.png)
 
 **参考代码**
 
@@ -5531,7 +5531,7 @@ const onLogout = () => {
 
 用户可以对会员信息进行更新操作，涉及到表单数据提交、图片读取、文件上传等知识点。
 
-![会员信息页](./assets/member_picture_4.png)
+![会员信息页](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937680.png)
 
 #### 静态结构
 
@@ -5955,7 +5955,7 @@ onLoad(() => {
 
 2. 通过 `uni.uploadFile()` 上传用户图片。
 
-![更新头像](./assets/member_picture_5.png)
+![更新头像](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937681.png)
 
 **接口信息**
 
@@ -6241,7 +6241,7 @@ const onSubmit = async () => {
 
 地址模块共两个页面：地址管理页，地址表单页 ，划分到会员分包中。
 
-![picture_31](./assets/address_picture_1.png)
+![picture_31](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937682.png)
 
 ##### 地址管理页
 
@@ -6563,7 +6563,7 @@ uni.setNavigationBarTitle({ title: query.id ? '修改地址' : '新建地址' })
 
 主要功能：前端收集表单的数据，提交表单给后端。
 
-![添加地址](./assets/address_picture_2.png)
+![添加地址](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937683.png)
 
 #### 接口封装
 
@@ -6731,7 +6731,7 @@ const onSubmit = async () => {
 
 为了能及时看到新建的收货地址，需在 `onShow` 生命周期中获取地址列表数据。
 
-![地址管理页](./assets/address_picture_3.png)
+![地址管理页](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937684.png)
 
 #### 接口调用
 
@@ -6878,7 +6878,7 @@ onShow(() => {
 
 通过页面参数 `id` 来区分当前是**修改地址**还是**新建地址**。
 
-![修改地址页](./assets/address_picture_4.png)
+![修改地址页](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937685.png)
 
 #### 数据回显
 
@@ -7020,7 +7020,7 @@ const onSubmit = async () => {
 
 通过 `uni-ui` 组件库的 [uni-forms](https://uniapp.dcloud.net.cn/component/uniui/uni-forms.html#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8) 组件实现表单校验。
 
-![表单校验](./assets/address_picture_5.png)
+![表单校验](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937686.png)
 
 #### 操作步骤
 
@@ -7133,7 +7133,7 @@ const onSubmit = async () => {
 
 通过 `uni-ui` 组件库的 [uni-swipe-action](https://uniapp.dcloud.net.cn/component/uniui/uni-swipe-action.html) 组件实现侧滑删除。
 
-![侧滑删除](./assets/address_picture_6.png)
+![侧滑删除](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937687.png)
 
 #### 侧滑组件用法
 
@@ -7271,7 +7271,7 @@ const onDeleteAddress = (id: string) => {
 
 `SKU` 属于电商常见业务，插件市场有现成的 `SKU` 插件，我们下载并在项目中使用。
 
-![插件市场](./assets/sku_picture_1.png)
+![插件市场](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937688.png)
 
 #### 下载 SKU 插件
 
@@ -7279,7 +7279,7 @@ const onDeleteAddress = (id: string) => {
 
 **体验地址**
 
-![插件市场](./assets/sku_picture_2.png)
+![插件市场](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937689.png)
 
 ::: tip 常见问题
 
@@ -7643,7 +7643,7 @@ const selectArrText = computed(() => {
 
 在商品详情页把 **选中规格后的商品(SKU)** 加入购物车。
 
-![购物车](./assets/cart_picture_1.png)
+![购物车](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937690.png)
 
 #### 接口相关
 
@@ -7707,7 +7707,7 @@ const onAddCart = async (ev: SkuPopupEvent) => {
 
 购物车列表需要访问后才能登录。
 
-![购物车](./assets/cart_picture_2.png)
+![购物车](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937691.png)
 
 #### 静态结构
 
@@ -8554,7 +8554,7 @@ const gotoPayment = () => {
 
 这样就需要 **两个购物车页面** 实现该功能，其中一个页面为 tabBar 页，另一个为普通页。
 
-![购物车页](./assets/cart_picture_3.png)
+![购物车页](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937692.png)
 
 目录结构如下：
 
@@ -8586,7 +8586,7 @@ pages/cart
 
 小兔鲜儿项目有三种方式可以生成订单信息，分别是：购物车结算、立即购买、再次购买。
 
-![填写订单](./assets/order_picture_1.png)
+![填写订单](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937693.png)
 
 #### 静态结构
 
@@ -9965,7 +9965,7 @@ page {
 
 :::
 
-![导航栏交互](./assets/order_picture_2.gif)
+![导航栏交互](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937694.gif)
 
 **参考代码**
 
@@ -10673,7 +10673,7 @@ export const getMemberOrderCancelByIdAPI = (id: string, data: { cancelReason: st
 
 根据订单的不同状态展示订单列表，并实现多 Tabs 分页加载。
 
-![订单列表](./assets/order_picture_3.png)
+![订单列表](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937695.png)
 
 #### 静态结构
 
@@ -11270,7 +11270,7 @@ A：通过 [条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#pr
 
 :::
 
-![多端登录](./assets/build_picture_2.png)
+![多端登录](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202405210937696.png)
 
 **网页端不支持微信平台授权登录等功能**，可通过 [条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#preprocessor)，实现不同端渲染不同的登录界面。
 
