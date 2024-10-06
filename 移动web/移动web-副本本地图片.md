@@ -10,7 +10,7 @@
 
 概念：改变盒子在平面内的形态（位移、旋转、缩放、倾斜）
 
-![1681357773327](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615634.png)
+![1681357773327](assets/1681357773327.png)
 
 平面转换也叫 2D 转换，属性是 **transform**
 
@@ -32,15 +32,15 @@ transform: translate(X轴移动距离, Y轴移动距离);
 
 * 方法一：margin
 
-![1681358064880](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615635.png)
+![1681358064880](assets/1681358064880.png)
 
 * 方法二：平移 → 百分比参照盒子自身尺寸计算结果 
 
-![1681358076134](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615636.png)
+![1681358076134](assets/1681358076134.png)
 
 ### 案例-双开门
 
-![1681358110583](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615637.png)
+![1681358110583](assets/1681358110583.png)
 
 * HTML 结构
 
@@ -122,7 +122,7 @@ transform-origin: 水平原点位置 垂直原点位置;
 
 ### 案例-时钟
 
-![1681358351628](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615638.png)
+![1681358351628](assets/1681358351628.png)
 
 ```css
 .hour {
@@ -178,7 +178,7 @@ transform: scale(X轴缩放倍数, Y轴缩放倍数);
 
 ### 案例-播放特效
 
-![1681358481436](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615639.png)
+![1681358481436](assets/1681358481436.png)
 
 * CSS 样式
 
@@ -232,11 +232,11 @@ transform: skew();
 
 * 线性渐变
 
-![1681358603090](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615640.png)
+![1681358603090](assets/1681358603090.png)
 
 * 径向渐变
 
-![1681358608036](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615642.png)
+![1681358608036](assets/1681358608036.png)
 
 ### 线性渐变
 
@@ -259,7 +259,7 @@ background-image: linear-gradient(
 
 ### 案例-产品展示
 
-![1681358757636](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615643.png)
+![1681358757636](assets/1681358757636.png)
 
 * HTML 结构
 
@@ -312,7 +312,7 @@ background-image: radial-gradient(
 
 ## 03-综合案例
 
-![1681365549936](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615644.png)
+![1681365549936](assets/1681365549936.png)
 
 ### 导航-频道
 
@@ -469,7 +469,7 @@ background-image: radial-gradient(
 * 空间转换也叫 3D转换
 * 属性：transform
 
-![1681723381377](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615645.png)
+![1681723381377](assets/1681723381377.png)
 
 ### 平移
 
@@ -496,21 +496,21 @@ transform: translateZ();
 perspective: 视距;
 ```
 
-![1681723504103](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615646.png)
+![1681723504103](assets/1681723504103.png)
 
 ### 旋转
 
 * Z 轴：rotateZ()
 
-![1681723549616](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615647.png)
+![1681723549616](assets/1681723549616.png)
 
 * X 轴：rotateX()
 
-![1681723568598](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615648.png)
+![1681723568598](assets/1681723568598.png)
 
 * Y 轴：rotateY()
 
-![1681723587974](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615649.png)
+![1681723587974](assets/1681723587974.png)
 
 ### 左手法则
 
@@ -518,7 +518,7 @@ perspective: 视距;
 
 使用：左手握住旋转轴, 拇指指向正值方向, 其他四个手指弯曲方向为旋转正值方向 
 
-![1681723629410](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615650.png)
+![1681723629410](assets/1681723629410.png)
 
 ### rotate3d-了解
 
@@ -538,7 +538,7 @@ perspective: 视距;
 
 ### 案例-3d导航
 
-![1681723704637](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615651.png)
+![1681723704637](assets/1681723704637.png)
 
 案例步骤：
 
@@ -547,9 +547,9 @@ perspective: 视距;
    2. 橙色是立方体的上面
 2. 鼠标悬停，立方体旋转
 
-![1681723746854](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615652.png)
+![1681723746854](assets/1681723746854.png)
 
-![1681723827660](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615653.png)
+![1681723827660](assets/1681723827660.png)
 
 ```css
 .nav li {
@@ -637,7 +637,7 @@ animation: 动画名称 动画花费时长;
 
 ### animation复合属性
 
-![1681723979998](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615654.png)
+![1681723979998](assets/1681723979998.png)
 
 提示：
 
@@ -647,11 +647,11 @@ animation: 动画名称 动画花费时长;
 
 ### animation拆分写法
 
-![1681724035890](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615655.png)
+![1681724035890](assets/1681724035890.png)
 
 ### 案例-走马灯
 
-![1681724053648](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615656.png)
+![1681724053648](assets/1681724053648.png)
 
 * HTML 结构
 
@@ -706,7 +706,7 @@ animation: 动画名称 动画花费时长;
 
 * 核心
 
-![1681724175321](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615657.png)
+![1681724175321](assets/1681724175321.png)
 
 * 制作步骤
 
@@ -755,7 +755,7 @@ animation:
 
 ## 03-综合案例-全名出游
 
-![1681724426559](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615658.png)
+![1681724426559](assets/1681724426559.png)
 
 ### 背景
 
@@ -870,7 +870,7 @@ body {
 
 模拟移动设备，方便查看页面效果
 
-![1681811083202](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615659.png)
+![1681811083202](assets/1681811083202.png)
 
 ### 屏幕分辨率
 
@@ -881,7 +881,7 @@ body {
 
 结论：**制作网页参考 逻辑分辨率** 
 
-![1681811157520](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615660.png)
+![1681811157520](assets/1681811157520.png)
 
 ### 视口
 
@@ -916,7 +916,7 @@ body {
 
 使用方法：
 
-![1681811271300](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615661.png)
+![1681811271300](assets/1681811271300.png)
 
 ### 适配方案
 
@@ -942,7 +942,7 @@ body {
 
 当某个条件成立, 执行对应的CSS样式
 
-![1681811369469](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615662.png)
+![1681811369469](assets/1681811369469.png)
 
 ```css
 @media (width:320px) {
@@ -956,7 +956,7 @@ body {
 
 目前rem布局方案中，将网页等分成10份， HTML标签的字号为视口宽度的 1/10。
 
-![1681811438512](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615663.png)
+![1681811438512](assets/1681811438512.png)
 
 ### flexible.js
 
@@ -991,7 +991,7 @@ Less是一个CSS预处理器, Less文件后缀是.less。扩充了 CSS 语言, �
 
 VS Code 插件：Easy LESS，保存 less文件后自动生成对应的 CSS 文件
 
-![1681811545628](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615664.png)
+![1681811545628](assets/1681811545628.png)
 
 ### 注释
 
@@ -1008,17 +1008,17 @@ VS Code 插件：Easy LESS，保存 less文件后自动生成对应的 CSS 文�
 * 除法需要添加 小括号 或 .
 * 表达式存在多个单位以第一个单位为准
 
-![1681811616094](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615665.png)
+![1681811616094](assets/1681811616094.png)
 
 ### 嵌套
 
 作用：快速生成后代选择器
 
-![1681811640347](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615666.png)
+![1681811640347](assets/1681811640347.png)
 
 提示：用 & 表示当前选择器，不会生成后代选择器，通常配合伪类或伪元素使用
 
-![1681811659709](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615667.png)
+![1681811659709](assets/1681811659709.png)
 
 ### 变量
 
@@ -1071,19 +1071,19 @@ a {
 
 写法：在 less 文件第一行添加:  // out: false 
 
-![1681811772496](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615668.png)
+![1681811772496](assets/1681811772496.png)
 
 
 
 ## 04-综合案例-极速问诊
 
-![1681811796608](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615669.png)
+![1681811796608](assets/1681811796608.png)
 
 ### 准备工作
 
 * 项目目录
 
-![1681811827562](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615670.png)
+![1681811827562](assets/1681811827562.png)
 
 * HTML 结构
 
@@ -1296,11 +1296,11 @@ vh是1/100视口高度，全面屏视口高度尺寸大，如果混用可能会�
 
 ## 02-综合案例-酷我音乐 
 
-![1682666610217](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615671.png)
+![1682666610217](assets/1682666610217.png)
 
 ### 准备工作
 
-![1682666716132](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615672.png)
+![1682666716132](assets/1682666716132.png)
 
 * HTML 结构
 
@@ -1791,7 +1791,7 @@ header {
 
 ### 基本写法
 
-![1682667975274](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615673.png)
+![1682667975274](assets/1682667975274.png)
 
 * max-width：最大宽度（小于等于）
 * min-width：最小宽度（大于等于）
@@ -1805,7 +1805,7 @@ header {
 
 需求：网页宽度小于等于768px则隐藏左侧区域
 
-![1682668088236](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615674.png)
+![1682668088236](assets/1682668088236.png)
 
 * HTML 结构
 
@@ -1846,7 +1846,7 @@ header {
 
 ### 媒体查询-完整写法
 
-![1682668186585](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615675.png)
+![1682668186585](assets/1682668186585.png)
 
 #### 关键词 / 逻辑操作符
 
@@ -1874,7 +1874,7 @@ header {
 
 ### 媒体查询-外部CSS
 
-![1682668446411](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615676.png)
+![1682668446411](assets/1682668446411.png)
 
 ## 02-Bootstrap
 
@@ -1890,7 +1890,7 @@ Bootstrap 是由 Twitter 公司开发维护的前端 UI 框架，它提供了大
 
 下载：Bootstrap V5中文文档 → 进入中文文档 → 下载 →下载 Bootstrap 生产文件
 
-![1682668529209](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615677.png)
+![1682668529209](assets/1682668529209.png)
 
 #### 使用
 
@@ -1914,7 +1914,7 @@ Bootstrap 是由 Twitter 公司开发维护的前端 UI 框架，它提供了大
 
 例如：一行排4个盒子，则每个盒子占 3份 即可（12 / 4 = 3）
 
-![1682668611644](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615678.png)
+![1682668611644](assets/1682668611644.png)
 
 * row 类：行，可以让内容在一行排（flex布局）
 
@@ -1922,7 +1922,7 @@ Bootstrap 是由 Twitter 公司开发维护的前端 UI 框架，它提供了大
 
 #### 按钮
 
-![1682668666364](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615679.png)
+![1682668666364](assets/1682668666364.png)
 
 类名
 
@@ -1934,7 +1934,7 @@ Bootstrap 是由 Twitter 公司开发维护的前端 UI 框架，它提供了大
 
 #### 表格
 
-![1682668706851](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615680.png)
+![1682668706851](assets/1682668706851.png)
 
 表格类：
 
@@ -1971,7 +1971,7 @@ Bootstrap 是由 Twitter 公司开发维护的前端 UI 框架，它提供了大
 
 ### 准备工作
 
-![1682668919871](https://ltpbje.oss-cn-zhangjiakou.aliyuncs.com/img/202410061615681.png)
+![1682668919871](assets/1682668919871.png)
 
 * HTML 结构
 
