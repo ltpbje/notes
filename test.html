@@ -9,58 +9,14 @@
 
 <body>
     <script>
-        // 定义一个函数，用于给二叉树的节点赋值
-        function assignValues(root) {
-            // 如果根节点为空，则返回null
-            if (!root) return null;
-            // 定义一个数组，用于存储节点的值
-            let values = [];
-            // 定义一个变量，用于记录当前层数
-            let level = 1;
-            // 定义一个队列，用于存储节点
-            let queue = [root];
-
-            // 当队列不为空时，循环执行以下操作
-            while (queue.length > 0) {
-                // 获取队列的长度
-                let size = queue.length;
-                // 定义一个变量，用于记录当前层的节点值之和
-                let sum = 0;
-                // 循环遍历队列中的节点
-                for (let i = 0; i < size; i++) {
-                    // 获取队列中的节点
-                    let node = queue.shift();
-                    // 如果节点有左子节点，则将左子节点加入队列
-                    if (node.left) queue.push(node.left);
-                    // 如果节点有右子节点，则将右子节点加入队列
-                    if (node.right) queue.push(node.right);
-                    // 将节点值加入数组
-                    sum += values.length + 1; // Assign values in order
-                    // 将节点值赋给节点的val属性
-                    node.val = values.length + 1;
-                    // 将节点值加入数组
-                    values.push(node.val);
-                }
-
-                // 如果当前层为奇数层，且当前层的节点值之和与上一层的节点值之和的差值大于1，则返回null
-                if (level % 2 === 1 && Math.abs(sum - (values.slice(0, values.length - size).reduce((a, b) => a + b, 0))) > 1) {
-                    return null;
-                }
-                // 当前层数加1
-                level++;
-            }
-            // 返回根节点
-            return root;
-        }
-
-        assignValues(1);
-        assignValues(2);
-        assignValues(42);
-        assignValues(13);
-        assignValues(12);
-        assignValues(42);
-        assignValues(5);
-        const arr = assignValues(8);
+        console.log(null == false);             //           false
+        console.log(null == true);            //   false
+        console.log(undefined == false);//false
+        console.log(undefined == true); //false
+        console.log(undefined == null); //true
+        console.log(undefined == undefined);// true
+        console.log(null == null); //true
+        console.log(null == NaN); //false
 
     </script>
 </body>
