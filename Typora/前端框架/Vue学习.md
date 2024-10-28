@@ -76,8 +76,6 @@ Vue是什么？
 
 插值表达式是一种 Vue 的模板语法
 
-![image-20230802093507152](C:\Users\MSIK\AppData\Roaming\Typora\typora-user-images\image-20230802093507152.png)![image-20230802093532821](C:\Users\MSIK\AppData\Roaming\Typora\typora-user-images\image-20230802093532821.png)
-
 **1. 作用:** 利用表达式进行插值，渲染到页面中
 
 表达式：是可以被求值的代码，JS引擎会将其计算出一个结果
@@ -1847,7 +1845,7 @@ VS
 2. 单页面应用优缺点?
 
 		优点：按需更新性能高，开发效率高，用户体验好
-	
+		
 		缺点：学习成本，首屏加载慢，不利于SEO
 
 3. 应用场景？

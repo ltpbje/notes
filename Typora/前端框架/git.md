@@ -9,10 +9,10 @@ MSIK@MSI MINGW64 /e/01-代码/02-笔记 (master)
 $ git config --global user.name 'ltpbje'
 
 MSIK@MSI MINGW64 /e/01-代码/02-笔记 (master)
-$ git config --global email.name '19836788252@163.com'
+$ git config --global email.name '10000000000@163.com'
 
 MSIK@MSI MINGW64 /e/01-代码/02-笔记 (master)
-$ git remote add origin https://github.com/ltpdbz/notes.git
+$ git remote add origin https://github.com/llllll/notes.git
 
 MSIK@MSI MINGW64 /e/01-代码/02-笔记 (master)
 $ git pull
