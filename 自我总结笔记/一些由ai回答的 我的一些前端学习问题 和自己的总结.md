@@ -2,9 +2,82 @@
 
 
 
+## ### [Map](https://zh.javascript.info/map-set#map)
 
+[Map](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Map) 是一个带键的数据项的集合，就像一个 `Object` 一样。 但是它们最大的差别是 `Map` 允许任何类型的键（key）。
+
+它的方法和属性如下：
+
+- `new Map()` —— 创建 map。
+- `map.set(key, value)` —— 根据键存储值。
+- `map.get(key)` —— 根据键来返回值，如果 `map` 中不存在对应的 `key`，则返回 `undefined`。
+- `map.has(key)` —— 如果 `key` 存在则返回 `true`，否则返回 `false`。
+- `map.delete(key)` —— 删除指定键的值。
+- `map.clear()` —— 清空 map。
+- `map.size` —— 返回当前元素个数。
+
+举个例子：
+
+```javascript
+let map = new Map();
+
+map.set('1', 'str1');   // 字符串键
+map.set(1, 'num1');     // 数字键
+map.set(true, 'bool1'); // 布尔值键
+
+// 还记得普通的 Object 吗? 它会将键转化为字符串
+// Map 则会保留键的类型，所以下面这两个结果不同：
+alert( map.get(1)   ); // 'num1'
+alert( map.get('1') ); // 'str1'
+
+alert( map.size ); // 3
+```
+
+## ### [Set](https://zh.javascript.info/map-set#set)
+
+`Set` 是一个特殊的类型集合 —— “值的集合”（没有键），它的每一个值只能出现一次。
+
+它的主要方法如下：
+
+- `new Set(iterable)` —— 创建一个 `set`，如果提供了一个 `iterable` 对象（通常是数组），将会从数组里面复制值到 `set` 中。
+- `set.add(value)` —— 添加一个值，返回 set 本身
+- `set.delete(value)` —— 删除值，如果 `value` 在这个方法调用的时候存在则返回 `true` ，否则返回 `false`。
+- `set.has(value)` —— 如果 `value` 在 set 中，返回 `true`，否则返回 `false`。
+- `set.clear()` —— 清空 set。
+- `set.size` —— 返回元素个数。
+
+它的主要特点是，重复使用同一个值调用 `set.add(value)` 并不会发生什么改变。这就是 `Set` 里面的每一个值只出现一次的原因。
+
+例如，我们有客人来访，我们想记住他们每一个人。但是已经来访过的客人再次来访，不应造成重复记录。每个访客必须只被“计数”一次。
+
+`Set` 可以帮助我们解决这个问题：
+
+```javascript
+let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits，一些访客来访好几次
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set 只保留不重复的值
+alert( set.size ); // 3
+
+for (let user of set) {
+  alert(user.name); // John（然后 Pete 和 Mary）
+}
+```
+
+`Set` 的替代方法可以是一个用户数组，用 [arr.find](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/find) 在每次插入值时检查是否重复。但是这样性能会很差，因为这个方法会遍历整个数组来检查每个元素。`Set` 内部对唯一性检查进行了更好的优化。
 
 ### Array.from()和of()
+
 `Array.of()` 静态方法通过可变数量的参数创建一个新的 Array 实例，而不考虑参数的数量或类型。
 
 `Array.from()` 静态方法从可迭代或类数组对象创建一个新的浅拷贝的数组实例。
