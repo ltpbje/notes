@@ -27,7 +27,7 @@
 
 ### 1.1 Undefined类型
 
-`Undefined`类型只有一个唯一的字面值`undefined`,表示的含义是一个变量不存在。
+**`Undefined`类型只有一个唯一的字面值`undefined`,表示的含义是一个变量不存在。**
 
 问题：哪些场景中会出现`undefined`?
 
