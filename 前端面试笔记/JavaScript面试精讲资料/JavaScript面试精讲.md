@@ -65,7 +65,7 @@ fn(1,2)
 
 ### 1.2 Null类型
 
-​	`Null`类型只有一个唯一的字面值`null`,表示一个空指针的对象，这也是在使用`typeof`运行符检测`null`值时会返回`object`的原因。
+​	`Null`类型只有一个唯一的字面值`null`,**表示一个空指针的对象**，这也是在使用`typeof`运行符检测`null`值时会返回`object`的原因。
 
 问题：哪些场景中会出现`null`？
 
@@ -90,7 +90,7 @@ document.querySelector('#id') //null
 第三：在使用正则表达式进行匹配的时候，如果没有匹配的结果，就会返回`null`
 
 ```js
-'test'.match(/a/);// null
+ 
 ```
 
 ### 1.3 Undefined与null比较
@@ -136,7 +136,7 @@ undefined+" abc" //"undefined abc"
 null+" abc" //"null abc"
 ```
 
-第四：在进行数值类型的转换时，`undefined`会转换为`NaN`,无法参与计算，而`null`会转换为`0`,可以参与计算。
+第四：**在进行数值类型的转换时，`undefined`会转换为`NaN`,无法参与计算，而`null`会转换为`0`,可以参与计算。**
 
 ```js
 undefined +0;// NaN
