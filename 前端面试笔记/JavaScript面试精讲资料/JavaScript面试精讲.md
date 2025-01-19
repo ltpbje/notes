@@ -153,19 +153,19 @@ null+0 ;// 0
 
 如果`a`不是`Boolean`类型的值，那么`JavaScript`解析器会自动调用`Boolean( )`函数对`a`进行类型的转换，返回最终符合`if`语句判断的`true`或者是`false`值。
 
-不同类型与`Boolean`类型的值的转换是`Boolean`类型的重点。
+不同类型与`Boolean`类型的值的转换是`Boolean`类型的重点。        
 
-第一：`String`类型转换为`Boolean`类型
+**第一：`String`类型转换为`Boolean`类型**
 
 空字符都会转换成`false`,而任何非空字符串都会转换为`true`
 
-第二：`Number`类型转换为`Boolean`类型
+**第二：`Number`类型转换为`Boolean`类型**
 
 `0`和`NaN`都会转换为`false`.而除了`0`和`NaN`以外都会转换`true`.
 
-第三：`Object`类型转换`Boolean`类型
+**第三：`Object`类型转换`Boolean`类型**
 
-如果`object`为`null`时，会转换为`false`,如果`object`不为`null`，则都会转换成`true`.
+  
 
 ```js
 var obj={}
