@@ -656,7 +656,7 @@ function reverseString(str) {
 
 ```js
 var arr=Array.from('abcdef') //转换成数组,这里比第一种方式简单
-console.log(arr.reverse().join(""))
+    console.log(arr.reverse().join(""))
 ```
 
 第三种算法：
@@ -669,7 +669,7 @@ console.log(arr.reverse().join(""))
   function reverseString2(str) {
         var result = "";
         for (var i = str.length - 1; i >= 0; i--) {
-          result += str.charAt(i);
+          result += str.charAt(i);// charAt() 方法返回字符串中指定索引（下标）处的字符。
         }
         return result;
       }
@@ -686,7 +686,7 @@ console.log(arr.reverse().join(""))
 
 思想：通过`key-value`形式的对象存储字符串以及字符串出现的次数，然后逐个判断出现次数最大的值，同时获取对应的字符。
 
-
+​         
 
 ```js
 <script>
@@ -697,7 +697,7 @@ console.log(arr.reverse().join(""))
           //判断json对象中是否有当前从str字符串中取出来的某个字符。
           if (!json[str.charAt(i)]) {
             //如果不存在，把当前字符作为key添加到json对象中，值为1
-            json[str.charAt(i)] = 1;
+            
           } else {
             //如果存在，则让value值加1
             json[str.charAt(i)]++;
