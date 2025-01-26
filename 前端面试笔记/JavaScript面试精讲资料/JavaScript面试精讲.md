@@ -1366,7 +1366,7 @@ new String('3')==='3' //false
 
 以上打印的结果中，输出的是`Person{}`，并没有包含`userName`和`age`,原因是什么呢？
 
-因为在 构造函数中如果没有添加`return`,则默认返回的是`return this`.
+**因为在 构造函数中如果没有添加`return`,则默认返回的是`return this`.**
 
 
 
