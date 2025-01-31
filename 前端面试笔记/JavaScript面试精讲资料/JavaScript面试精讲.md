@@ -1939,14 +1939,14 @@ for(var p in person){
 
 ```js
       var a = [1, 2, 3];
-      console.log(typeof a); 
+      console.log(typeof a); //Object
 ```
 
 
 
 #### 2.1.1 `instanceof`运算符
 
-`instanceof`运算符用于通过查找原型链来检查某个变量是否为某个类型数据的实例，使用`instanceof`运算符可以判断一个变量是数组还是对象。
+`instanceof`**运算符用于通过查找原型链来检查某个变量是否为某个类型数据的实例，**使用`instanceof`运算符可以判断一个变量是数组还是对象。
 
 ```js
     var a = [1, 2, 3];
