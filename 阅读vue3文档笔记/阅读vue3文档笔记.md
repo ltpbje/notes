@@ -160,3 +160,116 @@ const vHighlight = {
   opacity: 0;
 }
 ```
+
+### [KeepAlive](https://cn.vuejs.org/guide/built-ins/keep-alive.html)
+
+```vue
+<!-- 非活跃的组件将会被缓存！ -->
+<KeepAlive>
+  <component :is="activeComponent" />
+</KeepAlive>
+```
+
+#### [最大缓存实例数](https://cn.vuejs.org/guide/built-ins/keep-alive.html#max-cached-instances)
+
+我们可以通过传入 `max` prop 来限制可被缓存的最大组件实例数。`<KeepAlive>` 的行为在指定了 `max` 后类似一个 [LRU 缓存](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU))：如果缓存的实例数量即将超过指定的那个最大数量，则最久没有被访问的缓存实例将被销毁，以便为新的实例腾出空间。
+
+```vue
+<KeepAlive :max="10">
+  <component :is="activeComponent" />
+</KeepAlive>
+```
+
+### [Teleport](https://cn.vuejs.org/guide/built-ins/teleport.html)
+
+将子组件的模板传送到 子组件之外的DOM结构中显示
+
+`<Teleport>` 是一个内置组件，它可以将一个组件内部的一部分模板“传送”到该组件的 DOM 结构外层的位置去。
+
+### [Suspense](https://cn.vuejs.org/guide/built-ins/suspense.html#loading-state)
+
+Vue.js 的 `<Suspense>` 组件是一个用于协调异步依赖关系的内置组件，主要用于优化异步组件或异步数据加载时的用户体验。以下是该页面核心内容的解读：
+
+---
+
+#### **核心功能**
+1. **异步组件加载状态管理**  
+   当子组件包含异步操作（如 `async setup()` 或动态导入的组件）时，`<Suspense>` 允许你定义一个 **备用内容（fallback）** 在加载期间展示（如加载动画），待异步操作完成后显示正式内容。
+
+2. **多层级异步协调**  
+   `<Suspense>` 会等待所有嵌套的异步操作完成，即使它们是深层嵌套的组件，避免界面部分加载导致的闪烁问题。
+
+---
+
+#### **基本用法**
+```vue
+<template>
+  <Suspense>
+    <!-- 主内容：包含异步操作的组件 -->
+    <AsyncComponent />
+
+    <!-- 加载状态的回退内容 -->
+    <template #fallback>
+      <div>Loading...</div>
+    </template>
+  </Suspense>
+</template>
+
+<script setup>
+// 异步组件示例
+const AsyncComponent = defineAsyncComponent(() =>
+  import('./AsyncComponent.vue')
+)
+</script>
+```
+
+---
+
+#### **关键特性**
+1. **异步 `setup()` 支持**  
+   如果组件的 `setup()` 是异步的，可以直接在父级用 `<Suspense>` 包裹：
+   ```vue
+   <script setup>
+   const data = await fetchData() // 异步操作
+   </script>
+   ```
+
+2. **错误处理**  
+   结合 `onErrorCaptured` 生命周期钩子捕获子组件的错误，实现错误边界：
+   
+   ```vue
+   <script setup>
+   import { onErrorCaptured } from 'vue'
+   
+   onErrorCaptured((error) => {
+     // 处理错误（如显示错误信息）
+     return false // 阻止错误继续冒泡
+   })
+   </script>
+   ```
+   
+3. **事件触发**  
+   `<Suspense>` 提供 `@pending`、`@resolve` 和 `@fallback` 事件，用于跟踪加载状态变化。
+
+---
+
+#### **注意事项**
+1. **组合式 API 限制**  
+   异步 `setup()` 需通过 `<Suspense>` 或 `await` 在父组件中调用，否则可能导致数据未就绪。
+
+2. **嵌套使用**  
+   多个 `<Suspense>` 可以嵌套，每个会独立处理自己的异步依赖。
+
+3. **SSR 兼容性**  
+   `<Suspense>` 在服务端渲染（SSR）中，初始请求会渲染 fallback，客户端激活后才加载内容。
+
+---
+
+#### **适用场景**
+- 需要数据预加载的组件（如从 API 获取数据）。
+- 动态导入的组件（Code Splitting）。
+- 需要统一处理复杂异步依赖树的加载状态。
+
+---
+
+通过 `<Suspense>`，开发者可以更优雅地处理异步逻辑，提升用户对加载过程的感知体验。建议结合具体项目需求设计合理的 fallback UI 和错误处理机制。
