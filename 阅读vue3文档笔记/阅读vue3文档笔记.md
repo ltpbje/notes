@@ -273,3 +273,52 @@ const AsyncComponent = defineAsyncComponent(() =>
 ---
 
 通过 `<Suspense>`，开发者可以更优雅地处理异步逻辑，提升用户对加载过程的感知体验。建议结合具体项目需求设计合理的 fallback UI 和错误处理机制。
+
+
+
+#### 嵌套 `<Suspense>`产生的问题
+
+**原因分析**
+
+父级 `<Suspense>` 默认会捕获 **所有直接子层级的异步依赖**，但对深层嵌套的异步组件（如 `DynamicAsyncInner`），父级可能无法感知其加载状态。此时，内层组件会被视为普通组件，导致加载状态未被统一管理。
+
+------
+
+**解决方案：嵌套 `<Suspense>` 并设置 `suspensible`**
+
+为内层异步组件包裹一个嵌套的 `<Suspense>`，并添加 `suspensible` 属性：
+
+```html
+<Suspense>
+  <component :is="DynamicAsyncOuter">
+    <!-- 内层增加带有 suspensible 的 Suspense -->
+    <Suspense suspensible> 
+      <component :is="DynamicAsyncInner" />
+    </Suspense>
+  </component>
+</Suspense>
+```
+
+**关键点**
+
+1. `suspensible` 的作用
+
+   ：
+
+   - 若未设置，内层 `<Suspense>` 会被父级视为 **同步组件**，导致：
+
+- 内层自行处理加载状态（有自己的 `fallback` 插槽）。
+- 可能出现多个加载状态同时触发，导致页面闪烁或空节点
+  - 设置后，父级 `<Suspense>` 会统一管理 **所有嵌套异步依赖**（包括内层），而内层 `<Suspense>` 仅作为异步解析的边界。
+
+1. 运行效果：
+   - 当 `DynamicAsyncInner` 变化时，父级 `<Suspense>` 会等待其加载完成，期间显示统一的 `fallback` 内容，而非空节点。
+   - 所有异步操作（如加载事件）由父级统一处理，避免多个修补周期。
+
+------
+
+**总结**
+
+- **嵌套异步组件**需配合嵌套 `<Suspense>` 使用。
+- **`suspensible` 属性**是核心，用于将内层异步依赖的管控权交给父级。
+- 此模式常见于复杂布局（如多级路由）或需要统一加载状态的场景。
