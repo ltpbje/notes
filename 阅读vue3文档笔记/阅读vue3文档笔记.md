@@ -399,3 +399,68 @@ shallowArray.value = [
 ]
 ```
 
+
+
+## TS 与组合式 API
+
+### [为 provide / inject 标注类型](https://cn.vuejs.org/guide/typescript/composition-api.html#typing-provide-inject)
+
+provide 和 inject 通常会在不同的组件中运行。要正确地为注入的值标记类型，Vue 提供了一个 `InjectionKey` 接口，它是一个继承自 `Symbol` 的泛型类型，可以用来在提供者和消费者之间同步注入值的类型：
+
+
+
+
+
+
+
+
+
+
+
+## TS 与选项式 API
+
+### [类型扩展的位置](https://cn.vuejs.org/guide/typescript/options-api.html#type-augmentation-placement)
+
+
+
+我们可以将这些类型扩展放在一个 `.ts` 文件，或是一个影响整个项目的 `*.d.ts` 文件中。无论哪一种，都应确保在 `tsconfig.json` 中包括了此文件。对于库或插件作者，这个文件应该在 `package.json` 的 `types` 属性中被列出。
+
+为了利用模块扩展的优势，你需要确保将扩展的模块放在 [TypeScript 模块](https://www.typescriptlang.org/docs/handbook/modules.html) 中。 也就是说，该文件需要包含至少一个顶级的 `import` 或 `export`，即使它只是 `export {}`。如果扩展被放在模块之外，它将覆盖原始类型，而不是扩展!
+
+1. **正确扩展模块**
+
+   - 如果你直接在全局作用域中扩展模块，而不是在一个模块文件中，TypeScript 会覆盖原始类型，而不是扩展它。
+
+   - 正确的方式是将扩展放在一个模块文件中，例如：
+
+     TypeScript复制
+
+     ```typescript
+     // 正确的方式
+     export {}
+     
+     declare module 'vue' {
+       interface ComponentCustomProperties {
+         $translate: (key: string) => string
+       }
+     }
+     ```
+
+   - 如果没有 `export {}`，TypeScript 会认为这是一个全局文件，从而覆盖原始类型：
+
+     TypeScript复制
+
+     ```typescript
+     // 错误的方式，会覆盖原始类型
+     declare module 'vue' {
+       interface ComponentCustomProperties {
+         $translate: (key: string) => string
+       }
+     }
+     ```
+
+How Good：可以带来什么好处
+
+- **避免类型覆盖**：正确使用模块扩展可以确保你添加的新类型是扩展原始类型，而不是覆盖它。这有助于保持代码的稳定性和可维护性。
+- **增强类型安全性**：通过扩展类型，你可以为第三方库添加更精确的类型定义，减少运行时错误。
+- **提高代码可读性**：清晰的类型扩展可以让其他开发者更容易理解你的代码意图，尤其是当你添加了新的功能或方法时。
