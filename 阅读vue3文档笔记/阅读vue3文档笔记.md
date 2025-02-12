@@ -474,3 +474,16 @@ How Good：可以带来什么好处
 函数式组件是一种定义自身没有任何状态的组件的方式。它们很像纯函数：接收 props，返回 vnodes。函数式组件在渲染过程中不会创建组件实例 (也就是说，没有 `this`)，也不会触发常规的组件生命周期钩子。
 
 我们用一个普通的函数而不是一个选项对象来创建函数式组件。该函数实际上就是该组件的渲染函数。
+
+
+
+## [Vue 与 Web Components](https://cn.vuejs.org/guide/extras/web-components.html#web-components-vs-vue-components)
+
+### [Web Components vs. Vue Components](https://cn.vuejs.org/guide/extras/web-components.html#web-components-vs-vue-components)
+
+- **选择 Web Components**：
+  - **优点**：完全基于 Web 标准，理论上不会过时。可以在任何现代浏览器中使用，不需要依赖特定框架。
+  - **缺点**：功能有限，需要自己实现很多额外的功能。维护成本高，缺乏成熟的生态系统支持。
+- **选择 Vue Components**：
+  - **优点**：功能强大且全面，提供了高效的模板系统、响应式状态管理和 SSR 支持。有成熟的生态系统，社区支持丰富，开发效率高。
+  - **缺点**：依赖 Vue 框架，需要学习和维护框架的使用。不过，Vue 的更新通常会保持向后兼容，不会轻易导致项目重构。
