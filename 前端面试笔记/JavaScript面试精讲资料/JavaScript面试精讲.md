@@ -1949,13 +1949,13 @@ for(var p in person){
 `instanceof`**运算符用于通过查找原型链来检查某个变量是否为某个类型数据的实例，**使用`instanceof`运算符可以判断一个变量是数组还是对象。
 
 ```js
-    var a = [1, 2, 3];
-      console.log(a instanceof Array); // true
-      console.log(a instanceof Object); // true
+var a = [1, 2, 3];
+console.log(a instanceof Array); // true
+console.log(a instanceof Object); // true
 
-  var userInfo = { userName: "zhangsan" };
-      console.log(userInfo instanceof Array); // false
-      console.log(userInfo instanceof Object); // true
+var userInfo = { userName: "zhangsan" };
+console.log(userInfo instanceof Array); // false
+console.log(userInfo instanceof Object); // true
 ```
 
 
@@ -2200,6 +2200,10 @@ for(var i=0;i<arr.length;i++){
 #### 使用`map( )`函数
 
 `m
+
+
+
+`map()` 是 JavaScript 中数组的一个方法，它会创建一个新数组，新数组中的每个元素都是对原数组中对应元素执行一次提供的函数后的返回值。简单来说，`map()` 可以帮助我们对数组中的每个元素进行某种操作，然后生成一个新的数组。
 
 ```js
     var arr = [1, 3, 6, 90, 23];
